@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: decide_the_future_production
-  username: decide_the_future
-  password: <%= ENV['DECIDE-THE-FUTURE_DATABASE_PASSWORD'] %>
