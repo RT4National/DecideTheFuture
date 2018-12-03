@@ -1,24 +1,25 @@
-# README
+# Big Surveillance
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Because everyone really _is_ out to get your data with no pesky responsibilities
+like having reliable security, as long as they’re willing to share it with the
+federal government. Who, you know, are totally trustworthy to use that data in a
+way that doesn't endanger your first amendment rights.
 
-Things you may want to cover:
 
-* Ruby version
+## Development
 
-* System dependencies
+### Frameworks and libraries
 
-* Configuration
+* [React On Rails][02]
+* [Ruby on Rails 5.2.1][03]
 
-* Database creation
+### Installing & running the server
 
-* Database initialization
+Coming soon...
 
-* How to run the test suite
+### Deploying
 
-* Services (job queues, cache servers, search engines, etc.)
+Coming soon...
 
-* Deployment instructions
-
-* ...
+[02]: https://github.com/shakacode/react_on_rails
+[03]: https://rubyonrails.org/
