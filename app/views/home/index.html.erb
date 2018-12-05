@@ -14,7 +14,9 @@
 <div id="candidates" class="candidates"></div>
 
 <a id="scoreboard" name="scoreboard"></a>
-<div class="scoreboard">
+<%= react_component("ScorecardPolitical") %>
+
+<!-- <div class="scoreboard">
   <h2>Political Scoreboard</h2>
   <div id="candidates"></div>
   <p>
@@ -23,7 +25,7 @@
     <a href="#our-scoring-system">Learn about our scoring system. </a>
   </p>
   <div id="scoreboard_data"></div>
-</div>
+</div> -->
 
 <div class="action">
   <h3>Tweet Congress</h3>
@@ -50,7 +52,7 @@
       </label>
     </div>
     <div id="tweet-iframe-container"></div>
-    <a class="tweet" href="#" id="tweet_your_state"><%= image_tag "tw_white.png" %>Tweet your Senators</a>
+    <a class="tweet" href="#" id="tweet_your_state"><%= image_tag "share/tw_white.png" %>Tweet your Senators</a>
     <a class="call" href="#" id="call_congress">Can't tweet? Call Congress...</a>
   </p>
   <script type="text/javascript">

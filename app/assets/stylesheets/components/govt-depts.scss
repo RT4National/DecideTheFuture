@@ -1,0 +1,44 @@
+@mixin renderLogo($x, $y) {
+    background-position: $x $y;
+}
+
+.abc {
+    background-image: image-url('govt-depts/govt-depts.png');
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    border: 0;
+    color: transparent;
+    display: block;
+    font: 0/0 a;
+    height: 20rem;
+    text-shadow: none;
+    width: 20rem;
+
+    &.depttreasury {
+        @include renderLogo(0, 0);
+    }
+
+    &.deptodni {
+        @include renderLogo(-200px, 0);
+    }
+
+    &.deptjustice {
+        @include renderLogo(0, -200px);
+    }
+
+    &.depthomelandsecurity {
+        @include renderLogo(-200px, -200px);
+    }
+
+    &.deptenergy {
+        @include renderLogo(-400px, 0);
+    }
+
+    &.deptdefense {
+        @include renderLogo(-400px, -200px);
+    }
+
+    &.deptcommerce {
+        @include renderLogo(0, -400px);
+    }
+}

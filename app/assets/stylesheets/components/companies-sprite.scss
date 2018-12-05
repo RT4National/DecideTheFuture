@@ -1,0 +1,179 @@
+/* Auto-generated sprites!
+ * To add company logo:
+ * 1. Create a 96px ⨉ 96px png of the new logo
+ * 2. Upload it and all the rest of them to https://draeton.github.io/stitches/
+ * 3. Change "Style prefix" setting to "logo"; "Padding" setting to 0
+ * 4. Download the png and the stylesheet
+ * 5. Rename the png to companies-logos$2x.png
+ * 6. Resize by 50% and save as companies-logos.png
+ * 7. Copy company-specific style declarations, paste them below the line
+ * */
+
+@mixin stitches-logo($x: 0, $y: 0) {
+    background-position: ($x / 3) ($y / 3);
+    @media screen and (min-width: $small-phone) {
+        background-position: ($x / 2) ($y / 2);
+    }
+}
+
+.logo {
+    background-repeat: no-repeat;
+    background-size: 192px 192px;
+    display: block;
+    @media screen and #{$standard-def} {
+        background-image: image-url('companies/companies-logos.png');
+    }
+    @media screen and #{$retina} {
+        background-image: image-url('companies/companies-logos$2x.png');
+    }
+    @media screen and (min-width: $small-phone) {
+        background-size: 288px 288px;
+    }
+
+// -----------------------------------------------------------------------------
+
+    &.logo-adobe {
+        @include stitches-logo(0, 0);
+    }
+
+    &.logo-amazon {
+        @include stitches-logo(-96px, 0);
+    }
+
+    &.logo-apple {
+        @include stitches-logo(-192px, 0);
+    }
+
+    &.logo-att {
+        @include stitches-logo(-288px, 0);
+    }
+
+    &.logo-automattic {
+        @include stitches-logo(-384px, 0);
+    }
+
+    &.logo-cisco {
+        @include stitches-logo(-480px, 0);
+    }
+
+    &.logo-comcast {
+        @include stitches-logo(0, -96px);
+    }
+
+    &.logo-credomobile {
+        @include stitches-logo(-96px, -96px);
+    }
+
+    &.logo-dell {
+        @include stitches-logo(-192px, -96px);
+    }
+
+    &.logo-disconnect {
+        @include stitches-logo(-288px, -96px);
+    }
+
+    &.logo-dropbox {
+        @include stitches-logo(-384px, -96px);
+    }
+
+    &.logo-duckduckgo {
+        @include stitches-logo(-480px, -96px);
+    }
+
+    &.logo-ebay {
+        @include stitches-logo(0, -192px);
+    }
+
+    &.logo-expedia {
+        @include stitches-logo(-96px, -192px);
+    }
+
+    &.logo-facebook {
+        @include stitches-logo(-192px, -192px);
+    }
+
+    &.logo-google {
+        @include stitches-logo(-288px, -192px);
+    }
+
+    &.logo-hp {
+        @include stitches-logo(-384px, -192px);
+    }
+
+    &.logo-ibm {
+        @include stitches-logo(-480px, -192px);
+    }
+
+    &.logo-intel {
+        @include stitches-logo(0, -288px);
+    }
+
+    &.logo-linkedin {
+        @include stitches-logo(-96px, -288px);
+    }
+
+    &.logo-microsoft {
+        @include stitches-logo(-192px, -288px);
+    }
+
+    &.logo-mozilla {
+        @include stitches-logo(-288px, -288px);
+    }
+
+    &.logo-netflix {
+        @include stitches-logo(-384px, -288px);
+    }
+
+    &.logo-oracle {
+        @include stitches-logo(-480px, -288px);
+    }
+
+    &.logo-priceline {
+        @include stitches-logo(0, -384px);
+    }
+
+    &.logo-privateinternetaccess {
+        @include stitches-logo(-96px, -384px);
+    }
+
+    &.logo-reddit {
+        @include stitches-logo(-192px, -384px);
+    }
+
+    &.logo-salesforce {
+        @include stitches-logo(-288px, -384px);
+    }
+
+    &.logo-t-mobile {
+        @include stitches-logo(-384px, -384px);
+    }
+
+    &.logo-twilio {
+        @include stitches-logo(-480px, -384px);
+    }
+
+    &.logo-twitter {
+        @include stitches-logo(0, -480px);
+    }
+
+    &.logo-verizon {
+        @include stitches-logo(-96px, -480px);
+    }
+
+    &.logo-wikipedia {
+        @include stitches-logo(-192px, -480px);
+    }
+
+    &.logo-xerox {
+        @include stitches-logo(-288px, -480px);
+    }
+
+    &.logo-yahoo {
+        @include stitches-logo(-384px, -480px);
+    }
+
+    &.logo-yelp {
+        @include stitches-logo(-480px, -480px);
+    }
+
+}

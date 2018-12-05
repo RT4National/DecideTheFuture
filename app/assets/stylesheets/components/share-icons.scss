@@ -1,0 +1,26 @@
+@mixin renderShareIcon($x, $y, $dim, $bgw: 120px, $bgh: 60px) {
+    background-position: $x $y;
+    width: $dim;
+    height: $dim;
+    background-image: image-url('share-icons.png');
+    background-repeat: no-repeat;
+    background-size: $bgw $bgh;
+}
+
+@mixin renderTwitter($dim: 6rem, $bgw: 120px, $bgh: 60px) {
+    @include renderShareIcon(0, 0, $dim, $bgw, $bgh);
+}
+
+@mixin renderFacebook($dim: 6rem, $bgw: 120px, $bgh: 60px) {
+    @include renderShareIcon(-50%, 0, $dim, $bgw, $bgh);
+}
+
+.share-icon {
+    &.twitter {
+        @include renderTwitter();
+    }
+
+    &.facebook {
+        @include renderFacebook();
+    }
+}

@@ -1,0 +1,2501 @@
+@mixin renderHead($x, $y) {
+    background-position: ($x * 1.025) ($y * 1.025);
+}
+
+.congressional-head {
+    background-image: url('../congress/congressional-heads.jpg');
+    background-repeat: no-repeat;
+    background-size: (2784px * 1.025) (2613px * 1.025);
+    display: block;
+}
+
+.congressional-head {
+
+    &.wylummiscynthiam {
+        @include renderHead(0, 0);
+    }
+
+    &.wyenzimichaelb {
+        @include renderHead(-96px, 0);
+    }
+
+    &.wybarrassojohn {
+        @include renderHead(-192px, 0);
+    }
+
+    &.wvrockefellerjohndiv {
+        @include renderHead(0, -117px);
+    }
+
+    &.wvrahallnickjii {
+        @include renderHead(-96px, -117px);
+    }
+
+    &.wvmooneyalex {
+        @include renderHead(-288px, 0);
+    }
+
+    &.wvmckinleydavidb {
+        @include renderHead(-192px, -117px);
+    }
+
+    &.wvmanchinjoeiii {
+        @include renderHead(0, -234px);
+    }
+
+    &.wvjenkinsevan {
+        @include renderHead(-384px, 0);
+    }
+
+    &.wvcapitoshelleymoore {
+        @include renderHead(-384px, -144px);
+    }
+
+    &.wvcapitoshelley {
+        @include renderHead(-480px, 0);
+    }
+
+    &.wisensenbrennerfjamesjr {
+        @include renderHead(-480px, -144px);
+    }
+
+    &.wiryanpaul {
+        @include renderHead(-96px, -234px);
+    }
+
+    &.wiribblereidj {
+        @include renderHead(-192px, -234px);
+    }
+
+    &.wipocanmark {
+        @include renderHead(-288px, -234px);
+    }
+
+    &.wipetrithomase {
+        @include renderHead(0, -351px);
+    }
+
+    &.wimooregwen {
+        @include renderHead(-96px, -351px);
+    }
+
+    &.wikinderron {
+        @include renderHead(-192px, -351px);
+    }
+
+    &.wijohnsonron {
+        @include renderHead(-288px, -351px);
+    }
+
+    &.wigrothmanglenn {
+        @include renderHead(-480px, -261px);
+    }
+
+    &.widuffysean {
+        @include renderHead(-384px, -351px);
+    }
+
+    &.wibaldwintammy {
+        @include renderHead(-480px, -351px);
+    }
+
+    &.wheeler {
+        @include renderHead(-576px, 0);
+    }
+
+    &.wasmithadam {
+        @include renderHead(-576px, -122px);
+    }
+
+    &.warodgerscathymcmorris {
+        @include renderHead(-576px, -239px);
+    }
+
+    &.wareichertdave {
+        @include renderHead(0, -468px);
+    }
+
+    &.wanewhousedan {
+        @include renderHead(-672px, 0);
+    }
+
+    &.wamurraypatty {
+        @include renderHead(-672px, -144px);
+    }
+
+    &.wamcdermottjim {
+        @include renderHead(-672px, -261px);
+    }
+
+    &.walarsenrick {
+        @include renderHead(-672px, -378px);
+    }
+
+    &.wakilmerderek {
+        @include renderHead(-96px, -468px);
+    }
+
+    &.waherrerajaime {
+        @include renderHead(-192px, -468px);
+    }
+
+    &.waheckdenny {
+        @include renderHead(-288px, -468px);
+    }
+
+    &.wahastingsdoc {
+        @include renderHead(-384px, -468px);
+    }
+
+    &.wadelbenesuzan {
+        @include renderHead(-480px, -468px);
+    }
+
+    &.wacantwellmaria {
+        @include renderHead(-576px, -468px);
+    }
+
+    &.vtwelchpeter {
+        @include renderHead(0, -585px);
+    }
+
+    &.vtsandersbernard {
+        @include renderHead(-96px, -585px);
+    }
+
+    &.vtleahypatrickj {
+        @include renderHead(-192px, -585px);
+    }
+
+    &.viplaskettstacey {
+        @include renderHead(-768px, 0);
+    }
+
+    &.vawolffrankr {
+        @include renderHead(-768px, -118px);
+    }
+
+    &.vawittmanrobertj {
+        @include renderHead(-768px, -235px);
+    }
+
+    &.vawarnermarkr {
+        @include renderHead(-768px, -352px);
+    }
+
+    &.vascottrobert {
+        @include renderHead(-768px, -469px);
+    }
+
+    &.varigellescott {
+        @include renderHead(-288px, -585px);
+    }
+
+    &.vamoranjamespjr {
+        @include renderHead(-384px, -585px);
+    }
+
+    &.vakainetimothym {
+        @include renderHead(-480px, -585px);
+    }
+
+    &.vahurtrobert {
+        @include renderHead(-576px, -585px);
+    }
+
+    &.vagriffithhmorgan {
+        @include renderHead(-672px, -585px);
+    }
+
+    &.vagoodlatterw {
+        @include renderHead(0, -702px);
+    }
+
+    &.vaforbesjrandy {
+        @include renderHead(-96px, -702px);
+    }
+
+    &.vaconnollygeralde {
+        @include renderHead(-192px, -702px);
+    }
+
+    &.vacomstockbarbara {
+        @include renderHead(-864px, 0);
+    }
+
+    &.vacantorerici {
+        @include renderHead(-864px, -141px);
+    }
+
+    &.vabratdavid {
+        @include renderHead(-864px, -258px);
+    }
+
+    &.vabeyerdon {
+        @include renderHead(-864px, -354px);
+    }
+
+    &.utstewartchris {
+        @include renderHead(-864px, -474px);
+    }
+
+    &.utmathesonjim {
+        @include renderHead(-864px, -591px);
+    }
+
+    &.utlovemia {
+        @include renderHead(0, -819px);
+    }
+
+    &.utleemike {
+        @include renderHead(-288px, -702px);
+    }
+
+    &.uthatchorring {
+        @include renderHead(-384px, -702px);
+    }
+
+    &.utchaffetzjason {
+        @include renderHead(-480px, -702px);
+    }
+
+    &.utbishoprob {
+        @include renderHead(-576px, -702px);
+    }
+
+    &.txwilliamsroger {
+        @include renderHead(-672px, -702px);
+    }
+
+    &.txweberrandy {
+        @include renderHead(-768px, -702px);
+    }
+
+    &.txvelafilemon {
+        @include renderHead(-96px, -819px);
+    }
+
+    &.txveaseymarc {
+        @include renderHead(-192px, -819px);
+    }
+
+    &.txthornberrymac {
+        @include renderHead(-288px, -819px);
+    }
+
+    &.txstockmansteve {
+        @include renderHead(-384px, -819px);
+    }
+
+    &.txsmithlamar {
+        @include renderHead(-480px, -819px);
+    }
+
+    &.txsessionspete {
+        @include renderHead(-576px, -819px);
+    }
+
+    &.txratcliffejohn {
+        @include renderHead(-672px, -819px);
+    }
+
+    &.txpoeted {
+        @include renderHead(-768px, -819px);
+    }
+
+    &.txorourkebeto {
+        @include renderHead(-864px, -819px);
+    }
+
+    &.txolsonpete {
+        @include renderHead(-960px, 0);
+    }
+
+    &.txneugebauerrandy {
+        @include renderHead(-960px, -117px);
+    }
+
+    &.txmccaulmichaelt {
+        @include renderHead(-960px, -234px);
+    }
+
+    &.txmarchantkenny {
+        @include renderHead(-960px, -351px);
+    }
+
+    &.txjohnsonsam {
+        @include renderHead(-960px, -468px);
+    }
+
+    &.txjohnsoneddiebernice {
+        @include renderHead(-960px, -585px);
+    }
+
+    &.txjacksonleesheila {
+        @include renderHead(-960px, -702px);
+    }
+
+    &.txhurdwill {
+        @include renderHead(-960px, -819px);
+    }
+
+    &.txhinojosaruben {
+        @include renderHead(0, -938px);
+    }
+
+    &.txhensarlingjeb {
+        @include renderHead(-96px, -938px);
+    }
+
+    &.txhallralphm {
+        @include renderHead(-192px, -938px);
+    }
+
+    &.txgreengene {
+        @include renderHead(-288px, -938px);
+    }
+
+    &.txgreenal {
+        @include renderHead(-384px, -938px);
+    }
+
+    &.txgrangerkay {
+        @include renderHead(-480px, -938px);
+    }
+
+    &.txgohmertlouie {
+        @include renderHead(-576px, -938px);
+    }
+
+    &.txgallegopetep {
+        @include renderHead(-672px, -938px);
+    }
+
+    &.txfloresbill {
+        @include renderHead(-768px, -938px);
+    }
+
+    &.txfarentholdrblake {
+        @include renderHead(-864px, -938px);
+    }
+
+    &.txdoggettlloyd {
+        @include renderHead(-960px, -938px);
+    }
+
+    &.txculbersonjohnabney {
+        @include renderHead(-1056px, 0);
+    }
+
+    &.txcuellarhenry {
+        @include renderHead(-1056px, -117px);
+    }
+
+    &.txcruzted {
+        @include renderHead(-1056px, -234px);
+    }
+
+    &.txcornynjohn {
+        @include renderHead(-1056px, -351px);
+    }
+
+    &.txconawaymike {
+        @include renderHead(-1056px, -468px);
+    }
+
+    &.txcastrojoaquin {
+        @include renderHead(-1056px, -585px);
+    }
+
+    &.txcarterjohnr {
+        @include renderHead(-1056px, -702px);
+    }
+
+    &.txburgessmichaelc {
+        @include renderHead(-1056px, -819px);
+    }
+
+    &.txbradykevin {
+        @include renderHead(-1056px, -936px);
+    }
+
+    &.txbartonjoe {
+        @include renderHead(-1152px, 0);
+    }
+
+    &.txbabinbrian {
+        @include renderHead(-1152px, -117px);
+    }
+
+    &.tnroephilip {
+        @include renderHead(-1152px, -234px);
+    }
+
+    &.tnfleischmannchuck {
+        @include renderHead(-1152px, -351px);
+    }
+
+    &.tnfincherstephenlee {
+        @include renderHead(-1152px, -468px);
+    }
+
+    &.tnduncanjrjohn {
+        @include renderHead(-1152px, -585px);
+    }
+
+    &.tndesjarlaisscott {
+        @include renderHead(-1152px, -702px);
+    }
+
+    &.tncorkerbob {
+        @include renderHead(-1152px, -819px);
+    }
+
+    &.tncooperjim {
+        @include renderHead(-1152px, -936px);
+    }
+
+    &.tncohensteve {
+        @include renderHead(0, -1055px);
+    }
+
+    &.tnblackdiane {
+        @include renderHead(-96px, -1055px);
+    }
+
+    &.tnblackburnmarsha {
+        @include renderHead(-192px, -1055px);
+    }
+
+    &.tnalexanderlamar {
+        @include renderHead(-288px, -1055px);
+    }
+
+    &.sdthunejohnr {
+        @include renderHead(-384px, -1055px);
+    }
+
+    &.sdroundsmike {
+        @include renderHead(-1248px, 0);
+    }
+
+    &.sdnoemkristi {
+        @include renderHead(-1248px, -127px);
+    }
+
+    &.sdjohnsontim {
+        @include renderHead(-1248px, -244px);
+    }
+
+    &.scscotttim {
+        @include renderHead(-1248px, -361px);
+    }
+
+    &.scsanfordmark {
+        @include renderHead(-1248px, -478px);
+    }
+
+    &.scricetom {
+        @include renderHead(-1248px, -595px);
+    }
+
+    &.scmulvaneymick {
+        @include renderHead(-1248px, -712px);
+    }
+
+    &.scgrahamlindseyo {
+        @include renderHead(-1248px, -829px);
+    }
+
+    &.scgowdytrey {
+        @include renderHead(-1248px, -946px);
+    }
+
+    &.scduncanjeff {
+        @include renderHead(-480px, -1055px);
+    }
+
+    &.scclyburnjamese {
+        @include renderHead(-576px, -1055px);
+    }
+
+    &.rosenworcel {
+        @include renderHead(0, -1172px);
+    }
+
+    &.riwhitehousesheldon {
+        @include renderHead(-672px, -1055px);
+    }
+
+    &.rireedjack {
+        @include renderHead(-768px, -1055px);
+    }
+
+    &.rilangevinjamesr {
+        @include renderHead(-864px, -1055px);
+    }
+
+    &.ricicillinedavidn {
+        @include renderHead(-960px, -1055px);
+    }
+
+    &.prpierluisipedro {
+        @include renderHead(-1344px, 0);
+    }
+
+    &.placeholder {
+        @include renderHead(-1344px, -144px);
+    }
+
+    &.patoomeypatrickj {
+        @include renderHead(-1344px, -212px);
+    }
+
+    &.pathompsonglennw {
+        @include renderHead(-1344px, -329px);
+    }
+
+    &.pashusterbillfranklin {
+        @include renderHead(-1344px, -446px);
+    }
+
+    &.paschwartzallysony {
+        @include renderHead(-1344px, -563px);
+    }
+
+    &.parothfuskeith {
+        @include renderHead(-1344px, -680px);
+    }
+
+    &.papittsjosephr {
+        @include renderHead(-1344px, -797px);
+    }
+
+    &.paperryscottg {
+        @include renderHead(-1344px, -914px);
+    }
+
+    &.pamurphytim {
+        @include renderHead(-1344px, -1031px);
+    }
+
+    &.pameehanpatrick {
+        @include renderHead(-1344px, -1148px);
+    }
+
+    &.pamarinothomasa {
+        @include renderHead(-1056px, -1055px);
+    }
+
+    &.pakellymike {
+        @include renderHead(-1152px, -1055px);
+    }
+
+    &.pai {
+        @include renderHead(-96px, -1172px);
+    }
+
+    &.pagerlachjimw {
+        @include renderHead(-192px, -1172px);
+    }
+
+    &.pafitzpatrickmichaelg {
+        @include renderHead(-288px, -1172px);
+    }
+
+    &.pafattahchaka {
+        @include renderHead(-384px, -1172px);
+    }
+
+    &.padoylemikef {
+        @include renderHead(-480px, -1172px);
+    }
+
+    &.padentcharlesw {
+        @include renderHead(-576px, -1172px);
+    }
+
+    &.pacostelloryan {
+        @include renderHead(0, -1294px);
+    }
+
+    &.pacaseybobjr {
+        @include renderHead(-672px, -1172px);
+    }
+
+    &.pacartwrightmatthewa {
+        @include renderHead(-768px, -1172px);
+    }
+
+    &.pabradyrobert {
+        @include renderHead(-864px, -1172px);
+    }
+
+    &.paboylebrendan {
+        @include renderHead(-960px, -1172px);
+    }
+
+    &.pabarlettalou {
+        @include renderHead(-1056px, -1172px);
+    }
+
+    &.orwydenron {
+        @include renderHead(-96px, -1294px);
+    }
+
+    &.orwaldengreg {
+        @include renderHead(-1152px, -1172px);
+    }
+
+    &.orschraderkurt {
+        @include renderHead(-1248px, -1172px);
+    }
+
+    &.orryantim {
+        @include renderHead(-192px, -1294px);
+    }
+
+    &.ormerkleyjeff {
+        @include renderHead(-288px, -1294px);
+    }
+
+    &.oreilly {
+        @include renderHead(-1440px, 0);
+    }
+
+    &.ordefaziopetera {
+        @include renderHead(-1440px, -122px);
+    }
+
+    &.orbonamicisuzanne {
+        @include renderHead(-1440px, -239px);
+    }
+
+    &.orblumenauerearl {
+        @include renderHead(-1440px, -356px);
+    }
+
+    &.okrussellsteve {
+        @include renderHead(-1440px, -473px);
+    }
+
+    &.okmullinmarkwayne {
+        @include renderHead(-1440px, -619px);
+    }
+
+    &.oklucasfrankd {
+        @include renderHead(-1440px, -736px);
+    }
+
+    &.oklankfordjames {
+        @include renderHead(-1440px, -853px);
+    }
+
+    &.okinhofejimm {
+        @include renderHead(-1440px, -970px);
+    }
+
+    &.okcoletom {
+        @include renderHead(-1440px, -1087px);
+    }
+
+    &.okcoburntom {
+        @include renderHead(-1440px, -1204px);
+    }
+
+    &.okbridenstinejim {
+        @include renderHead(-1440px, -1321px);
+    }
+
+    &.ohwenstrupbrad {
+        @include renderHead(-384px, -1294px);
+    }
+
+    &.ohturnermichaelr {
+        @include renderHead(-480px, -1294px);
+    }
+
+    &.ohtiberipatrickj {
+        @include renderHead(-576px, -1294px);
+    }
+
+    &.ohstiverssteve {
+        @include renderHead(-672px, -1294px);
+    }
+
+    &.ohrenaccijim {
+        @include renderHead(-768px, -1294px);
+    }
+
+    &.ohportmanrob {
+        @include renderHead(-864px, -1294px);
+    }
+
+    &.ohlattaroberte {
+        @include renderHead(-960px, -1294px);
+    }
+
+    &.ohkapturmarcy {
+        @include renderHead(-1056px, -1294px);
+    }
+
+    &.ohjoycedavid {
+        @include renderHead(-1152px, -1294px);
+    }
+
+    &.ohjordanjim {
+        @include renderHead(-1248px, -1294px);
+    }
+
+    &.ohjohnsonbill {
+        @include renderHead(-1344px, -1294px);
+    }
+
+    &.ohgibbsbob {
+        @include renderHead(-1536px, 0);
+    }
+
+    &.ohfudgemarcial {
+        @include renderHead(-1536px, -117px);
+    }
+
+    &.ohchabotsteve {
+        @include renderHead(-1536px, -234px);
+    }
+
+    &.ohbrownsherrod {
+        @include renderHead(-1536px, -351px);
+    }
+
+    &.ohboehnerjohna {
+        @include renderHead(-1536px, -468px);
+    }
+
+    &.ohbeattyjoyce {
+        @include renderHead(-1536px, -585px);
+    }
+
+    &.obama {
+        @include renderHead(-1536px, -702px);
+    }
+
+    &.nyzeldinlee {
+        @include renderHead(-1536px, -824px);
+    }
+
+    &.nyvelazqueznydiam {
+        @include renderHead(-1536px, -958px);
+    }
+
+    &.nytonkopauld {
+        @include renderHead(-1536px, -1075px);
+    }
+
+    &.nystefanikelise {
+        @include renderHead(-1536px, -1192px);
+    }
+
+    &.nyslaughterlouisem {
+        @include renderHead(-1536px, -1293px);
+    }
+
+    &.nyserranojose {
+        @include renderHead(0, -1438px);
+    }
+
+    &.nyschumercharlese {
+        @include renderHead(-96px, -1438px);
+    }
+
+    &.nyricekathleen {
+        @include renderHead(-1248px, -1063px);
+    }
+
+    &.nyreedtom {
+        @include renderHead(-192px, -1438px);
+    }
+
+    &.nyrangelcharlesb {
+        @include renderHead(-288px, -1438px);
+    }
+
+    &.nyowensbill {
+        @include renderHead(-384px, -1438px);
+    }
+
+    &.nynadlerjerroldl {
+        @include renderHead(-480px, -1438px);
+    }
+
+    &.nymenggrace {
+        @include renderHead(-576px, -1438px);
+    }
+
+    &.nymeeksgregoryw {
+        @include renderHead(-672px, -1438px);
+    }
+
+    &.nymccarthycarolyn {
+        @include renderHead(-768px, -1438px);
+    }
+
+    &.nymaloneyseanpatrick {
+        @include renderHead(-864px, -1438px);
+    }
+
+    &.nymaloneycarolyn {
+        @include renderHead(-960px, -1438px);
+    }
+
+    &.nymaffeidan {
+        @include renderHead(-1056px, -1438px);
+    }
+
+    &.nyloweynitam {
+        @include renderHead(-1152px, -1438px);
+    }
+
+    &.nykingpeter {
+        @include renderHead(-1248px, -1438px);
+    }
+
+    &.nykatkojohn {
+        @include renderHead(-864px, -708px);
+    }
+
+    &.nyjeffrieshakeem {
+        @include renderHead(-1344px, -1438px);
+    }
+
+    &.nyisraelstevej {
+        @include renderHead(-1440px, -1438px);
+    }
+
+    &.nyhigginsbrianm {
+        @include renderHead(-1536px, -1438px);
+    }
+
+    &.nyhannarichardl {
+        @include renderHead(-1632px, 0);
+    }
+
+    &.nygrimmmichaelg {
+        @include renderHead(-1632px, -117px);
+    }
+
+    &.nygillibrandkirstene {
+        @include renderHead(-1632px, -234px);
+    }
+
+    &.nygibsonchristopherp {
+        @include renderHead(-1632px, -351px);
+    }
+
+    &.nyengeleliotl {
+        @include renderHead(-1632px, -468px);
+    }
+
+    &.nycrowleyjoseph {
+        @include renderHead(-1632px, -585px);
+    }
+
+    &.nycollinschris {
+        @include renderHead(-1632px, -702px);
+    }
+
+    &.nyclarkeyvetted {
+        @include renderHead(-1632px, -819px);
+    }
+
+    &.nybishoptimothy {
+        @include renderHead(-1632px, -936px);
+    }
+
+    &.nvtitusdina {
+        @include renderHead(-1632px, -1053px);
+    }
+
+    &.nvreidharry {
+        @include renderHead(-1632px, -1170px);
+    }
+
+    &.nvhorsfordstevena {
+        @include renderHead(-1632px, -1287px);
+    }
+
+    &.nvhellerdean {
+        @include renderHead(-1632px, -1404px);
+    }
+
+    &.nvheckjoe {
+        @include renderHead(0, -1555px);
+    }
+
+    &.nvhardycrescent {
+        @include renderHead(-768px, -586px);
+    }
+
+    &.nvamodeimarke {
+        @include renderHead(-96px, -1555px);
+    }
+
+    &.nmudalltom {
+        @include renderHead(-192px, -1555px);
+    }
+
+    &.nmpearcesteve {
+        @include renderHead(-288px, -1555px);
+    }
+
+    &.nmlujanben {
+        @include renderHead(-384px, -1555px);
+    }
+
+    &.nmheinrichmartint {
+        @include renderHead(-480px, -1555px);
+    }
+
+    &.nmgrishammichellelujan {
+        @include renderHead(-576px, -1555px);
+    }
+
+    &.njwatsoncolemanbonnie {
+        @include renderHead(-1728px, 0);
+    }
+
+    &.njsmithchris {
+        @include renderHead(-1728px, -133px);
+    }
+
+    &.njsiresalbio {
+        @include renderHead(-1728px, -250px);
+    }
+
+    &.njrunyanjon {
+        @include renderHead(-1728px, -367px);
+    }
+
+    &.njpaynedonaldmjr {
+        @include renderHead(-1728px, -484px);
+    }
+
+    &.njpascrellwilliamjjr {
+        @include renderHead(-1728px, -601px);
+    }
+
+    &.njpallonefrankjr {
+        @include renderHead(-1728px, -718px);
+    }
+
+    &.njnorcrossdavid {
+        @include renderHead(-1728px, -835px);
+    }
+
+    &.njmenendezrobert {
+        @include renderHead(-1728px, -975px);
+    }
+
+    &.njmacarthurtom {
+        @include renderHead(-1728px, -1092px);
+    }
+
+    &.njlobiondofranka {
+        @include renderHead(-1728px, -1236px);
+    }
+
+    &.njlanceleonard {
+        @include renderHead(-1728px, -1353px);
+    }
+
+    &.njholtrushd {
+        @include renderHead(-1728px, -1470px);
+    }
+
+    &.njgarrettscott {
+        @include renderHead(-672px, -1555px);
+    }
+
+    &.njfrelinghuysenrodneyp {
+        @include renderHead(-768px, -1555px);
+    }
+
+    &.njbookercory {
+        @include renderHead(-864px, -1555px);
+    }
+
+    &.njandrewsroberte {
+        @include renderHead(-960px, -1555px);
+    }
+
+    &.nhsheaportercarol {
+        @include renderHead(-1056px, -1555px);
+    }
+
+    &.nhshaheenjeanne {
+        @include renderHead(-1152px, -1555px);
+    }
+
+    &.nhkusterannmclane {
+        @include renderHead(-1248px, -1555px);
+    }
+
+    &.nhguintafrank {
+        @include renderHead(-1344px, -1555px);
+    }
+
+    &.nhayottekelly {
+        @include renderHead(-1440px, -1555px);
+    }
+
+    &.neterrylee {
+        @include renderHead(-1536px, -1555px);
+    }
+
+    &.nesmithadrian {
+        @include renderHead(-1632px, -1555px);
+    }
+
+    &.nesassebenjamin {
+        @include renderHead(0, -1672px);
+    }
+
+    &.nejohannsmike {
+        @include renderHead(-96px, -1672px);
+    }
+
+    &.nefortenberryjeff {
+        @include renderHead(-192px, -1672px);
+    }
+
+    &.nefischerdeb {
+        @include renderHead(-288px, -1672px);
+    }
+
+    &.neashfordbrad {
+        @include renderHead(-576px, -356px);
+    }
+
+    &.ndhoevenjohn {
+        @include renderHead(-384px, -1672px);
+    }
+
+    &.ndheitkampheidi {
+        @include renderHead(-480px, -1672px);
+    }
+
+    &.ndcramerkevin {
+        @include renderHead(-576px, -1672px);
+    }
+
+    &.ncwattmelvinl {
+        @include renderHead(-672px, -1672px);
+    }
+
+    &.ncwalkerbradley {
+        @include renderHead(-1824px, 0);
+    }
+
+    &.nctillisthom {
+        @include renderHead(-1824px, -134px);
+    }
+
+    &.ncrouzerdavid {
+        @include renderHead(-1824px, -275px);
+    }
+
+    &.ncpricedavid {
+        @include renderHead(-1824px, -419px);
+    }
+
+    &.ncpittengerrobert {
+        @include renderHead(-1824px, -536px);
+    }
+
+    &.ncmeadowsmark {
+        @include renderHead(-1824px, -653px);
+    }
+
+    &.ncmcintyremike {
+        @include renderHead(-1824px, -770px);
+    }
+
+    &.ncmchenrypatrick {
+        @include renderHead(-1824px, -887px);
+    }
+
+    &.ncjoneswalterb {
+        @include renderHead(-1824px, -1004px);
+    }
+
+    &.nchudsonrichard {
+        @include renderHead(-1824px, -1121px);
+    }
+
+    &.ncholdinggeorge {
+        @include renderHead(-1824px, -1238px);
+    }
+
+    &.nchagankayr {
+        @include renderHead(-1824px, -1355px);
+    }
+
+    &.ncfoxxvirginia {
+        @include renderHead(-1824px, -1472px);
+    }
+
+    &.ncellmersrenee {
+        @include renderHead(-1824px, -1589px);
+    }
+
+    &.nccoblehoward {
+        @include renderHead(-768px, -1672px);
+    }
+
+    &.ncbutterfieldgkjr {
+        @include renderHead(-864px, -1672px);
+    }
+
+    &.ncburrrichard {
+        @include renderHead(-960px, -1672px);
+    }
+
+    &.ncadamsalma {
+        @include renderHead(-1920px, 0);
+    }
+
+    &.mtzinkeryan {
+        @include renderHead(-1920px, -141px);
+    }
+
+    &.mttesterjon {
+        @include renderHead(-1920px, -285px);
+    }
+
+    &.mtdainessteve {
+        @include renderHead(-1920px, -402px);
+    }
+
+    &.mtbaucusmax {
+        @include renderHead(-1920px, -519px);
+    }
+
+    &.mswickerrogerf {
+        @include renderHead(-1920px, -636px);
+    }
+
+    &.mspalazzosteven {
+        @include renderHead(-1920px, -753px);
+    }
+
+    &.msnunneleealan {
+        @include renderHead(-1920px, -870px);
+    }
+
+    &.msharpergregg {
+        @include renderHead(-1920px, -987px);
+    }
+
+    &.mscochranthad {
+        @include renderHead(-1920px, -1104px);
+    }
+
+    &.mpsablangregorio {
+        @include renderHead(-1920px, -1221px);
+    }
+
+    &.mowagnerann {
+        @include renderHead(-1920px, -1365px);
+    }
+
+    &.mosmithjason {
+        @include renderHead(-1920px, -1482px);
+    }
+
+    &.momccaskillclaire {
+        @include renderHead(-1920px, -1599px);
+    }
+
+    &.moluetkemeyerblaine {
+        @include renderHead(-1056px, -1672px);
+    }
+
+    &.molongbilly {
+        @include renderHead(-1152px, -1672px);
+    }
+
+    &.mohartzlervicky {
+        @include renderHead(-1248px, -1672px);
+    }
+
+    &.mogravessam {
+        @include renderHead(-1344px, -1672px);
+    }
+
+    &.mocleaveremanuelii {
+        @include renderHead(-1440px, -1672px);
+    }
+
+    &.moclaywilliamlacy {
+        @include renderHead(-1536px, -1672px);
+    }
+
+    &.mobluntroy {
+        @include renderHead(-1632px, -1672px);
+    }
+
+    &.mnwalztim {
+        @include renderHead(-1728px, -1672px);
+    }
+
+    &.mnpetersoncollinc {
+        @include renderHead(0, -1794px);
+    }
+
+    &.mnpaulsenerik {
+        @include renderHead(-96px, -1794px);
+    }
+
+    &.mnnolanrichard {
+        @include renderHead(-192px, -1794px);
+    }
+
+    &.mnmccollumbetty {
+        @include renderHead(-288px, -1794px);
+    }
+
+    &.mnklobucharamy {
+        @include renderHead(-384px, -1794px);
+    }
+
+    &.mnklinejohn {
+        @include renderHead(-480px, -1794px);
+    }
+
+    &.mnfrankenal {
+        @include renderHead(-576px, -1794px);
+    }
+
+    &.mnemmertom {
+        @include renderHead(-672px, -1794px);
+    }
+
+    &.mnellisonkeithm {
+        @include renderHead(-768px, -1794px);
+    }
+
+    &.mnbachmannmichele {
+        @include renderHead(-864px, -1794px);
+    }
+
+    &.miwalbergtim {
+        @include renderHead(-960px, -1794px);
+    }
+
+    &.miuptonfreds {
+        @include renderHead(-1056px, -1794px);
+    }
+
+    &.mitrottdavid {
+        @include renderHead(-2016px, 0);
+    }
+
+    &.mithompsonbennieg {
+        @include renderHead(-2016px, -144px);
+    }
+
+    &.mistabenowdebbie {
+        @include renderHead(-2016px, -261px);
+    }
+
+    &.mirogersmike {
+        @include renderHead(-2016px, -378px);
+    }
+
+    &.mipetersgary {
+        @include renderHead(-2016px, -495px);
+    }
+
+    &.mimoolenaarjohn {
+        @include renderHead(-2016px, -612px);
+    }
+
+    &.mimillercandices {
+        @include renderHead(-2016px, -756px);
+    }
+
+    &.milevinsander {
+        @include renderHead(-2016px, -873px);
+    }
+
+    &.milevincarl {
+        @include renderHead(-2016px, -990px);
+    }
+
+    &.milawrencebrenda {
+        @include renderHead(-2016px, -1107px);
+    }
+
+    &.mikildeedaniel {
+        @include renderHead(-2016px, -1203px);
+    }
+
+    &.mikildeedalee {
+        @include renderHead(-2016px, -1347px);
+    }
+
+    &.mihuizengabill {
+        @include renderHead(-2016px, -1464px);
+    }
+
+    &.midingelljohnd {
+        @include renderHead(-2016px, -1581px);
+    }
+
+    &.midingelldebbie {
+        @include renderHead(-2016px, -1698px);
+    }
+
+    &.miconyersjohnjr {
+        @include renderHead(-1152px, -1794px);
+    }
+
+    &.micampdavelee {
+        @include renderHead(-1248px, -1794px);
+    }
+
+    &.mibishopmike {
+        @include renderHead(-1344px, -1794px);
+    }
+
+    &.mibentivoliokerry {
+        @include renderHead(0, -1911px);
+    }
+
+    &.mibenishekdan {
+        @include renderHead(-96px, -1911px);
+    }
+
+    &.miamashjustin {
+        @include renderHead(-192px, -1911px);
+    }
+
+    &.mepoliquinbruce {
+        @include renderHead(-288px, -1911px);
+    }
+
+    &.mepingreechellie {
+        @include renderHead(-384px, -1911px);
+    }
+
+    &.memichaudmichaelh {
+        @include renderHead(-480px, -1911px);
+    }
+
+    &.mekingangus {
+        @include renderHead(-576px, -1911px);
+    }
+
+    &.mecollinssusan {
+        @include renderHead(-672px, -1911px);
+    }
+
+    &.mdvanhollenchris {
+        @include renderHead(-768px, -1911px);
+    }
+
+    &.mdsarbanesjohnp {
+        @include renderHead(-864px, -1911px);
+    }
+
+    &.mdruppersbergercadutch {
+        @include renderHead(-960px, -1911px);
+    }
+
+    &.mdmikulskibarbaraa {
+        @include renderHead(-1056px, -1911px);
+    }
+
+    &.mdhoyerstenyh {
+        @include renderHead(-1152px, -1911px);
+    }
+
+    &.mdharrisandy {
+        @include renderHead(-1248px, -1911px);
+    }
+
+    &.mdedwardsdonna {
+        @include renderHead(-1344px, -1911px);
+    }
+
+    &.mddelaneyjohn {
+        @include renderHead(-1440px, -1911px);
+    }
+
+    &.mdcummingselijahe {
+        @include renderHead(-1536px, -1911px);
+    }
+
+    &.mdcardinbenjaminl {
+        @include renderHead(-1632px, -1911px);
+    }
+
+    &.mawarrenelizabetha {
+        @include renderHead(-1728px, -1911px);
+    }
+
+    &.matsongasniki {
+        @include renderHead(-1824px, -1911px);
+    }
+
+    &.matierneyjohnf {
+        @include renderHead(-1920px, -1911px);
+    }
+
+    &.markey {
+        @include renderHead(-2112px, 0);
+    }
+
+    &.manealricharde {
+        @include renderHead(-2112px, -122px);
+    }
+
+    &.mamoultonseth {
+        @include renderHead(-2112px, -239px);
+    }
+
+    &.mamcgovernjamesp {
+        @include renderHead(-2112px, -355px);
+    }
+
+    &.malynchstephenf {
+        @include renderHead(-2112px, -472px);
+    }
+
+    &.makennedyjosephpiii {
+        @include renderHead(-2112px, -589px);
+    }
+
+    &.makeatingwilliamr {
+        @include renderHead(-2112px, -706px);
+    }
+
+    &.macowanwilliam {
+        @include renderHead(-2112px, -823px);
+    }
+
+    &.maclarkkatherine {
+        @include renderHead(-2112px, -940px);
+    }
+
+    &.macapuanomichaele {
+        @include renderHead(-2112px, -1058px);
+    }
+
+    &.lavitterdavid {
+        @include renderHead(-2112px, -1175px);
+    }
+
+    &.lascalisesteve {
+        @include renderHead(-2112px, -1292px);
+    }
+
+    &.larichmondcedricl {
+        @include renderHead(-2112px, -1409px);
+    }
+
+    &.lalandrieumaryl {
+        @include renderHead(-2112px, -1526px);
+    }
+
+    &.lagravesgarrett {
+        @include renderHead(-2112px, -1643px);
+    }
+
+    &.laflemingjohn {
+        @include renderHead(-2112px, -1760px);
+    }
+
+    &.lacassidybill {
+        @include renderHead(-2112px, -1877px);
+    }
+
+    &.laboustanycharlesjr {
+        @include renderHead(-2016px, -1911px);
+    }
+
+    &.laalexanderrodney {
+        @include renderHead(0, -2028px);
+    }
+
+    &.laabrahamralph {
+        @include renderHead(-96px, -2028px);
+    }
+
+    &.kyrogersharold {
+        @include renderHead(-192px, -2028px);
+    }
+
+    &.kypaulrand {
+        @include renderHead(-288px, -2028px);
+    }
+
+    &.kymcconnellmitch {
+        @include renderHead(-384px, -2028px);
+    }
+
+    &.kymassiethomas {
+        @include renderHead(-480px, -2028px);
+    }
+
+    &.kyjohnyarmuth {
+        @include renderHead(-576px, -2028px);
+    }
+
+    &.kyguthriebrett {
+        @include renderHead(-672px, -2028px);
+    }
+
+    &.kyedwardwhitfield {
+        @include renderHead(-768px, -2028px);
+    }
+
+    &.kybarrgarland {
+        @include renderHead(-864px, -2028px);
+    }
+
+    &.ksyoderkevinw {
+        @include renderHead(-960px, -2028px);
+    }
+
+    &.ksrobertspat {
+        @include renderHead(-1056px, -2028px);
+    }
+
+    &.kspompeomike {
+        @include renderHead(-1152px, -2028px);
+    }
+
+    &.ksmoranjerry {
+        @include renderHead(-1248px, -2028px);
+    }
+
+    &.ksjenkinslynn {
+        @include renderHead(-1344px, -2028px);
+    }
+
+    &.kshuelskamptim {
+        @include renderHead(-1440px, -2028px);
+    }
+
+    &.inyoungtodd {
+        @include renderHead(-1536px, -2028px);
+    }
+
+    &.inwalorskijackie {
+        @include renderHead(-1632px, -2028px);
+    }
+
+    &.inviscloskypeterj {
+        @include renderHead(-1728px, -2028px);
+    }
+
+    &.instutzmanmarlina {
+        @include renderHead(-1824px, -2028px);
+    }
+
+    &.inrokitatodd {
+        @include renderHead(-1920px, -2028px);
+    }
+
+    &.inmesserluke {
+        @include renderHead(-2016px, -2028px);
+    }
+
+    &.indonnellyjoe {
+        @include renderHead(-2112px, -2028px);
+    }
+
+    &.indavisdanny {
+        @include renderHead(-2208px, 0);
+    }
+
+    &.incoatsdan {
+        @include renderHead(-2208px, -117px);
+    }
+
+    &.incarsonandred {
+        @include renderHead(-2208px, -234px);
+    }
+
+    &.inbucshonlarryd {
+        @include renderHead(-2208px, -351px);
+    }
+
+    &.inbrookssusan {
+        @include renderHead(-2208px, -468px);
+    }
+
+    &.ilshimkusjohnm {
+        @include renderHead(-2208px, -585px);
+    }
+
+    &.ilschockaaron {
+        @include renderHead(-2208px, -702px);
+    }
+
+    &.ilschneiderbrad {
+        @include renderHead(-2208px, -819px);
+    }
+
+    &.ilschakowskyjand {
+        @include renderHead(-2208px, -936px);
+    }
+
+    &.ilrushbobbyl {
+        @include renderHead(-2208px, -1053px);
+    }
+
+    &.ilroskampeter {
+        @include renderHead(-2208px, -1170px);
+    }
+
+    &.ilquigleymike {
+        @include renderHead(-2208px, -1287px);
+    }
+
+    &.illipinskidanielwilliam {
+        @include renderHead(-2208px, -1404px);
+    }
+
+    &.ilkirkmarksteven {
+        @include renderHead(-2208px, -1521px);
+    }
+
+    &.ilkinzingeradam {
+        @include renderHead(-2208px, -1638px);
+    }
+
+    &.ilkellyrobin {
+        @include renderHead(-2208px, -1755px);
+    }
+
+    &.ilhultgrenrandall {
+        @include renderHead(-2208px, -1872px);
+    }
+
+    &.ilgutierrezluisv {
+        @include renderHead(-2208px, -1989px);
+    }
+
+    &.ilfosterbill {
+        @include renderHead(0, -2145px);
+    }
+
+    &.ilenyartwilliaml {
+        @include renderHead(-96px, -2145px);
+    }
+
+    &.ildurbinrichardj {
+        @include renderHead(-192px, -2145px);
+    }
+
+    &.ilduckworthltammy {
+        @include renderHead(-288px, -2145px);
+    }
+
+    &.ildoldbob {
+        @include renderHead(-384px, -2145px);
+    }
+
+    &.ildavisrodney {
+        @include renderHead(-480px, -2145px);
+    }
+
+    &.ilbustoscheri {
+        @include renderHead(-576px, -2145px);
+    }
+
+    &.ilbostmike {
+        @include renderHead(-672px, -2145px);
+    }
+
+    &.idsimpsonmichaelk {
+        @include renderHead(-768px, -2145px);
+    }
+
+    &.idrischjamese {
+        @include renderHead(-864px, -2145px);
+    }
+
+    &.idlabradorraulr {
+        @include renderHead(-960px, -2145px);
+    }
+
+    &.idcrapomichaeld {
+        @include renderHead(-1056px, -2145px);
+    }
+
+    &.iayoungdavid {
+        @include renderHead(-1152px, -2145px);
+    }
+
+    &.ialoebsackdavid {
+        @include renderHead(-1248px, -2145px);
+    }
+
+    &.ialathamtom {
+        @include renderHead(-1344px, -2145px);
+    }
+
+    &.iakingsteve {
+        @include renderHead(-1440px, -2145px);
+    }
+
+    &.iaharkintom {
+        @include renderHead(-1536px, -2145px);
+    }
+
+    &.iagrassleychucke {
+        @include renderHead(-1632px, -2145px);
+    }
+
+    &.iaernstjoni {
+        @include renderHead(-1728px, -2145px);
+    }
+
+    &.iabraleybruce {
+        @include renderHead(-1824px, -2145px);
+    }
+
+    &.iablumrod {
+        @include renderHead(-1920px, -2145px);
+    }
+
+    &.hitakaimark {
+        @include renderHead(-2016px, -2145px);
+    }
+
+    &.hischatzbrian {
+        @include renderHead(-2112px, -2145px);
+    }
+
+    &.hihironomaziek {
+        @include renderHead(-2208px, -2145px);
+    }
+
+    &.hihanabusacolleen {
+        @include renderHead(-2304px, 0);
+    }
+
+    &.higabbardtulsi {
+        @include renderHead(-2304px, -117px);
+    }
+
+    &.gubordallomadeleine {
+        @include renderHead(-2304px, -234px);
+    }
+
+    &.gmbordallomadeleine {
+        @include renderHead(-2304px, -351px);
+    }
+
+    &.gawoodallrob {
+        @include renderHead(-2304px, -498px);
+    }
+
+    &.gawestmorelandlynn {
+        @include renderHead(-2304px, -615px);
+    }
+
+    &.gascottdavid {
+        @include renderHead(-2304px, -732px);
+    }
+
+    &.gascottaustin {
+        @include renderHead(-2304px, -849px);
+    }
+
+    &.gapricetom {
+        @include renderHead(-2304px, -966px);
+    }
+
+    &.gaperduedavid {
+        @include renderHead(-2304px, -1083px);
+    }
+
+    &.galoudermilkbarry {
+        @include renderHead(-2304px, -1200px);
+    }
+
+    &.galewisjohn {
+        @include renderHead(-2304px, -1317px);
+    }
+
+    &.gakingstonjack {
+        @include renderHead(-2304px, -1434px);
+    }
+
+    &.gajohnsonhank {
+        @include renderHead(-2304px, -1551px);
+    }
+
+    &.gaisaksonjohnny {
+        @include renderHead(-2304px, -1668px);
+    }
+
+    &.gahicejody {
+        @include renderHead(-2304px, -1785px);
+    }
+
+    &.gagravestom {
+        @include renderHead(-2304px, -1902px);
+    }
+
+    &.gagingreyphil {
+        @include renderHead(-2304px, -2019px);
+    }
+
+    &.gacollinsdoug {
+        @include renderHead(-2304px, -2136px);
+    }
+
+    &.gachamblisssaxby {
+        @include renderHead(0, -2262px);
+    }
+
+    &.gacarterbuddy {
+        @include renderHead(-96px, -2262px);
+    }
+
+    &.gabrounpaulcjr {
+        @include renderHead(-192px, -2262px);
+    }
+
+    &.gabishopjrsanfordd {
+        @include renderHead(-288px, -2262px);
+    }
+
+    &.gabarrowjohn {
+        @include renderHead(-384px, -2262px);
+    }
+
+    &.gaallenrick {
+        @include renderHead(-480px, -2262px);
+    }
+
+    &.flyoungcwbill {
+        @include renderHead(-576px, -2262px);
+    }
+
+    &.flyohoted {
+        @include renderHead(-672px, -2262px);
+    }
+
+    &.flwilsonjoe {
+        @include renderHead(-768px, -2262px);
+    }
+
+    &.flwilsonfrederica {
+        @include renderHead(-864px, -2262px);
+    }
+
+    &.flwebsterdaniel {
+        @include renderHead(-960px, -2262px);
+    }
+
+    &.flsoutherlandsteve {
+        @include renderHead(-1056px, -2262px);
+    }
+
+    &.flschultzdebbiewasserman {
+        @include renderHead(-1152px, -2262px);
+    }
+
+    &.flrubiomarco {
+        @include renderHead(-1248px, -2262px);
+    }
+
+    &.flrossdennisa {
+        @include renderHead(-1344px, -2262px);
+    }
+
+    &.flroslehtinenileana {
+        @include renderHead(-1440px, -2262px);
+    }
+
+    &.flrooneyrooney {
+        @include renderHead(-1536px, -2262px);
+    }
+
+    &.flradeltrey {
+        @include renderHead(-1632px, -2262px);
+    }
+
+    &.flposeybill {
+        @include renderHead(-1728px, -2262px);
+    }
+
+    &.flnugentrichardb {
+        @include renderHead(-1824px, -2262px);
+    }
+
+    &.flnelsonbill {
+        @include renderHead(-1920px, -2262px);
+    }
+
+    &.flmurphypatrick {
+        @include renderHead(-2016px, -2262px);
+    }
+
+    &.flmillerjeff {
+        @include renderHead(-2112px, -2262px);
+    }
+
+    &.flmicajohnl {
+        @include renderHead(-2208px, -2262px);
+    }
+
+    &.fljollydavid {
+        @include renderHead(-2304px, -2262px);
+    }
+
+    &.flhastingsalceel {
+        @include renderHead(-2400px, 0);
+    }
+
+    &.flgraysonalan {
+        @include renderHead(-2400px, -117px);
+    }
+
+    &.flgrahamgwen {
+        @include renderHead(-2400px, -234px);
+    }
+
+    &.flgarciajoe {
+        @include renderHead(-2400px, -351px);
+    }
+
+    &.flfrankellois {
+        @include renderHead(-2400px, -468px);
+    }
+
+    &.fldiazbalartmario {
+        @include renderHead(-2400px, -585px);
+    }
+
+    &.fldeutchted {
+        @include renderHead(-2400px, -702px);
+    }
+
+    &.fldesantisron {
+        @include renderHead(-2400px, -819px);
+    }
+
+    &.flcurbelocarlos {
+        @include renderHead(-2400px, -936px);
+    }
+
+    &.flcrenshawander {
+        @include renderHead(-2400px, -1053px);
+    }
+
+    &.flclawsoncurtis {
+        @include renderHead(-2400px, -1170px);
+    }
+
+    &.flcastorkathy {
+        @include renderHead(-2400px, -1287px);
+    }
+
+    &.flbuchananvern {
+        @include renderHead(-2400px, -1404px);
+    }
+
+    &.flbrowncorrine {
+        @include renderHead(-2400px, -1521px);
+    }
+
+    &.flbilirakisgusmichael {
+        @include renderHead(-2400px, -1638px);
+    }
+
+    &.decoonschristophera {
+        @include renderHead(-2400px, -1755px);
+    }
+
+    &.decarperthomasr {
+        @include renderHead(-2400px, -1872px);
+    }
+
+    &.decarneyjohncjr {
+        @include renderHead(-2400px, -1989px);
+    }
+
+    &.dcnortoneleanorholmes {
+        @include renderHead(-2400px, -2106px);
+    }
+
+    &.ctmurphychristopher {
+        @include renderHead(-2400px, -2223px);
+    }
+
+    &.ctlarsonjohnb {
+        @include renderHead(0, -2379px);
+    }
+
+    &.cthimesjim {
+        @include renderHead(-96px, -2379px);
+    }
+
+    &.ctestyelizabeth {
+        @include renderHead(-192px, -2379px);
+    }
+
+    &.ctdelaurorosal {
+        @include renderHead(-288px, -2379px);
+    }
+
+    &.ctcourtneyjoe {
+        @include renderHead(-384px, -2379px);
+    }
+
+    &.ctblumenthalrichard {
+        @include renderHead(-480px, -2379px);
+    }
+
+    &.coudallmark {
+        @include renderHead(-576px, -2379px);
+    }
+
+    &.cotiptonscott {
+        @include renderHead(-672px, -2379px);
+    }
+
+    &.copolisjared {
+        @include renderHead(-768px, -2379px);
+    }
+
+    &.coperlmuttered {
+        @include renderHead(-864px, -2379px);
+    }
+
+    &.colamborndoug {
+        @include renderHead(-960px, -2379px);
+    }
+
+    &.cogardnercory {
+        @include renderHead(-1056px, -2379px);
+    }
+
+    &.codegettediana {
+        @include renderHead(-1152px, -2379px);
+    }
+
+    &.cocoffmanmike {
+        @include renderHead(-1248px, -2379px);
+    }
+
+    &.cobuckken {
+        @include renderHead(-1344px, -2379px);
+    }
+
+    &.cobennetmichaelf {
+        @include renderHead(-1440px, -2379px);
+    }
+
+    &.clyburn {
+        @include renderHead(-2496px, 0);
+    }
+
+    &.cawaxmanhenrya {
+        @include renderHead(-2496px, -122px);
+    }
+
+    &.cawatersmaxine {
+        @include renderHead(-2496px, -239px);
+    }
+
+    &.cawaltersmimi {
+        @include renderHead(-2496px, -356px);
+    }
+
+    &.cavargasjuan {
+        @include renderHead(-2496px, -473px);
+    }
+
+    &.cavaladaodavidg {
+        @include renderHead(-2496px, -590px);
+    }
+
+    &.catorresnorma {
+        @include renderHead(-2496px, -707px);
+    }
+
+    &.cathompsonmike {
+        @include renderHead(-2496px, -824px);
+    }
+
+    &.catakanomark {
+        @include renderHead(-2496px, -941px);
+    }
+
+    &.caswalwelleric {
+        @include renderHead(-2496px, -1058px);
+    }
+
+    &.caspeierjackie {
+        @include renderHead(-2496px, -1175px);
+    }
+
+    &.cashermanbrad {
+        @include renderHead(-2496px, -1292px);
+    }
+
+    &.caschiffadamb {
+        @include renderHead(-2496px, -1409px);
+    }
+
+    &.casanchezloretta {
+        @include renderHead(-2496px, -1526px);
+    }
+
+    &.casanchezlinda {
+        @include renderHead(-2496px, -1643px);
+    }
+
+    &.caruizraul {
+        @include renderHead(-2496px, -1760px);
+    }
+
+    &.caroyceedr {
+        @include renderHead(-2496px, -1877px);
+    }
+
+    &.caroybalallardlucille {
+        @include renderHead(-2496px, -1994px);
+    }
+
+    &.carohrabacherdana {
+        @include renderHead(-2496px, -2111px);
+    }
+
+    &.capetersscott {
+        @include renderHead(-2496px, -2228px);
+    }
+
+    &.capelosinancy {
+        @include renderHead(-2496px, -2345px);
+    }
+
+    &.canunesdevin {
+        @include renderHead(-1536px, -2379px);
+    }
+
+    &.canapolitanogracef {
+        @include renderHead(-1632px, -2379px);
+    }
+
+    &.camillergeorge {
+        @include renderHead(-1728px, -2379px);
+    }
+
+    &.camillergary {
+        @include renderHead(-1824px, -2379px);
+    }
+
+    &.camcnerneygeraldm {
+        @include renderHead(-1920px, -2379px);
+    }
+
+    &.camcleodglorianegrete {
+        @include renderHead(-2016px, -2379px);
+    }
+
+    &.camckeonhowardp {
+        @include renderHead(-2112px, -2379px);
+    }
+
+    &.camcclintocktom {
+        @include renderHead(-2208px, -2379px);
+    }
+
+    &.camccarthykevin {
+        @include renderHead(-2304px, -2379px);
+    }
+
+    &.camatsuirobertt {
+        @include renderHead(-2400px, -2379px);
+    }
+
+    &.camalfadougla {
+        @include renderHead(-2592px, 0);
+    }
+
+    &.calowenthalalan {
+        @include renderHead(-2592px, -117px);
+    }
+
+    &.calofgrenzoe {
+        @include renderHead(-2592px, -234px);
+    }
+
+    &.calieuted {
+        @include renderHead(-2592px, -351px);
+    }
+
+    &.caleebarbara {
+        @include renderHead(-2592px, -468px);
+    }
+
+    &.caknightsteve {
+        @include renderHead(-2592px, -585px);
+    }
+
+    &.caissadarrelle {
+        @include renderHead(-2592px, -702px);
+    }
+
+    &.cahunterduncan {
+        @include renderHead(-2592px, -819px);
+    }
+
+    &.cahuffmanjared {
+        @include renderHead(-2592px, -936px);
+    }
+
+    &.cahondamikem {
+        @include renderHead(-2592px, -1053px);
+    }
+
+    &.cahahnjanice {
+        @include renderHead(-2592px, -1170px);
+    }
+
+    &.cagaramendijohn {
+        @include renderHead(-2592px, -1287px);
+    }
+
+    &.cafeinsteindianne {
+        @include renderHead(-2592px, -1404px);
+    }
+
+    &.cafarrsam {
+        @include renderHead(-2592px, -1521px);
+    }
+
+    &.caeshooannag {
+        @include renderHead(-2592px, -1638px);
+    }
+
+    &.cadesaulniermark {
+        @include renderHead(-2592px, -1755px);
+    }
+
+    &.cadenhamjeff {
+        @include renderHead(-2592px, -1872px);
+    }
+
+    &.cadavissusan {
+        @include renderHead(-2592px, -1989px);
+    }
+
+    &.cacostajim {
+        @include renderHead(-2592px, -2106px);
+    }
+
+    &.cacookpaul {
+        @include renderHead(-2592px, -2223px);
+    }
+
+    &.cachujudy {
+        @include renderHead(-2592px, -2340px);
+    }
+
+    &.cacardenastony {
+        @include renderHead(0, -2496px);
+    }
+
+    &.cacappslois {
+        @include renderHead(-96px, -2496px);
+    }
+
+    &.cacampbelljohn {
+        @include renderHead(-192px, -2496px);
+    }
+
+    &.cacalvertken {
+        @include renderHead(-288px, -2496px);
+    }
+
+    &.cabrownleyjulia {
+        @include renderHead(-384px, -2496px);
+    }
+
+    &.caboxerbarbara {
+        @include renderHead(-480px, -2496px);
+    }
+
+    &.caberaami {
+        @include renderHead(-576px, -2496px);
+    }
+
+    &.cabecerraxavier {
+        @include renderHead(-672px, -2496px);
+    }
+
+    &.cabasskaren {
+        @include renderHead(-768px, -2496px);
+    }
+
+    &.caaguilarpete {
+        @include renderHead(-864px, -2496px);
+    }
+
+    &.azsinemakyrsten {
+        @include renderHead(-960px, -2496px);
+    }
+
+    &.azschweikertdavid {
+        @include renderHead(-1056px, -2496px);
+    }
+
+    &.azsalmonmatt {
+        @include renderHead(-1152px, -2496px);
+    }
+
+    &.azpastored {
+        @include renderHead(-1248px, -2496px);
+    }
+
+    &.azmcsallymartha {
+        @include renderHead(-1344px, -2496px);
+    }
+
+    &.azmccainjohn {
+        @include renderHead(-1440px, -2496px);
+    }
+
+    &.azkirkpatrickann {
+        @include renderHead(-1536px, -2496px);
+    }
+
+    &.azgrijalvaraulm {
+        @include renderHead(-1632px, -2496px);
+    }
+
+    &.azgosarpaul {
+        @include renderHead(-1728px, -2496px);
+    }
+
+    &.azgallegoruben {
+        @include renderHead(-1824px, -2496px);
+    }
+
+    &.azfrankstrent {
+        @include renderHead(-1920px, -2496px);
+    }
+
+    &.azflakejeff {
+        @include renderHead(-2016px, -2496px);
+    }
+
+    &.azbarberron {
+        @include renderHead(-2112px, -2496px);
+    }
+
+    &.asamataaumua {
+        @include renderHead(-2688px, 0);
+    }
+
+    &.arwomacksteve {
+        @include renderHead(-2688px, -128px);
+    }
+
+    &.arwestermanbruce {
+        @include renderHead(-2688px, -245px);
+    }
+
+    &.arpryormark {
+        @include renderHead(-2688px, -362px);
+    }
+
+    &.arhillfrench {
+        @include renderHead(-2688px, -479px);
+    }
+
+    &.argriffintim {
+        @include renderHead(-2688px, -596px);
+    }
+
+    &.arcrawfordrick {
+        @include renderHead(-2688px, -713px);
+    }
+
+    &.arcottonthomasb {
+        @include renderHead(-2688px, -830px);
+    }
+
+    &.arboozmanjohn {
+        @include renderHead(-2688px, -947px);
+    }
+
+    &.alshelbyrichardc {
+        @include renderHead(-2688px, -1064px);
+    }
+
+    &.alsewellterria {
+        @include renderHead(-2688px, -1181px);
+    }
+
+    &.alsessionsjeff {
+        @include renderHead(-2688px, -1298px);
+    }
+
+    &.alrogersmike {
+        @include renderHead(-2688px, -1415px);
+    }
+
+    &.alrobymartha {
+        @include renderHead(-2688px, -1532px);
+    }
+
+    &.alpalmergary {
+        @include renderHead(-2688px, -1649px);
+    }
+
+    &.albyrnebradley {
+        @include renderHead(-2688px, -1766px);
+    }
+
+    &.albrooksmo {
+        @include renderHead(-2688px, -1883px);
+    }
+
+    &.albonnerjo {
+        @include renderHead(-2688px, -2000px);
+    }
+
+    &.albachusspencertiii {
+        @include renderHead(-2688px, -2117px);
+    }
+
+    &.aladerholtrobertb {
+        @include renderHead(-2688px, -2234px);
+    }
+
+    &.akyoungdone {
+        @include renderHead(-2688px, -2351px);
+    }
+
+    &.aksullivandan {
+        @include renderHead(-2688px, -2468px);
+    }
+
+    &.akmurkowskilisa {
+        @include renderHead(-2208px, -2496px);
+    }
+
+    &.akbegichmark {
+        @include renderHead(-2304px, -2496px);
+    }
+}
