@@ -8,6 +8,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-infinite-scroller": "^1.2.2",
     "react-on-rails": "11.1.8"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import InfiniteScroll from 'react-infinite-scroller';
 import Politician from './scorecard_political/Politician'
 
 export default class ScorecardPolitical extends React.Component {
@@ -8,61 +9,70 @@ export default class ScorecardPolitical extends React.Component {
 
     this.state = {
       expanded: '',
-      good: [],
-      neutral: [],
-      bad: [],
-      states: {
-        'Alabama': 'AL',
-        'Alaska': 'AK',
-        'Arizona': 'AZ',
-        'Arkansas': 'AR',
-        'California': 'CA',
-        'Colorado': 'CO',
-        'Connecticut': 'CT',
-        'Delaware': 'DE',
-        'Florida': 'FL',
-        'Georgia': 'GA',
-        'Hawaii': 'HI',
-        'Idaho': 'ID',
-        'Illinois': 'IL',
-        'Indiana': 'IN',
-        'Iowa': 'IA',
-        'Kansas': 'KS',
-        'Kentucky': 'KY',
-        'Louisiana': 'LA',
-        'Maine': 'ME',
-        'Maryland': 'MD',
-        'Massachusetts': 'MA',
-        'Michigan': 'MI',
-        'Minnesota': 'MN',
-        'Mississippi': 'MS',
-        'Missouri': 'MO',
-        'Montana': 'MT',
-        'Nebraska': 'NE',
-        'Nevada': 'NV',
-        'New Hampshire': 'NH',
-        'New Jersey': 'NJ',
-        'New Mexico': 'NM',
-        'New York': 'NY',
-        'North Carolina': 'NC',
-        'North Dakota': 'ND',
-        'Ohio': 'OH',
-        'Oklahoma': 'OK',
-        'Oregon': 'OR',
-        'Pennsylvania': 'PA',
-        'Rhode Island': 'RI',
-        'South Carolina': 'SC',
-        'South Dakota': 'SD',
-        'Tennessee': 'TN',
-        'Texas': 'TX',
-        'Utah': 'UT',
-        'Vermont': 'VT',
-        'Virginia': 'VA',
-        'Washington': 'WA',
-        'West Virginia': 'WV',
-        'Wisconsin': 'WI',
-        'Wyoming': 'WY'
-      }
+      good: 0,
+      goodFiltered: [],
+      neutral: 0,
+      neutralFiltered: [],
+      bad: 0,
+      badFiltered: [],
+      politicians: {
+        good: [],
+        neutral: [],
+        bad: []
+      },
+      filtered: 'All',
+      states: [
+        'Alabama',
+        'Alaska',
+        'Arizona',
+        'Arkansas',
+        'California',
+        'Colorado',
+        'Connecticut',
+        'Delaware',
+        'Florida',
+        'Georgia',
+        'Hawaii',
+        'Idaho',
+        'Illinois',
+        'Indiana',
+        'Iowa',
+        'Kansas',
+        'Kentucky',
+        'Louisiana',
+        'Maine',
+        'Maryland',
+        'Massachusetts',
+        'Michigan',
+        'Minnesota',
+        'Mississippi',
+        'Missouri',
+        'Montana',
+        'Nebraska',
+        'Nevada',
+        'New Hampshire',
+        'New Jersey',
+        'New Mexico',
+        'New York',
+        'North Carolina',
+        'North Dakota',
+        'Ohio',
+        'Oklahoma',
+        'Oregon',
+        'Pennsylvania',
+        'Rhode Island',
+        'South Carolina',
+        'South Dakota',
+        'Tennessee',
+        'Texas',
+        'Utah',
+        'Vermont',
+        'Virginia',
+        'Washington',
+        'West Virginia',
+        'Wisconsin',
+        'Wyoming'
+      ]
     };
 
   }
@@ -70,12 +80,15 @@ export default class ScorecardPolitical extends React.Component {
   componentDidMount() {
     axios.get('https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json')
       .then(res => {
-        console.log('get spreadsheet', res.data);
         var politicians = this.processPoliticians(res.data.feed.entry);
         this.setState({
-          good: politicians.good,
-          neutral: politicians.neutral,
-          bad: politicians.bad
+          good: 5 < politicians.good.length ? 5 : politicians.good.length,
+          neutral: 5 < politicians.neutral.length ? 5 : politicians.neutral.length,
+          bad: 5 < politicians.bad.length ? 5 : politicians.bad.length,
+          goodFiltered: politicians.good,
+          neutralFiltered: politicians.neutral,
+          badFiltered: politicians.bad,
+          politicians: politicians
         });
         window.scrollTo(0, 0);
       })
@@ -467,7 +480,6 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     if (politician['ECPA_reform_cosponsor'] == 'GOOD') {
-        console.log("ECPA")
         var inc = 2;
         score_criteria.push({
             score:  inc,
@@ -703,8 +715,81 @@ export default class ScorecardPolitical extends React.Component {
     );
   }
 
+  loadGood = () => {
+    const { goodFiltered, good } = this.state;
+    const max = goodFiltered.length;
+    console.log('loading more good...', good, max);
+    this.setState({ good: good + 5 < max ? good + 5 : max });
+  }
+
+  loadNeutral = () => {
+    const { neutralFiltered, neutral } = this.state;
+    const max = neutralFiltered.length;
+
+    console.log('loading more neutral...', max);
+    this.setState({ neutral: neutral + 5 < max ? neutral + 5 : max });
+  }
+
+  loadBad = () => {
+    const { badFiltered, bad } = this.state;
+    const max = badFiltered.length;
+    console.log('loading more bad...', bad, max);
+    this.setState({ bad: bad + 5 < max ? bad + 5 : max });
+  }
+
+  filterPoliticians = (e) => {
+    const { politicians } = this.state;
+    const selection = e.target.value
+    var goodFiltered, neutralFiltered, badFiltered;
+
+    if (e.target.value == 'All') {
+      goodFiltered = politicians.good;
+      neutralFiltered = politicians.neutral;
+      badFiltered = politicians.bad;
+    } else if (selection == 'House' || selection == 'Senate') {
+      goodFiltered = politicians.good.filter(politician => (
+        politician.organization == selection
+      ));
+      neutralFiltered = politicians.neutral.filter(politician => (
+        politician.organization == selection
+      ));
+      badFiltered = politicians.bad.filter(politician => (
+        politician.organization == selection
+      ));
+    } else {
+      goodFiltered = politicians.good.filter(politician => (
+        politician.state == selection
+      ));
+      neutralFiltered = politicians.neutral.filter(politician => (
+        politician.state == selection
+      ));
+      badFiltered = politicians.bad.filter(politician => (
+        politician.state == selection
+      ));
+    }
+    this.setState({
+      filtered: selection,
+      good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
+      neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
+      bad: 5 < badFiltered.length ? 5 : badFiltered.length,
+      goodFiltered: goodFiltered,
+      neutralFiltered: neutralFiltered,
+      badFiltered: badFiltered
+    });
+  }
+
   render() {
-    const { expanded, good, neutral, bad } = this.state;
+    const {
+      expanded,
+      good,
+      neutral,
+      bad,
+      states,
+      filtered,
+      goodFiltered,
+      neutralFiltered,
+      badFiltered
+    } = this.state;
 
     return (
       <div className="scoreboard">
@@ -717,43 +802,79 @@ export default class ScorecardPolitical extends React.Component {
         </p>
         <div id="scoreboard_data">
           <label>Choose view:</label>
-          <select>
+          <select onChange={this.filterPoliticians}>
             <optgroup label="View by Chamber">
-              <option value="all">All Congress</option>
-              <option value="senate">Senate</option>
-              <option value="house">House</option>
+              <option value="All">All Congress</option>
+              <option value="Senate">Senate</option>
+              <option value="House">House</option>
             </optgroup>
             <optgroup label="View by state">
-              <option value="AL">Alamaba</option>
+              { states.map(value => (
+                <option key={value} value={value}>{value}</option>
+              ))}
             </optgroup>
           </select>
           <div className='politicians'>
-            <div className="team internet">
-              <h3>Team Internet</h3>
-              <em>These politicians are standing up for the free Internet and oppose mass surveillance.</em>
-              <div className="filtered">
-              { good.map((politician, i) => (
-                <Politician key={i} politician={politician} team='good' />
-              )) }
+            { good > 0 || bad > 0 ? (
+              <div className="team internet">
+                <h3>Team Internet</h3>
+                <em>These politicians are standing up for the free Internet and oppose mass surveillance.</em>
+                <div key={`good-${filtered}`} className={goodFiltered.length < 4 ? '' : 'politicians-scroll'}>
+                  <InfiniteScroll
+                    pageStart={0}
+                    loadMore={this.loadGood}
+                    hasMore={good < goodFiltered.length}
+                    loader={<div className="loader" key={0}>Loading ...</div>}
+                    useWindow={false}
+                    initialLoad={false}
+                    className="filtered"
+                  >
+                    {goodFiltered.slice(0, good).map((politician, i) => (
+                      <Politician key={i} politician={politician} team='good' />
+                    ))}
+                  </InfiniteScroll>
+                </div>
               </div>
-            </div>
-            <div className="team surveillance">
-              <h3>Team NSA</h3>
-              <em>These politicians are working with monopolies to control the Internet for power and profit.</em>
-              <div className="filtered">
-                { bad.map((politician, i) => (
-                  <Politician key={i} politician={politician} team='bad' />
-                )) }
+            ) : '' }
+            { good > 0 || bad > 0 ? (
+              <div className="team surveillance">
+                <h3>Team NSA</h3>
+                <em>These politicians are working with monopolies to control the Internet for power and profit.</em>
+                <div key={`bad-${filtered}`} className={badFiltered.length < 4 ? '' : 'politicians-scroll'}>
+                  <InfiniteScroll
+                    pageStart={0}
+                    loadMore={this.loadBad}
+                    hasMore={bad < badFiltered.length}
+                    loader={<div className="loader" key={0}>Loading ...</div>}
+                    useWindow={false}
+                    initialLoad={false}
+                    className="filtered"
+                  >
+                    {badFiltered.slice(0, bad).map((politician, i) => (
+                      <Politician key={i} politician={politician} team='bad' />
+                    ))}
+                  </InfiniteScroll>
+                </div>
               </div>
-            </div>
+            ) : '' }
           </div>
-          { neutral.length > 0 ? (
+          { neutral > 0 ? (
             <div className="team unknown">
               <h3>Unclear</h3>
-              <div className="filtered">
-                { neutral.map((politician, i) => (
-                  <Politician key={i} politician={politician} team='neutral' />
-                )) }
+              <div key={`neutral-${filtered}`} className={neutralFiltered.length < 4 ? '' : 'politicians-scroll'}>
+                <InfiniteScroll
+                  pageStart={0}
+                  loadMore={this.loadNeutral}
+                  hasMore={neutral < neutralFiltered.length}
+                  loader={<div className="loader" key={0}>Loading ...</div>}
+                  useWindow={false}
+                  initialLoad={false}
+                  className="filtered"
+                >
+                  {neutralFiltered.slice(0, neutral).map((politician, i) => (
+                    <Politician key={i} politician={politician} team='neutral' />
+                  ))}
+                </InfiniteScroll>
               </div>
             </div>
           ) : '' }
