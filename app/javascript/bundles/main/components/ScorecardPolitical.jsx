@@ -21,6 +21,7 @@ export default class ScorecardPolitical extends React.Component {
         bad: []
       },
       filtered: 'All',
+      name: '',
       states: [
         'Alabama',
         'Alaska',
@@ -737,38 +738,81 @@ export default class ScorecardPolitical extends React.Component {
     this.setState({ bad: bad + 5 < max ? bad + 5 : max });
   }
 
-  filterPoliticians = (e) => {
-    const { politicians } = this.state;
-    const selection = e.target.value
-    var goodFiltered, neutralFiltered, badFiltered;
+  filterPoliticians = (value, field) => {
+    console.log('filter politicians', value, field);
+    const { filtered, name, politicians } = this.state;
+    var goodFiltered, neutralFiltered, badFiltered, filteredValue, nameValue;
 
-    if (e.target.value == 'All') {
-      goodFiltered = politicians.good;
-      neutralFiltered = politicians.neutral;
-      badFiltered = politicians.bad;
-    } else if (selection == 'House' || selection == 'Senate') {
+    if ( field == 'view' ) {
+      filteredValue = value;
+      nameValue = name;
+    } else {
+      filteredValue = filtered;
+      nameValue = value;
+    }
+
+    if (filteredValue == 'All') {
+      if (nameValue == '') {
+        goodFiltered = politicians.good;
+        neutralFiltered = politicians.neutral;
+        badFiltered = politicians.bad;
+      } else {
+        goodFiltered = politicians.good.filter(politician => (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        ));
+        neutralFiltered = politicians.neutral.filter(politician => (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        ));
+        badFiltered = politicians.bad.filter(politician => (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        ));
+      }
+    } else if (filteredValue == 'House' || filteredValue == 'Senate') {
       goodFiltered = politicians.good.filter(politician => (
-        politician.organization == selection
+        politician.organization == filteredValue && (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        )
       ));
       neutralFiltered = politicians.neutral.filter(politician => (
-        politician.organization == selection
+        politician.organization == filteredValue && (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        )
       ));
       badFiltered = politicians.bad.filter(politician => (
-        politician.organization == selection
+        politician.organization == filteredValue && (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        )
       ));
     } else {
       goodFiltered = politicians.good.filter(politician => (
-        politician.state == selection
+        politician.state == filteredValue && (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        )
       ));
       neutralFiltered = politicians.neutral.filter(politician => (
-        politician.state == selection
+        politician.state == filteredValue && (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        )
       ));
       badFiltered = politicians.bad.filter(politician => (
-        politician.state == selection
+        politician.state == filteredValue && (
+          politician.first_name.toLowerCase().includes(nameValue) ||
+          politician.last_name.toLowerCase().includes(nameValue)
+        )
       ));
     }
+
     this.setState({
-      filtered: selection,
+      filtered: filteredValue,
+      name: nameValue,
       good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
       neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
       bad: 5 < badFiltered.length ? 5 : badFiltered.length,
@@ -778,28 +822,29 @@ export default class ScorecardPolitical extends React.Component {
     });
   }
 
-  filterPoliticiansByName = (e) => {
-    const { politicians } = this.state;
-    const name = e.target.value.toLowerCase();
-    var goodFiltered = politicians.good.filter(politician => (
-      politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
-    ));
-    var neutralFiltered = politicians.neutral.filter(politician => (
-      politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
-    ));
-    var badFiltered = politicians.bad.filter(politician => (
-      politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
-    ));
-    this.setState({
-      filtered: name,
-      good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
-      neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
-      bad: 5 < badFiltered.length ? 5 : badFiltered.length,
-      goodFiltered: goodFiltered,
-      neutralFiltered: neutralFiltered,
-      badFiltered: badFiltered
-    });
-  }
+  // filterPoliticiansByName = (e) => {
+  //   const { politicians } = this.state;
+  //   const name = e.target.value.toLowerCase();
+  //   var goodFiltered = politicians.good.filter(politician => (
+  //     politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
+  //   ));
+  //   var neutralFiltered = politicians.neutral.filter(politician => (
+  //     politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
+  //   ));
+  //   var badFiltered = politicians.bad.filter(politician => (
+  //     politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
+  //   ));
+  //   this.setState({
+  //     filtered: 'All',
+  //     name: name,
+  //     good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
+  //     neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
+  //     bad: 5 < badFiltered.length ? 5 : badFiltered.length,
+  //     goodFiltered: goodFiltered,
+  //     neutralFiltered: neutralFiltered,
+  //     badFiltered: badFiltered
+  //   });
+  // }
 
   render() {
     const {
@@ -809,6 +854,7 @@ export default class ScorecardPolitical extends React.Component {
       bad,
       states,
       filtered,
+      name,
       goodFiltered,
       neutralFiltered,
       badFiltered
@@ -825,7 +871,7 @@ export default class ScorecardPolitical extends React.Component {
         </p>
         <div id="scoreboard_data">
           <label>Choose View:</label>
-          <select onChange={this.filterPoliticians}>
+          <select onChange={e => this.filterPoliticians(e.target.value, 'view')}>
             <optgroup label="View by Chamber">
               <option value="All">All Congress</option>
               <option value="Senate">Senate</option>
@@ -842,7 +888,7 @@ export default class ScorecardPolitical extends React.Component {
             <input
               type='text'
               size='13'
-              onChange={this.filterPoliticiansByName}
+              onChange={e => this.filterPoliticians(e.target.value, 'name')}
               placeholder='First/Last Name'
             />
           </div>
@@ -851,7 +897,10 @@ export default class ScorecardPolitical extends React.Component {
               <div className="team internet">
                 <h3>Team Internet</h3>
                 <em>These politicians are standing up for the free Internet and oppose mass surveillance.</em>
-                <div key={`good-${filtered}`} className={goodFiltered.length < 4 ? '' : 'politicians-scroll'}>
+                <div
+                  key={`good-${filtered}${name}`}
+                  className={goodFiltered.length < 4 ? '' : 'politicians-scroll'}
+                >
                   <InfiniteScroll
                     pageStart={0}
                     loadMore={this.loadGood}
@@ -872,7 +921,7 @@ export default class ScorecardPolitical extends React.Component {
               <div className="team surveillance">
                 <h3>Team NSA</h3>
                 <em>These politicians are working with monopolies to control the Internet for power and profit.</em>
-                <div key={`bad-${filtered}`} className={badFiltered.length < 4 ? '' : 'politicians-scroll'}>
+                <div key={`bad-${filtered}${name}`} className={badFiltered.length < 4 ? '' : 'politicians-scroll'}>
                   <InfiniteScroll
                     pageStart={0}
                     loadMore={this.loadBad}
@@ -893,7 +942,7 @@ export default class ScorecardPolitical extends React.Component {
           { neutral > 0 ? (
             <div className="team unknown">
               <h3>Unclear</h3>
-              <div key={`neutral-${filtered}`} className={neutralFiltered.length < 4 ? '' : 'politicians-scroll'}>
+              <div key={`neutral-${filtered}${name}`} className={neutralFiltered.length < 4 ? '' : 'politicians-scroll'}>
                 <InfiniteScroll
                   pageStart={0}
                   loadMore={this.loadNeutral}
