@@ -719,7 +719,6 @@ export default class ScorecardPolitical extends React.Component {
   loadGood = () => {
     const { goodFiltered, good } = this.state;
     const max = goodFiltered.length;
-    console.log('loading more good...', good, max);
     this.setState({ good: good + 5 < max ? good + 5 : max });
   }
 
@@ -727,19 +726,16 @@ export default class ScorecardPolitical extends React.Component {
     const { neutralFiltered, neutral } = this.state;
     const max = neutralFiltered.length;
 
-    console.log('loading more neutral...', max);
     this.setState({ neutral: neutral + 5 < max ? neutral + 5 : max });
   }
 
   loadBad = () => {
     const { badFiltered, bad } = this.state;
     const max = badFiltered.length;
-    console.log('loading more bad...', bad, max);
     this.setState({ bad: bad + 5 < max ? bad + 5 : max });
   }
 
   filterPoliticians = (value, field) => {
-    console.log('filter politicians', value, field);
     const { filtered, name, politicians } = this.state;
     var goodFiltered, neutralFiltered, badFiltered, filteredValue, nameValue;
 
@@ -822,30 +818,6 @@ export default class ScorecardPolitical extends React.Component {
     });
   }
 
-  // filterPoliticiansByName = (e) => {
-  //   const { politicians } = this.state;
-  //   const name = e.target.value.toLowerCase();
-  //   var goodFiltered = politicians.good.filter(politician => (
-  //     politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
-  //   ));
-  //   var neutralFiltered = politicians.neutral.filter(politician => (
-  //     politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
-  //   ));
-  //   var badFiltered = politicians.bad.filter(politician => (
-  //     politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
-  //   ));
-  //   this.setState({
-  //     filtered: 'All',
-  //     name: name,
-  //     good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
-  //     neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
-  //     bad: 5 < badFiltered.length ? 5 : badFiltered.length,
-  //     goodFiltered: goodFiltered,
-  //     neutralFiltered: neutralFiltered,
-  //     badFiltered: badFiltered
-  //   });
-  // }
-
   render() {
     const {
       expanded,
@@ -884,7 +856,7 @@ export default class ScorecardPolitical extends React.Component {
             </optgroup>
           </select>
           <div style={{marginTop: '15px'}}>
-            <label>Search by Name:{' '}</label>
+            <label>Search by Name:</label>
             <input
               type='text'
               size='13'
@@ -911,7 +883,7 @@ export default class ScorecardPolitical extends React.Component {
                     className="filtered"
                   >
                     {goodFiltered.slice(0, good).map((politician, i) => (
-                      <Politician key={i} politician={politician} team='good' />
+                      <Politician key={i} politician={politician} team='good' modal={i==1} />
                     ))}
                   </InfiniteScroll>
                 </div>

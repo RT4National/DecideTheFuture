@@ -4141,6 +4141,8 @@ button.social.donate {
 .modal h2 {
     font-family: 'Open Sans', 'open-sans', Arial, sans-serif;
     letter-spacing: 0;
+    color: #333;
+    font-size: 50px;
 }
 
 .modal p, .modal li {
@@ -4170,17 +4172,47 @@ button.social.donate {
     background: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 0;
+    float: right;
     color: black;
     opacity: .4;
-    font-size: 30px;
+    font-size: 23px;
     text-decoration: none;
 }
 
 .modal .close:hover {
     opacity: .6;
+}
+
+.politician_modal {
+  position: fixed;
+  z-index: 9002;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.politician-modal-content {
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 90%;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.politician-modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.politician-modal-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.politician-modal-content::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 .politician_modal p {

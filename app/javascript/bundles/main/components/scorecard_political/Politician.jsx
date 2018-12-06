@@ -1,11 +1,29 @@
 import React from 'react';
+import PoliticianModal from './PoliticianModal';
 
 export default class Politician extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modal: false
+    };
+  }
+
+  toggleModal = () => {
+    const { modal } = this.state;
+    this.setState({ modal: !modal });
+  }
+
   render() {
     const { politician, team } = this.props;
+    const { modal } = this.state;
     return (
       <div className={team}>
+        { modal ? (
+          <PoliticianModal politician={politician} toggleModal={this.toggleModal}/>
+        ): '' }
         <div className='peekaboo'>
           <div className='politician'>
             <div className={team}>
@@ -22,7 +40,7 @@ export default class Politician extends React.Component {
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
                 <button className='tweet_link'></button>
-                <button className='info_link'>i</button>
+                <button className='info_link' onClick={this.toggleModal}>i</button>
               </div>
             </div>
           </div>
