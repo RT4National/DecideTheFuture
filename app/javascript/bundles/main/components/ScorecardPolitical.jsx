@@ -778,6 +778,29 @@ export default class ScorecardPolitical extends React.Component {
     });
   }
 
+  filterPoliticiansByName = (e) => {
+    const { politicians } = this.state;
+    const name = e.target.value.toLowerCase();
+    var goodFiltered = politicians.good.filter(politician => (
+      politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
+    ));
+    var neutralFiltered = politicians.neutral.filter(politician => (
+      politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
+    ));
+    var badFiltered = politicians.bad.filter(politician => (
+      politician.first_name.toLowerCase().includes(name) || politician.last_name.toLowerCase().includes(name)
+    ));
+    this.setState({
+      filtered: name,
+      good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
+      neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
+      bad: 5 < badFiltered.length ? 5 : badFiltered.length,
+      goodFiltered: goodFiltered,
+      neutralFiltered: neutralFiltered,
+      badFiltered: badFiltered
+    });
+  }
+
   render() {
     const {
       expanded,
@@ -801,7 +824,7 @@ export default class ScorecardPolitical extends React.Component {
           <a href="#our-scoring-system">Learn about our scoring system. </a>
         </p>
         <div id="scoreboard_data">
-          <label>Choose view:</label>
+          <label>Choose View:</label>
           <select onChange={this.filterPoliticians}>
             <optgroup label="View by Chamber">
               <option value="All">All Congress</option>
@@ -814,6 +837,15 @@ export default class ScorecardPolitical extends React.Component {
               ))}
             </optgroup>
           </select>
+          <div style={{marginTop: '15px'}}>
+            <label>Search by Name:{' '}</label>
+            <input
+              type='text'
+              size='13'
+              onChange={this.filterPoliticiansByName}
+              placeholder='First/Last Name'
+            />
+          </div>
           <div className='politicians'>
             { good > 0 || bad > 0 ? (
               <div className="team internet">
