@@ -12,11 +12,11 @@ export default class PoliticianModal extends React.Component {
           <ul>
             { politician.score_criteria.map((data, i) => (
               <li key={i} className={data.score < 0 ? 'bad' : 'good'}>
-                { data.url ? data.info : (
+                { data.url ? (
                   <a href={data.url} target='_blank'>
                     {data.info}
                   </a>
-                ) }
+                ) : data.info  }
               </li>
             )) }
           </ul>

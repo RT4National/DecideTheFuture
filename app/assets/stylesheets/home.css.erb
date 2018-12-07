@@ -4145,8 +4145,17 @@ button.social.donate {
     font-size: 50px;
 }
 
-.modal p, .modal li {
+.modal p, .modal li, .modal li a {
     color: #333;
+}
+
+.modal li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.modal a:hover {
+  text-decoration: underline;
 }
 
 .modal ul {
@@ -4197,7 +4206,7 @@ button.social.donate {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 90%;
+  height: 80%;
   overflow: auto;
   background: rgba(255, 255, 255, 0.82);
 }
