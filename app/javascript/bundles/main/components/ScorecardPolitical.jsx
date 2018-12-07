@@ -83,12 +83,12 @@ export default class ScorecardPolitical extends React.Component {
       .then(res => {
         var politicians = this.processPoliticians(res.data.feed.entry);
         this.setState({
-          good: 5 < politicians.good.length ? 5 : politicians.good.length,
-          neutral: 5 < politicians.neutral.length ? 5 : politicians.neutral.length,
-          bad: 5 < politicians.bad.length ? 5 : politicians.bad.length,
+          good: 16 < politicians.good.length ? 16 : politicians.good.length,
+          bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
+          neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
           goodFiltered: politicians.good,
-          neutralFiltered: politicians.neutral,
           badFiltered: politicians.bad,
+          neutralFiltered: politicians.neutral,
           politicians: politicians
         });
         window.scrollTo(0, 0);
@@ -719,20 +719,20 @@ export default class ScorecardPolitical extends React.Component {
   loadGood = () => {
     const { goodFiltered, good } = this.state;
     const max = goodFiltered.length;
-    this.setState({ good: good + 5 < max ? good + 5 : max });
+    this.setState({ good: good + 10 < max ? good + 10 : max });
+  }
+
+  loadBad = () => {
+    const { badFiltered, bad } = this.state;
+    const max = badFiltered.length;
+    this.setState({ bad: bad + 10 < max ? bad + 10 : max });
   }
 
   loadNeutral = () => {
     const { neutralFiltered, neutral } = this.state;
     const max = neutralFiltered.length;
 
-    this.setState({ neutral: neutral + 5 < max ? neutral + 5 : max });
-  }
-
-  loadBad = () => {
-    const { badFiltered, bad } = this.state;
-    const max = badFiltered.length;
-    this.setState({ bad: bad + 5 < max ? bad + 5 : max });
+    this.setState({ neutral: neutral + 12 < max ? neutral + 12 : max });
   }
 
   filterPoliticians = (value, field) => {
@@ -809,9 +809,9 @@ export default class ScorecardPolitical extends React.Component {
     this.setState({
       filtered: filteredValue,
       name: nameValue,
-      good: 5 < goodFiltered.length ? 5 : goodFiltered.length,
-      neutral: 5 < neutralFiltered.length ? 5 : neutralFiltered.length,
-      bad: 5 < badFiltered.length ? 5 : badFiltered.length,
+      good: 16 < goodFiltered.length ? 16 : goodFiltered.length,
+      bad: 16 < badFiltered.length ? 16 : badFiltered.length,
+      neutral: 19 < neutralFiltered.length ? 19 : neutralFiltered.length,
       goodFiltered: goodFiltered,
       neutralFiltered: neutralFiltered,
       badFiltered: badFiltered
@@ -831,6 +831,7 @@ export default class ScorecardPolitical extends React.Component {
       neutralFiltered,
       badFiltered
     } = this.state;
+    const loader = <div key={0} style={{width: '100%'}}>Loading ...</div>;
 
     return (
       <div className="scoreboard">
@@ -871,16 +872,16 @@ export default class ScorecardPolitical extends React.Component {
                 <em>These politicians are standing up for the free Internet and oppose mass surveillance.</em>
                 <div
                   key={`good-${filtered}${name}`}
-                  className={goodFiltered.length < 4 ? '' : 'politicians-scroll'}
+                  className='filtered politicians-scroll'
                 >
                   <InfiniteScroll
                     pageStart={0}
                     loadMore={this.loadGood}
                     hasMore={good < goodFiltered.length}
-                    loader={<div className="loader" key={0}>Loading ...</div>}
+                    loader={loader}
                     useWindow={false}
                     initialLoad={false}
-                    className="filtered"
+                    className=""
                   >
                     {goodFiltered.slice(0, good).map((politician, i) => (
                       <Politician key={i} politician={politician} team='good' modal={i==1} />
@@ -893,12 +894,15 @@ export default class ScorecardPolitical extends React.Component {
               <div className="team surveillance">
                 <h3>Team NSA</h3>
                 <em>These politicians are working with monopolies to control the Internet for power and profit.</em>
-                <div key={`bad-${filtered}${name}`} className={badFiltered.length < 4 ? '' : 'politicians-scroll'}>
+                <div
+                  key={`bad-${filtered}${name}`}
+                  className='filtered politicians-scroll'
+                >
                   <InfiniteScroll
                     pageStart={0}
                     loadMore={this.loadBad}
                     hasMore={bad < badFiltered.length}
-                    loader={<div className="loader" key={0}>Loading ...</div>}
+                    loader={loader}
                     useWindow={false}
                     initialLoad={false}
                     className="filtered"
@@ -914,12 +918,15 @@ export default class ScorecardPolitical extends React.Component {
           { neutral > 0 ? (
             <div className="team unknown">
               <h3>Unclear</h3>
-              <div key={`neutral-${filtered}${name}`} className={neutralFiltered.length < 4 ? '' : 'politicians-scroll'}>
+              <div
+                key={`neutral-${filtered}${name}`}
+                className='filtered politicians-scroll'
+              >
                 <InfiniteScroll
                   pageStart={0}
                   loadMore={this.loadNeutral}
                   hasMore={neutral < neutralFiltered.length}
-                  loader={<div className="loader" key={0}>Loading ...</div>}
+                  loader={loader}
                   useWindow={false}
                   initialLoad={false}
                   className="filtered"

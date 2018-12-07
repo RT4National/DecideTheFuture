@@ -39,7 +39,11 @@ export default class Politician extends React.Component {
               <h4>{politician.last_name}</h4>
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
-                <button className='tweet_link'></button>
+                { politician.twitter ? (
+                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter}`}>
+                    <button className='tweet_link'></button>
+                  </a>
+                ) : '' }
                 <button className='info_link' onClick={this.toggleModal}>i</button>
               </div>
             </div>
