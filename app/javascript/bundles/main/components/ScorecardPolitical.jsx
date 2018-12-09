@@ -744,7 +744,7 @@ export default class ScorecardPolitical extends React.Component {
       nameValue = name;
     } else {
       filteredValue = filtered;
-      nameValue = value;
+      nameValue = value.toLowerCase();
     }
 
     if (filteredValue == 'All') {
