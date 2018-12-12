@@ -31,28 +31,32 @@
   <h3>Tweet Congress</h3>
   <p id="form-headline">
     <div id="tweet_text_container">
-      <textarea id="tweet_text" maxlength="105">please vote to #StopCISA—this bill is bad for cybersecurity and human rights. www.decidethefuture.org</textarea>
+      <textarea id="tweet_text" maxlength="105">please vote to #SunsetThePatriotAct—it's time to rein in the surveillance state. www.decidethefuture.org</textarea>
       <div id="remaining">0</div>
     </div>
     <div class="selectors">
-      <span class="tweet_to">Tweet to:</span>
-      <label for="just_state" class="sel" id="just_state_label">
-        <input type="radio" name="tweet_to" id="just_state" checked />
-        <span class="just">
-          just
-        </span>
-        <span id="placeholder_state_name">
-          your state
-        </span>
-        <span id="state_selector"></span>
-      </label>
-      <label for="EVERYONE" id="EVERYONE_label">
-        <input type="radio" name="tweet_to" id="EVERYONE" />
-          the whole Senate
-      </label>
+      <!--
+        <span class="tweet_to">Tweet to:</span>
+        <label for="just_state" class="sel" id="just_state_label">
+          <input type="radio" name="tweet_to" id="just_state" checked />
+          <span class="just">
+            just
+          </span>
+          <span id="placeholder_state_name">
+            your state
+          </span>
+          <span id="state_selector"></span>
+        </label>
+        <label for="EVERYONE" id="EVERYONE_label">
+          <input type="radio" name="tweet_to" id="EVERYONE" />
+            the whole Senate
+        </label>
+      -->
     </div>
     <div id="tweet-iframe-container"></div>
-    <a class="tweet" href="#" id="tweet_your_state"><%= image_tag "share/tw_white.png" %>Tweet your Senators</a>
+    <a class='tweet' href="<%= "https://twitter.com/intent/tweet?text=#{CGI.escape("please vote to #SunsetThePatriotAct—it's time to rein in the surveillance state. www.decidethefuture.org")}" %>">
+      <%= image_tag "share/tw_white.png" %>Tweet your Senators
+    </a>
     <a class="call" href="#" id="call_congress">Can't tweet? Call Congress...</a>
   </p>
   <script type="text/javascript">

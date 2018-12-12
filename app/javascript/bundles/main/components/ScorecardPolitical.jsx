@@ -22,6 +22,19 @@ export default class ScorecardPolitical extends React.Component {
       },
       filtered: 'All',
       name: '',
+      membership: 'All',
+      committees: {
+        intelligence: 'Intelligence',
+        judiciary: 'Judiciary',
+        homelandsecurity: 'Homeland Security',
+        armedservices: 'Armed Services'
+      },
+      caucuses: {
+        freedomcaucus: 'Freedom Caucus',
+        congressionalblackcaucus: 'Congressional Black Caucus',
+        congressionalprogressivecaucus: 'Congressional Progressive Caucus',
+        fourthamendmentcaucus: 'Fourth Amendment Caucus'
+      },
       states: [
         'Alabama',
         'Alaska',
@@ -105,7 +118,7 @@ export default class ScorecardPolitical extends React.Component {
 
     for (const entry of entries) {
       var politician = this.processPolitician(entry);
-      if (politician.active != 'No') {
+      if (politician.active != 'No' && politician.voting != 'Yes') {
         if (politician.score > 5 ){
           politicians.good.push(politician);
         } else if (politician.score >= 0) {
@@ -124,44 +137,49 @@ export default class ScorecardPolitical extends React.Component {
     var e = (field) => { return entry['gsx$'+field]['$t'].trim(); };
 
     var politician = {
-      first_name:      e('first'),
-      last_name:       e('name'),
-      image:           e('imagepleasedontedit'),
-      bioguide:        e('bioguide'),
-      email:           e('email'),
-      phone:           e('phone'),
-      organization:    e('organization'),
-      state:           e('state'),
-      state_short:     states[e('state')],
-      twitter:         e('twitter'),
-      party:           e('partyaffiliation'),
-      vote_usaf:       e('voteusaf'),
-      vote_tempreauth: e('votetempreauth'),
-      office1:         e('office1'),
-      office1phone:    e('office1phone'),
-      office1geo:      e('office1geo'),
-      office2:         e('office2'),
-      office2phone:    e('office2phone'),
-      office2geo:      e('office2geo'),
-      office3:         e('office3'),
-      office3phone:    e('office3phone'),
-      office3geo:      e('office3geo'),
-      office4:         e('office4'),
-      office4phone:    e('office4phone'),
-      office4geo:      e('office4geo'),
-      office5:         e('office5'),
-      office5phone:    e('office5phone'),
-      office5geo:      e('office5geo'),
-      office6:         e('office6'),
-      office6phone:    e('office6phone'),
-      office6geo:      e('office6geo'),
-      office7:         e('office7'),
-      office7phone:    e('office7phone'),
-      office7geo:      e('office7geo'),
-      office8:         e('office8'),
-      office8phone:    e('office8phone'),
-      office8geo:      e('office8geo'),
-      active:          e('active'),
+      first_name:       e('first'),
+      last_name:        e('name'),
+      image:            e('imagepleasedontedit'),
+      bioguide:         e('bioguide'),
+      email:            e('email'),
+      phone:            e('phone'),
+      organization:     e('organization'),
+      state:            e('state'),
+      state_short:      states[e('state')],
+      twitter:          e('twitter'),
+      party:            e('partyaffiliation'),
+      vote_usaf:        e('voteusaf'),
+      vote_tempreauth:  e('votetempreauth'),
+      office1:          e('office1'),
+      office1phone:     e('office1phone'),
+      office1geo:       e('office1geo'),
+      office2:          e('office2'),
+      office2phone:     e('office2phone'),
+      office2geo:       e('office2geo'),
+      office3:          e('office3'),
+      office3phone:     e('office3phone'),
+      office3geo:       e('office3geo'),
+      office4:          e('office4'),
+      office4phone:     e('office4phone'),
+      office4geo:       e('office4geo'),
+      office5:          e('office5'),
+      office5phone:     e('office5phone'),
+      office5geo:       e('office5geo'),
+      office6:          e('office6'),
+      office6phone:     e('office6phone'),
+      office6geo:       e('office6geo'),
+      office7:          e('office7'),
+      office7phone:     e('office7phone'),
+      office7geo:       e('office7geo'),
+      office8:          e('office8'),
+      office8phone:     e('office8phone'),
+      office8geo:       e('office8geo'),
+      active:           e('active'),
+      voting:           e('voting'),
+      intelligence:     e('intelligence'),
+      judiciary:        e('judiciary'),
+      homelandsecurity: e('homelandsecurity'),
+      armedservices:    e('armedservices'),
 
       // scorecard fields
       fisa_courts_reform_act:                                 e('fisacourtsreformact'),
@@ -737,78 +755,19 @@ export default class ScorecardPolitical extends React.Component {
 
   filterPoliticians = (value, field) => {
     const { filtered, name, politicians } = this.state;
-    var goodFiltered, neutralFiltered, badFiltered, filteredValue, nameValue;
+    var goodFiltered, neutralFiltered, badFiltered;
 
-    if ( field == 'view' ) {
-      filteredValue = value;
-      nameValue = name;
-    } else {
-      filteredValue = filtered;
-      nameValue = value.toLowerCase();
-    }
-
-    if (filteredValue == 'All') {
-      if (nameValue == '') {
-        goodFiltered = politicians.good;
-        neutralFiltered = politicians.neutral;
-        badFiltered = politicians.bad;
-      } else {
-        goodFiltered = politicians.good.filter(politician => (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        ));
-        neutralFiltered = politicians.neutral.filter(politician => (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        ));
-        badFiltered = politicians.bad.filter(politician => (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        ));
-      }
-    } else if (filteredValue == 'House' || filteredValue == 'Senate') {
-      goodFiltered = politicians.good.filter(politician => (
-        politician.organization == filteredValue && (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        )
-      ));
-      neutralFiltered = politicians.neutral.filter(politician => (
-        politician.organization == filteredValue && (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        )
-      ));
-      badFiltered = politicians.bad.filter(politician => (
-        politician.organization == filteredValue && (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        )
-      ));
-    } else {
-      goodFiltered = politicians.good.filter(politician => (
-        politician.state == filteredValue && (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        )
-      ));
-      neutralFiltered = politicians.neutral.filter(politician => (
-        politician.state == filteredValue && (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        )
-      ));
-      badFiltered = politicians.bad.filter(politician => (
-        politician.state == filteredValue && (
-          politician.first_name.toLowerCase().includes(nameValue) ||
-          politician.last_name.toLowerCase().includes(nameValue)
-        )
-      ));
-    }
+    goodFiltered = politicians.good.filter(politician => (
+      this.matchPolitician(politician, value, field)
+    ));
+    neutralFiltered = politicians.neutral.filter(politician => (
+      this.matchPolitician(politician, value, field)
+    ));
+    badFiltered = politicians.bad.filter(politician => (
+      this.matchPolitician(politician, value, field)
+    ));
 
     this.setState({
-      filtered: filteredValue,
-      name: nameValue,
       good: 16 < goodFiltered.length ? 16 : goodFiltered.length,
       bad: 16 < badFiltered.length ? 16 : badFiltered.length,
       neutral: 19 < neutralFiltered.length ? 19 : neutralFiltered.length,
@@ -818,6 +777,42 @@ export default class ScorecardPolitical extends React.Component {
     });
   }
 
+  matchPolitician = (politician, value, field) => {
+    const { filtered, name, membership } = this.state;
+    var filteredValue, nameValue, membershipValue;
+
+    if ( field == 'view' ) {
+      filteredValue = value;
+      nameValue = name;
+      membershipValue = membership;
+      this.setState({filtered: value});
+    } else if (field == 'membership') {
+      filteredValue = filtered;
+      nameValue = name;
+      membershipValue = value;
+      this.setState({membershipValue: value});
+    } else {
+      filteredValue = filtered;
+      nameValue = value.toLowerCase();
+      membershipValue = membership;
+      this.setState({name: value});
+    }
+
+    return (
+      (
+        filteredValue == 'All' ||
+        politician.organization == filteredValue ||
+        politician.state == filteredValue
+      ) && (
+        politician.first_name.toLowerCase().includes(nameValue) ||
+        politician.last_name.toLowerCase().includes(nameValue)
+      ) && (
+        membershipValue == 'All' ||
+        politician[membershipValue] == 'Yes'
+      )
+    );
+  }
+
   render() {
     const {
       expanded,
@@ -825,6 +820,8 @@ export default class ScorecardPolitical extends React.Component {
       neutral,
       bad,
       states,
+      committees,
+      caucuses,
       filtered,
       name,
       goodFiltered,
@@ -843,19 +840,37 @@ export default class ScorecardPolitical extends React.Component {
           <a href="#our-scoring-system">Learn about our scoring system. </a>
         </p>
         <div id="scoreboard_data">
-          <label>Choose View:</label>
-          <select onChange={e => this.filterPoliticians(e.target.value, 'view')}>
-            <optgroup label="View by Chamber">
-              <option value="All">All Congress</option>
-              <option value="Senate">Senate</option>
-              <option value="House">House</option>
-            </optgroup>
-            <optgroup label="View by state">
-              { states.map(value => (
-                <option key={value} value={value}>{value}</option>
-              ))}
-            </optgroup>
-          </select>
+          <div>
+            <label>Choose View:</label>
+            <select onChange={e => this.filterPoliticians(e.target.value, 'view')}>
+              <optgroup label="View by Chamber">
+                <option value="All">All Congress</option>
+                <option value="Senate">Senate</option>
+                <option value="House">House</option>
+              </optgroup>
+              <optgroup label="View by state">
+                { states.map(value => (
+                  <option key={value} value={value}>{value}</option>
+                ))}
+              </optgroup>
+            </select>
+          </div>
+          <div style={{marginTop: '15px'}}>
+            <label>Choose Membership:</label>
+            <select className='membership' onChange={e => this.filterPoliticians(e.target.value, 'membership')}>
+              <option value='All'>All Members</option>
+              <optgroup label="View by Committee">
+                { Object.keys(committees).map(key => (
+                  <option key={key} value={key}>{committees[key]}</option>
+                )) }
+              </optgroup>
+              <optgroup label="View by Caucus">
+                { Object.keys(caucuses).map(key => (
+                  <option key={key} value={key}>{caucuses[key]}</option>
+                )) }
+              </optgroup>
+            </select>
+          </div>
           <div style={{marginTop: '15px'}}>
             <label>Search by Name:</label>
             <input
