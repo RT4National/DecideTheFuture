@@ -1,9 +1,9 @@
 <nav>
   <ul>
-    <li><a href="#email">Email Congress</a></li>
+    <!-- <li><a href="#email">Email Congress</a></li> -->
     <li><a href="#scoreboard">Scoreboard</a></li>
     <li><a href="#video">Video</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <!-- <li><a href="#faq">FAQ</a></li> -->
   </ul>
 </nav>
 
@@ -57,16 +57,16 @@
     <a class='tweet' href="<%= "https://twitter.com/intent/tweet?text=#{CGI.escape("please vote to #SunsetThePatriotAct—it's time to rein in the surveillance state. www.decidethefuture.org")}" %>">
       <%= image_tag "share/tw_white.png" %>Tweet your Senators
     </a>
-    <a class="call" href="#" id="call_congress">Can't tweet? Call Congress...</a>
+    <!-- <a class="call" href="#" id="call_congress">Can't tweet? Call Congress...</a> -->
   </p>
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
       var url = TWEET_BLASTER_URL;
       var iframe = $c('iframe');
       iframe.id = 'tweet_blaster_frame';
       iframe.src = url + '?return='+encodeURIComponent(window.location.href.split("#")[0]);
       iframe.frameborder = 0;
       document.getElementById('tweet-iframe-container').appendChild(iframe);
-  </script>
+  </script> -->
 
 </div>
 
@@ -96,7 +96,7 @@
       </div>
     </div>
     <p>
-      <a href="#top" class="btn">Contact Congress now!</a>
+      <!-- <a href="#top" class="btn">Contact Congress now!</a> -->
     </p>
   </article>
 
@@ -159,8 +159,12 @@
   </a>
   <hr/>
   <div class="share">
-    <button class="social facebook">Share this</button>
-    <button class="social twitter">Tweet this</button>
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstark-inlet-79454.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+      <button class="social facebook">Share this</button>
+    </a>
+    <a class='tweet' href="<%= "https://twitter.com/intent/tweet?text=#{CGI.escape("We can protect the Internet, but to do that, we need to know who is helping us and who is working against us. www.decidethefuture.org")}" %>">
+      <button class="social twitter">Tweet this</button>
+    </a>
   </div>
   <div class="copy">
     <p>For press inquiries, please contact us at:</p>
