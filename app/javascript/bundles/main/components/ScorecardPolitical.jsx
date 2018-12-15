@@ -861,7 +861,11 @@ export default class ScorecardPolitical extends React.Component {
           </div>
           <div style={{marginTop: '15px'}}>
             <label>Choose Membership:</label>
-            <select className='membership' onChange={e => this.filterPoliticians(e.target.value, 'membership')}>
+            <select
+              className='membership'
+              style={{maxWidth: '300px'}}
+              onChange={e => this.filterPoliticians(e.target.value, 'membership')}
+            >
               <option value='All'>All Members</option>
               <optgroup label="View by Committee">
                 { Object.keys(committees).map(key => (

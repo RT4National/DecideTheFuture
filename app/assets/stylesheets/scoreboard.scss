@@ -606,16 +606,17 @@
     font-family: Georgia, Times, 'Times New Roman', serif;
     font-size: 2.5rem;
     font-weight: 600;
-    height: 45px;
+    padding: 0;
+    height: 4.5rem;
+    width: 4.5rem;
     transition: background-color 200ms linear, border-color 200ms linear;
     vertical-align: top;
-    width: 45px;
 }
 
 .politician button.tweet_link {
     background-position: 0 0;
-    width: 45px;
-    height: 45px;
+    width: 4.5rem;
+    height: 4.5rem;
     background-image: image-url('share-icons.png');
     background-repeat: no-repeat;
     background-size: auto 32px;
