@@ -23,6 +23,7 @@ export default class ScorecardPolitical extends React.Component {
       filtered: 'All',
       name: '',
       membership: 'All',
+      party: 'All',
       committees: {
         intelligence: 'Intelligence',
         judiciary: 'Judiciary',
@@ -216,7 +217,8 @@ export default class ScorecardPolitical extends React.Component {
       heller_cisa_amendment:                                  e('hellercisaamendment'),
       coons_cisa_amendment:                                   e('coonscisaamendment'),
       coons_cisa_amendment:                                   e('cottoncisaamendment'),
-      cisa_final:                                             e('cisafinal')
+      cisa_final:                                             e('cisafinal'),
+      s_139:                                                  e('s139')
     };
 
     var scoring = this.doScore(politician);
@@ -683,6 +685,41 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
 
+    if (politician['s_139'] == 'Yes') {
+      if (politician.organization === 'House') {
+        var inc = 4;
+        var url = 'http://clerk.house.gov/evs/2018/roll014.xml';
+        var info = 'Voted for the USA RIGHTS Act to rein in mass surveillance under Section 702 of the FISA Amendments Act';
+      } else {
+        var inc = -4;
+        var url = 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=115&session=2&vote=00012';
+        var info = 'Voted for closure on bill extending Section 702 mass surveillance powers'
+      }
+      score_criteria.push({
+        score: inc,
+        info: info,
+        url: url
+      });
+      score += inc;
+    }
+    else if (politician['s_139'] == 'No') {
+      if (politician.organization === 'House') {
+        var inc = -4;
+        var url = 'http://clerk.house.gov/evs/2018/roll014.xml';
+        var info = 'Voted against the USA RIGHTS Act to rein in mass surveillance under Section 702 of the FISA Amendments Act';
+      } else {
+        var inc = 4;
+        var url = 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=115&session=2&vote=00012';
+        var info = 'Voted against closure on bill extending Section 702 mass surveillance powers'
+      }
+      score_criteria.push({
+        score: inc,
+        info: info,
+        url: url
+      });
+      score += inc;
+    }
+
     if(score >= 15){
         var grade="A+"
     }
@@ -758,7 +795,7 @@ export default class ScorecardPolitical extends React.Component {
   }
 
   filterPoliticians = (value, field) => {
-    const { filtered, name, politicians } = this.state;
+    const { filtered, name, politicians, affiliation } = this.state;
     var goodFiltered, neutralFiltered, badFiltered;
 
     goodFiltered = politicians.good.filter(politician => (
@@ -782,24 +819,24 @@ export default class ScorecardPolitical extends React.Component {
   }
 
   matchPolitician = (politician, value, field) => {
-    const { filtered, name, membership } = this.state;
-    var filteredValue, nameValue, membershipValue;
+    const { filtered, name, membership, party } = this.state;
+    var filteredValue = filtered;
+    var nameValue = name;
+    var membershipValue = membership;
+    var partyValue = party;
 
     if ( field == 'view' ) {
       filteredValue = value;
-      nameValue = name;
-      membershipValue = membership;
       this.setState({filtered: value});
     } else if (field == 'membership') {
-      filteredValue = filtered;
-      nameValue = name;
       membershipValue = value;
       this.setState({membership: value});
-    } else {
-      filteredValue = filtered;
+    } else if (field == 'name') {
       nameValue = value.toLowerCase();
-      membershipValue = membership;
       this.setState({name: value});
+    } else if (field == 'party') {
+      partyValue = value;
+      this.setState({party: value});
     }
 
     return (
@@ -813,6 +850,9 @@ export default class ScorecardPolitical extends React.Component {
       ) && (
         membershipValue == 'All' ||
         politician[membershipValue] == 'Yes'
+      ) && (
+        partyValue == 'All' ||
+        politician.party == partyValue
       )
     );
   }
@@ -880,6 +920,17 @@ export default class ScorecardPolitical extends React.Component {
             </select>
           </div>
           <div style={{marginTop: '15px'}}>
+            <label>Choose Party:</label>
+            <select className='membership'
+              style={{maxWidth: '300px'}}
+              onChange={e => this.filterPoliticians(e.target.value, 'party')}
+            >
+              <option value='All'>All Parties</option>
+              <option value='Democrat'>Democrat</option>
+              <option value='Republican'>Republican</option>
+            </select>
+          </div>
+          <div style={{marginTop: '15px'}}>
             <label>Search by Name:</label>
             <input
               type='text'
@@ -915,8 +966,8 @@ export default class ScorecardPolitical extends React.Component {
             ) : '' }
             { good > 0 || bad > 0 ? (
               <div className="team surveillance">
-                <h3>Team NSA</h3>
-                <em>These politicians are working with monopolies to control the Internet for power and profit.</em>
+                <h3>Team Surveillance</h3>
+                <em>These politicians are voting to give intelligence agencies a freer hand in spying on Americans.</em>
                 <div
                   key={`bad-${filtered}${name}`}
                   className='filtered politicians-scroll'
