@@ -693,7 +693,7 @@ export default class ScorecardPolitical extends React.Component {
       } else {
         var inc = -4;
         var url = 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=115&session=2&vote=00012';
-        var info = 'Voted for closure on bill extending Section 702 mass surveillance powers'
+        var info = 'Voted for cloture on bill extending Section 702 mass surveillance powers'
       }
       score_criteria.push({
         score: inc,
@@ -710,7 +710,7 @@ export default class ScorecardPolitical extends React.Component {
       } else {
         var inc = 4;
         var url = 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=115&session=2&vote=00012';
-        var info = 'Voted against closure on bill extending Section 702 mass surveillance powers'
+        var info = 'Voted against cloture on bill extending Section 702 mass surveillance powers'
       }
       score_criteria.push({
         score: inc,
