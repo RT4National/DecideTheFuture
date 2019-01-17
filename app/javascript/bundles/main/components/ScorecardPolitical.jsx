@@ -508,7 +508,7 @@ export default class ScorecardPolitical extends React.Component {
         var inc = 2;
         score_criteria.push({
             score:  inc,
-            info:   'Co-Sponsor of Electronic Commmunication Privacy Act Reform',
+            info:   'Co-Sponsor of Electronic Communication Privacy Act Reform',
             url: 'https://www.eff.org/deeplinks/2015/09/senate-judiciary-committee-finally-focuses-ecpa-reform'
         });
         score += inc;
@@ -720,50 +720,52 @@ export default class ScorecardPolitical extends React.Component {
       score += inc;
     }
 
-    if(score >= 15){
-        var grade="A+"
+    if (score_criteria.length == 0) {
+      var grade = '?';
+    } else if(score >= 15){
+      var grade="A+";
     }
     else if(score >= 12){
-        var grade="A"
+      var grade="A";
     }
     else if(score >= 10){
-        var grade="A-"
+      var grade="A-";
     }
     else if(score >= 9){
-        var grade="B+"
+      var grade="B+";
     }
     else if(score >= 8){
-        var grade="B"
+      var grade="B";
     }
     else if(score >= 7){
-        var grade="B-"
+      var grade="B-";
     }
     else if(score >= 6){
-        var grade="B-"
+      var grade="B-";
     }
     else if(score >= 5){
-        var grade="C+"
+      var grade="C+";
     }
     else if(score >= 3){
-        var grade="C"
+      var grade="C";
     }
     else if(score >= 0){
-        var grade="C-"
+      var grade="C-";
     }
     else if(score >= -2){
-        var grade="D+"
+      var grade="D+";
     }
     else if(score >= -7){
-        var grade="D"
+      var grade="D";
     }
     else if(score >= -9){
-        var grade="D-"
+      var grade="D-";
     }
     else if (politician['last_name'] == 'McConnell') {
-        var grade="F-"
+      var grade="F-";
     }
     else{
-        var grade="F"
+      var grade="F";
     }
 
     return (
@@ -926,7 +928,7 @@ export default class ScorecardPolitical extends React.Component {
               onChange={e => this.filterPoliticians(e.target.value, 'party')}
             >
               <option value='All'>All Parties</option>
-              <option value='Democrat'>Democrat</option>
+              <option value='Democrat'>Democratic</option>
               <option value='Republican'>Republican</option>
             </select>
           </div>
