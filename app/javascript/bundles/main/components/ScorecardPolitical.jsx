@@ -218,7 +218,10 @@ export default class ScorecardPolitical extends React.Component {
       coons_cisa_amendment:                                   e('coonscisaamendment'),
       coons_cisa_amendment:                                   e('cottoncisaamendment'),
       cisa_final:                                             e('cisafinal'),
-      s_139:                                                  e('s139')
+      s_139:                                                  e('s139'),
+      fbi_search:                                             e('fbisearch'),
+      query_warrant:                                          e('querywarrant'),
+      fara:                                                   e('fara')
     };
 
     var scoring = this.doScore(politician);
@@ -684,7 +687,6 @@ export default class ScorecardPolitical extends React.Component {
         });
         score += inc;
     }
-
     if (politician['s_139'] == 'Yes') {
       if (politician.organization === 'House') {
         var inc = 4;
@@ -719,6 +721,64 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     }
+    if (politician['fbi_search'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted in Judiciary Committee to amend the USA Liberty Act to close the FBI backdoor search loophole',
+        url: 'https://docs.house.gov/meetings/JU/JU00/20171108/106622/CRPT-115-JU00-Vote001-20171108.pdf'
+      });
+      score += inc;
+    }
+    else if (politician['fbi_search'] == 'No') {
+      var inc = -2;
+
+      score_criteria.push({
+        score: inc,
+        info:   'Voted in Judiciary Committee to amend the USA Liberty Act to close the FBI backdoor search loophole',
+        url: 'https://docs.house.gov/meetings/JU/JU00/20171108/106622/CRPT-115-JU00-Vote001-20171108.pdf'
+      });
+      score += inc;
+    }
+    if (politician['query_warrant'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted in Intelligence Committee to amend FARA to require warrant before querying Section 702 data',
+        url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
+      });
+      score += inc;
+    }
+    else if (politician['query_warrant'] == 'No') {
+      var inc = -2;
+
+      score_criteria.push({
+        score: inc,
+        info:   'Voted in Intelligence Committee to amend FARA to require warrant before querying Section 702 data',
+        url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
+      });
+      score += inc;
+    }
+    if (politician['fara'] == 'Yes') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted in Intelligence Committee to report FARA to floor',
+        url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
+      });
+      score += inc;
+    }
+    else if (politician['fara'] == 'No') {
+      var inc = 2;
+
+      score_criteria.push({
+        score: inc,
+        info:   'Voted in Intelligence Committee to report FARA to floor',
+        url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
+      });
+      score += inc;
+    }
+
 
     if (score_criteria.length == 0) {
       var grade = '?';
