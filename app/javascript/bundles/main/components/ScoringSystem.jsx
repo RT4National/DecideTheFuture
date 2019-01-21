@@ -156,73 +156,58 @@ export default class ScoringSystem extends React.Component {
         </p>
 
         <p className='just'>
-          USA FREEDOM 2015 votes were not a clear signal of being for or
-          against surveillance reform. The USA FREEDOM Act changed the process of
-          surveillance by separating surveillance procedures but many organizations
-          and legislators warned that it preserves and modernizes the same
-          surveillance authorities, while enabling Congress to say it tackled
-          surveillance reform. Therefore, Yes votes are graded at -1. However,
-          because of the nature of the bill, a No vote could mean 1. that the
-          legislator thought the USA FREEDOM Act didn't go nearly far enough
-          or 2. that even very weak reforms are unacceptable there shouldn't
-          be any restrictions of surveillance authorities. Therefore No votes
-          in the Senate were tied to the legislator’s vote on whether to do
-          "straight reauthorization" of Section 215 of the PATRIOT Act. A Yes
-          on straight reauthorization indicated clearly that they wanted no
-          surveillance reform whatsoever, and therefore that if they then
-          voted No on the USA FREEDOM Act, it was because they believed it went
-          too far. Conversely, a Senator voting No on straight reauthorization
-          and then No on the USA FREEDOM Act likely felt that the USA FREEDOM Act
-          was far too weak. For the former group, we coded a No vote on USA FREEDOM
-          as -4 points; for the latter group, we coded the same vote as +4 points.
-          In the House, we went back to EFF's "Stand Against Spying" scorecard
-          and analyzed the grades of the 88 House members voting against the USA
-          FREEDOM  Act, and found that in almost all cases their grades on that
-          prior scorecard were very high. Consequently, all House No votes on USA
-          FREEDOM were coded as +4. For prior votes on the 2014 version of USA
-          FREEDOM, we adopted EFF's approach, and scored the version before it
-          was gutted at +2 and the version after it was gutted at -2.
+          USA FREEDOM 2015 votes were not a clear signal of being for or against
+          surveillance reform. The USA FREEDOM Act changed the process of surveillance
+          by separating surveillance procedures but many organizations and legislators
+          warned that it preserves and modernizes the same surveillance authorities,
+          while enabling Congress to say it tackled surveillance reform. Therefore,
+          Yes votes are graded at -1. However, because of the nature of the bill,
+          a No vote could mean 1. that the legislator thought the USA FREEDOM Act
+          didn't go nearly far enough or 2. that even very weak reforms are
+          unacceptable there shouldn't be any restrictions of surveillance authorities.
+          Therefore No votes in the Senate were tied to the legislator’s vote on
+          whether to do "straight reauthorization" of Section 215 of the PATRIOT
+          Act. A Yes on straight reauthorization indicated clearly that they wanted
+          no surveillance reform whatsoever, and therefore that if they then voted
+          No on the USA FREEDOM Act, it was because they believed it went too far.
+          Conversely, a Senator voting No on straight reauthorization and then No
+          on the USA FREEDOM Act likely felt that the USA FREEDOM Act was far too
+          weak. For the former group, we coded a No vote on USA FREEDOM as -4 points;
+          for the latter group, we coded the same vote as +4 points. In the House,
+          we went back to EFF's "Stand Against Spying" scorecard and analyzed the
+          grades of the 88 House members voting against the USA FREEDOM Act, and
+          found that in almost all cases their grades on that prior scorecard were
+          very high. Consequently, all House No votes on USA FREEDOM were coded
+          as +4. For prior votes on the 2014 version of USA FREEDOM, we adopted
+          EFF's approach, and scored the version before it was gutted at +2 and
+          the version after it was gutted at -2.
         </p>
         <p className='just'>
-          Scoring amendments to CISA posed complexities. CISA
-          went beyond cybersecurity policies and is a surveillance bill. Many
-          amendments were offered, and that raised the problem that legislators
-          might vote for CISA on cloture (-4) and on final passage (-4), but might
-          vote in favor of all anti-surveillance amendments, and thereby come out
-          ahead on net. We dealt with this by not scoring the Leahy amendment
-          (relating to FOIA exemptions) and by allocating points such that a
-          legislator like this would come out slightly behind on points.
+          Scoring amendments to CISA posed complexities. CISA went beyond
+          cybersecurity policies and is a surveillance bill. Many amendments were
+          offered, and that raised the problem that legislators might vote for
+          CISA on cloture (-4) and on final passage (-4), but might vote in favor
+          of all anti-surveillance amendments, and thereby come out ahead on net.
+          We dealt with this by not scoring the Leahy amendment (relating to FOIA
+          exemptions) and by allocating points such that a legislator like this
+          would come out slightly behind on points.
         </p>
 
         <h4>Reporting Accurately on Surveillance Reform</h4>
         <p className='just'>
-          This project threw up several important findings relevant to journalists
-          reporting on surveillance, and to members of the public deciding how to vote and
-          whom to fund.
-        </p>
-        <p className='just'>
-          First, and most importantly, party affiliation is not a guide to your
-          legislator's stance on mass surveillance. We find a few Democrats with Fs and
-          many Republicans with A+. So while not entirely useless, party affiliation is
-          highly unreliable, and journalists should steer clear of identifying a
-          party-based stance on surveillance in their reporting.
-        </p>
-        <p className='just'>
-          Second, reporters should not treat the reforms in the USA FREEDOM Act as being
-          the most radical reform measures in Congress. The scorecard includes many
-          examples of stronger reforms that have garnered substantial support. As we move
-          forward into discussions of reforms to the much more abusive Section 702 of the
-          FISA Amendments Act, which sunsets in June 2017, it will be worth bearing in
-          mind the substantial, bipartisan set of legislators who never intended reform
-          efforts to stop with the passage of the USA FREEDOM Act.
-        </p>
-        <p className='just'>
-          Third, the data does provide some guidance as to who in Congress is more likely
-          to support reform. There is also usually substantial variation within states
-          that argues against easy conclusions. In key 2016 races around the country, the
-          candidates running from both parties have sharply different positions on
-          surveillance, and we have no reason to suppose that this will change in future
-          cycles.
+          Party affiliation is not a guide to your legislator's stance on mass
+          surveillance. Some Democrats have Fs; some Republicans have A+s. If
+          you're reporting on surveillance as an issue, steer clear of identifying
+          a party-based stance on surveillance. In general, both major parties'
+          leadership tends to be more pro-surveillance than the rank and file of
+          both major parties. Current and past members of the Intelligence,
+          Homeland Security and Armed Services Committees tend to be more
+          pro-surveillance than Congress as a whole, partly because of selection
+          effects, and partly because they have experienced years of selective
+          briefings about threats from the intelligence community. In general,
+          in key races around the country, the candidates running from both parties
+          have sharply different positions on surveillance, and we have no reason
+          to suppose that this will change in future cycles.
         </p>
 
         <a
