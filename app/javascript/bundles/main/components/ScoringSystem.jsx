@@ -33,28 +33,42 @@ export default class ScoringSystem extends React.Component {
           <a href="https://fightforthefuture.org">Fight for the Future</a>.
         </p>
         <p className='just'>
-          The scorecard is objective, rather than qualitative. That is, scores are based
-          on actual votes and legislative action such as co-sponsorships rather
-          than the quality or trustworthiness of legislators' public action or
-          statements on mass
-          surveillance.
+          The scorecard is objective, rather than qualitative. That is, scores
+          are based on actual votes and legislative actions such as co-sponsorships,
+          rather than the quality or trustworthiness of legislators' public actions
+          or statements on mass surveillance. This creates two kinds of error. One,
+          that a legislator may strategically work behind the scenes in one direction,
+          and then vote in public on the other; two, that a legislator may show
+          up forvotes, but not take interest in moving the cause forward in between
+          rare voting opportunities. Both kinds of legislator exist in our database,
+          but no more objective method exists.
         </p>
 
         <ul>
           <li>
             Version 1.0 of this Scorecard was EFF’s{' '}
-            <a href="https://standagainstspying.org">
+            <a href="https://standagainstspying.org" target='_blank'>
               Stand Against Spying
             </a>
+            {' '}launched in 2012.
           </li>
           <li>
             Version 2.0 launched September 29, 2015, and scored Congressional
             votes on the USA FREEDOM Act of 2015 and FISA reform bills not included
             in v. 1.0.
+            Version 2.0 launched September 29, 2015 as a joint project of{' '}
+            <a href="https://restorethe4th.com/" target='_blank'>Restore The Fourth</a>{' and '}
+            <a href='https://fightforthefuture.org/' target='_blank'>Fight for the Future</a>{' '}
+            and scored Congressional votes on the USA FREEDOM Act of 2015 and
+            FISA reform bills not included in v. 1.0.
           </li>
           <li>
-            Version 2.1 launched October 29, 2015, and added Congressional votes
-            on cybersecurity bills (CISA, PCNA and NCPAA) and ECPA reform.
+            Version 3.0 relaunched January 21, 2019 as a project administered
+            solely by
+            {' '}<a href="https://restorethe4th.com/" target='_blank'>Restore The Fourth</a>{' '}
+            but still with the approval of Fight for the Future. It restructured
+            the internal code of the site, added search features by party, committees
+            and caucuses, and added votes on Section 702 renewal.
           </li>
         </ul>
 
@@ -70,24 +84,22 @@ export default class ScoringSystem extends React.Component {
         <p className='just'>
           Sponsored or cosponsored S. 1551, IOSRA (Yes=+4)<br/>
           Sponsored or cosponsored FISA Improvements Act (Yes=-4)<br/>
-          Sponsored or cosponsored FISA Transparency &amp; Modernization Act (Yes=-4)<br/>
-          Sponsored or cosponsored Surveillance State Repeal Act (2014 or
-          2015) (Yes=+4)<br/>
-          Sponsored or cosponsored USA FREEDOM 2014 prior to 2014-05-18 (Yes=+2)
-          Before this date, USA FREEDOM was a substantially stronger piece
-          of legislation, meriting +2 rather than +1.<br/>
+          Sponsored or cosponsored FISA Transparency & Modernization Act (Yes=-4)<br/>
+          Sponsored or cosponsored Surveillance State Repeal Act (2014 or 2015) (Yes=+4)<br/>
+          Sponsored or cosponsored USA FREEDOM 2014 prior to 2014-05-18 (Yes=+2)<br/>
+          Before this date, USA FREEDOM was a substantially stronger piece of
+          legislation, meriting +2 rather than +1.<br/>
           Voted for Conyers/Amash amendment (Yes=+4)<br/>
-          Voted for House version of USA FREEDOM 2014 (Yes=-2).
-          This gutted version of USA FREEDOM was weaker than what eventually passed in the
-          114th Congress, meriting -2 points.<br/>
+          Voted for House version of USA FREEDOM 2014 (Yes=-2).<br/>
+          This gutted version of USA FREEDOM was weaker than what eventually
+          passed in the 114th Congress, meriting -2 points.<br/>
           Voted for Massie-Lofgren amendment 2014 (Yes = +3)<br/>
         </p>
 
         <h5>114th Congress (2015-16):</h5>
 
         <p className='just'>
-          Sponsored or cosponsored whistleblower protection for IC
-          employees/contractors (Yes=+4)<br/>
+          Sponsored or cosponsored whistleblower protection for IC employees/contractors (Yes=+4)<br/>
           1st USA FREEDOM 2015 cloture vote (Yes=+1, No=+4 or =-4= conditional
           on straight reauth vote)<br/>
           Straight reauth (Yes=-3)<br/>
@@ -104,10 +116,10 @@ export default class ScoringSystem extends React.Component {
           Senate vote for cloture on CISA (Yes=-4, No=+4)<br/>
           Senate vote on Franken amendment to CISA (narrowing definition of
           cybersecurity threat) (Yes=+2/No=-1)<br/>
-          Senate vote on Wyden amendment to CISA (companies must scrub
-          personal data) (Yes=+2/No=-1)<br/>
-          Senate vote on Heller amendment to CISA (DHS must scrub personal
-          data) (Yes=+1/No=-1)<br/>
+          Senate vote on Wyden amendment to CISA (companies must scrub personal
+          data) (Yes=+2/No=-1)<br/>
+          Senate vote on Heller amendment to CISA (DHS must scrub personal data)
+          (Yes=+1/No=-1)<br/>
           Senate vote on Coons amendment to CISA (limit information sharing to
           that necessary to describe or identify a cybersecurity threat) (Yes=+1/No=-1)<br/>
           Senate vote on Cotton amendment (removes liability for bypassing DHS
@@ -115,6 +127,18 @@ export default class ScoringSystem extends React.Component {
           Cosponsored ECPA reform bill in 114th Congress (Yes=+2)<br/>
           Sponsored or cosponsored bill proposing Section 702 reforms in 114th
           Congress (Yes=+4)<br/>
+        </p>
+
+        <h5>115th Congress (2017-18):</h5>
+        <p className='just'>
+          House vote in Judiciary Committee to amend the USA Liberty Act to close
+          the FBI backdoor search loophole (Yes=+2/No=-2)<br/>
+          Senate vote in Intelligence Committee to amend FARA to require warrant
+          before querying Section 702 data (Yes=+2/No=-2)<br/>
+          House vote for/against the USA RIGHTS Act to rein in mass surveillance
+          under Section 702 of the FISA Amendments Act (Yes=+4/No=-4)<br/>
+          Senate vote for/against cloture on bill extending Section 702 mass
+          surveillance powers (Yes=+4/No=-4)<br/>
         </p>
 
         <p className='just'>
