@@ -725,7 +725,7 @@ export default class ScorecardPolitical extends React.Component {
       var inc = 2;
       score_criteria.push({
         score:  inc,
-        info:   'Voted in Judiciary Committee to amend the USA Liberty Act to close the FBI backdoor search loophole',
+        info:   'Voted in Judiciary Committee for the USA Liberty Act amendment to close the FBI backdoor search loophole',
         url: 'https://docs.house.gov/meetings/JU/JU00/20171108/106622/CRPT-115-JU00-Vote001-20171108.pdf'
       });
       score += inc;
@@ -735,7 +735,7 @@ export default class ScorecardPolitical extends React.Component {
 
       score_criteria.push({
         score: inc,
-        info:   'Voted in Judiciary Committee to amend the USA Liberty Act to close the FBI backdoor search loophole',
+        info:   'Voted in Judiciary Committee against the USA Liberty Act amendment to close the FBI backdoor search loophole',
         url: 'https://docs.house.gov/meetings/JU/JU00/20171108/106622/CRPT-115-JU00-Vote001-20171108.pdf'
       });
       score += inc;
@@ -744,7 +744,7 @@ export default class ScorecardPolitical extends React.Component {
       var inc = 2;
       score_criteria.push({
         score:  inc,
-        info:   'Voted in Intelligence Committee to amend FARA to require warrant before querying Section 702 data',
+        info:   'Voted in Intelligence Committee for the FARA amendment to require warrant before querying Section 702 data',
         url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
       });
       score += inc;
@@ -754,7 +754,7 @@ export default class ScorecardPolitical extends React.Component {
 
       score_criteria.push({
         score: inc,
-        info:   'Voted in Intelligence Committee to amend FARA to require warrant before querying Section 702 data',
+        info:   'Voted in Intelligence Committee against the FARA amendment to require warrant before querying Section 702 data',
         url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
       });
       score += inc;
@@ -773,7 +773,7 @@ export default class ScorecardPolitical extends React.Component {
 
       score_criteria.push({
         score: inc,
-        info:   'Voted in Intelligence Committee to report FARA to floor',
+        info:   'Voted in Intelligence Committee to not report FARA to floor',
         url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
       });
       score += inc;
