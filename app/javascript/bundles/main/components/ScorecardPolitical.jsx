@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
-import Politician from './scorecard_political/Politician'
+import Politician from './scorecard_political/Politician';
+import { scorecardData } from './ScorecardData';
 
 export default class ScorecardPolitical extends React.Component {
   constructor(props) {
@@ -93,21 +94,33 @@ export default class ScorecardPolitical extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json')
-      .then(res => {
-        var politicians = this.processPoliticians(res.data.feed.entry);
-        this.setState({
-          good: 16 < politicians.good.length ? 16 : politicians.good.length,
-          bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
-          neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
-          goodFiltered: politicians.good,
-          badFiltered: politicians.bad,
-          neutralFiltered: politicians.neutral,
-          politicians: politicians
-        });
-        window.scrollTo(0, 0);
-      })
-      .catch((error) => console.log('unable to get spreadsheet', error));
+    // axios.get('https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json')
+    //   .then(res => {
+    //     var politicians = this.processPoliticians(res.data.feed.entry);
+    //     this.setState({
+    //       good: 16 < politicians.good.length ? 16 : politicians.good.length,
+    //       bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
+    //       neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
+    //       goodFiltered: politicians.good,
+    //       badFiltered: politicians.bad,
+    //       neutralFiltered: politicians.neutral,
+    //       politicians: politicians
+    //     });
+    //     window.scrollTo(0, 0);
+    //   })
+    //   .catch((error) => console.log('unable to get spreadsheet', error));
+    console.log('entries', scorecardData);
+    var politicians = this.processPoliticians(scorecardData);
+    this.setState({
+      good: 16 < politicians.good.length ? 16 : politicians.good.length,
+      bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
+      neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
+      goodFiltered: politicians.good,
+      badFiltered: politicians.bad,
+      neutralFiltered: politicians.neutral,
+      politicians: politicians
+    });
+    window.scrollTo(0, 0);
   }
 
   expandArticle = () => {
