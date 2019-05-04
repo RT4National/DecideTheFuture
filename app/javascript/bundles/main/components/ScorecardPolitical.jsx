@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
 import Politician from './scorecard_political/Politician';
-import { scorecardData } from './ScorecardData';
 
 export default class ScorecardPolitical extends React.Component {
   constructor(props) {
@@ -25,6 +24,7 @@ export default class ScorecardPolitical extends React.Component {
       name: '',
       membership: 'All',
       party: 'All',
+      candidacy: 'All',
       committees: {
         intelligence: 'Intelligence',
         judiciary: 'Judiciary',
@@ -94,33 +94,21 @@ export default class ScorecardPolitical extends React.Component {
   }
 
   componentDidMount() {
-    // axios.get('https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json')
-    //   .then(res => {
-    //     var politicians = this.processPoliticians(res.data.feed.entry);
-    //     this.setState({
-    //       good: 16 < politicians.good.length ? 16 : politicians.good.length,
-    //       bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
-    //       neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
-    //       goodFiltered: politicians.good,
-    //       badFiltered: politicians.bad,
-    //       neutralFiltered: politicians.neutral,
-    //       politicians: politicians
-    //     });
-    //     window.scrollTo(0, 0);
-    //   })
-    //   .catch((error) => console.log('unable to get spreadsheet', error));
-    console.log('entries', scorecardData);
-    var politicians = this.processPoliticians(scorecardData);
-    this.setState({
-      good: 16 < politicians.good.length ? 16 : politicians.good.length,
-      bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
-      neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
-      goodFiltered: politicians.good,
-      badFiltered: politicians.bad,
-      neutralFiltered: politicians.neutral,
-      politicians: politicians
-    });
-    window.scrollTo(0, 0);
+    axios.get('https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json')
+      .then(res => {
+        var politicians = this.processPoliticians(res.data.feed.entry);
+        this.setState({
+          good: 16 < politicians.good.length ? 16 : politicians.good.length,
+          bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
+          neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
+          goodFiltered: politicians.good,
+          badFiltered: politicians.bad,
+          neutralFiltered: politicians.neutral,
+          politicians: politicians
+        });
+        window.scrollTo(0, 0);
+      })
+      .catch((error) => console.log('unable to get spreadsheet', error));
   }
 
   expandArticle = () => {
@@ -234,7 +222,8 @@ export default class ScorecardPolitical extends React.Component {
       s_139:                                                  e('s139'),
       fbi_search:                                             e('fbisearch'),
       query_warrant:                                          e('querywarrant'),
-      fara:                                                   e('fara')
+      fara:                                                   e('fara'),
+      candidacy:                                              e('candidacy')
     };
 
     var scoring = this.doScore(politician);
@@ -894,11 +883,12 @@ export default class ScorecardPolitical extends React.Component {
   }
 
   matchPolitician = (politician, value, field) => {
-    const { filtered, name, membership, party } = this.state;
+    const { filtered, name, membership, party, candidacy } = this.state;
     var filteredValue = filtered;
     var nameValue = name;
     var membershipValue = membership;
     var partyValue = party;
+    var candidacyValue = candidacy;
 
     if ( field == 'view' ) {
       filteredValue = value;
@@ -912,6 +902,9 @@ export default class ScorecardPolitical extends React.Component {
     } else if (field == 'party') {
       partyValue = value;
       this.setState({party: value});
+    } else if (field == 'candidacy') {
+      candidacyValue = value;
+      this.setState({candidacy: value});
     }
 
     return (
@@ -928,6 +921,9 @@ export default class ScorecardPolitical extends React.Component {
       ) && (
         partyValue == 'All' ||
         politician.party == partyValue
+      ) && (
+        candidacyValue == 'All' ||
+        politician.candidacy == candidacyValue
       )
     );
   }
@@ -960,7 +956,7 @@ export default class ScorecardPolitical extends React.Component {
         </p>
         <div id="scoreboard_data">
           <div>
-            <label>Choose View:</label>
+            <label>Chamber or State:</label>
             <select onChange={e => this.filterPoliticians(e.target.value, 'view')}>
               <optgroup label="View by Chamber">
                 <option value="All">All Congress</option>
@@ -975,7 +971,7 @@ export default class ScorecardPolitical extends React.Component {
             </select>
           </div>
           <div style={{marginTop: '15px'}}>
-            <label>Choose Membership:</label>
+            <label>Organization Membership:</label>
             <select
               className='membership'
               style={{maxWidth: '300px'}}
@@ -995,7 +991,7 @@ export default class ScorecardPolitical extends React.Component {
             </select>
           </div>
           <div style={{marginTop: '15px'}}>
-            <label>Choose Party:</label>
+            <label>Political Party:</label>
             <select className='membership'
               style={{maxWidth: '300px'}}
               onChange={e => this.filterPoliticians(e.target.value, 'party')}
@@ -1006,7 +1002,18 @@ export default class ScorecardPolitical extends React.Component {
             </select>
           </div>
           <div style={{marginTop: '15px'}}>
-            <label>Search by Name:</label>
+            <label>Presidential Candidacy:</label>
+            <select className='membership'
+              style={{maxWidth: '300px'}}
+              onChange={e => this.filterPoliticians(e.target.value, 'candidacy')}
+            >
+              <option value='All'>All Members</option>
+              <option value='Yes'>Running</option>
+              <option value=''>Not Running</option>
+            </select>
+          </div>
+          <div style={{marginTop: '15px'}}>
+            <label>Politician Name:</label>
             <input
               type='text'
               size='13'
