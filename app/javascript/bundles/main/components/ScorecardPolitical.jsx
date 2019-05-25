@@ -8,7 +8,6 @@ export default class ScorecardPolitical extends React.Component {
     super(props);
 
     this.state = {
-      expanded: '',
       good: 0,
       goodFiltered: [],
       neutral: 0,
@@ -20,11 +19,11 @@ export default class ScorecardPolitical extends React.Component {
         neutral: [],
         bad: []
       },
-      filtered: 'All',
-      name: '',
-      membership: 'All',
-      party: 'All',
-      candidacy: 'All',
+      filtered: props.filtered || 'All',
+      name: props.name || '',
+      membership: props.membership || 'All',
+      party: props.party || 'All',
+      candidacy: props.candidacy || 'All',
       committees: {
         intelligence: 'Intelligence',
         judiciary: 'Judiciary',
@@ -90,20 +89,19 @@ export default class ScorecardPolitical extends React.Component {
         'Wyoming'
       ]
     };
-
   }
 
   componentDidMount() {
     axios.get('https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json')
       .then(res => {
-        var politicians = this.processPoliticians(res.data.feed.entry);
+        const { politicians, filtered } = this.processPoliticians(res.data.feed.entry);
         this.setState({
-          good: 16 < politicians.good.length ? 16 : politicians.good.length,
-          bad: 16 < politicians.bad.length ? 16 : politicians.bad.length,
-          neutral: 19 < politicians.neutral.length ? 19 : politicians.neutral.length,
-          goodFiltered: politicians.good,
-          badFiltered: politicians.bad,
-          neutralFiltered: politicians.neutral,
+          good: 16 < filtered.good.length ? 16 : filtered.good.length,
+          bad: 16 < filtered.bad.length ? 16 : filtered.bad.length,
+          neutral: 19 < filtered.neutral.length ? 19 : filtered.neutral.length,
+          goodFiltered: filtered.good,
+          badFiltered: filtered.bad,
+          neutralFiltered: filtered.neutral,
           politicians: politicians
         });
         window.scrollTo(0, 0);
@@ -117,21 +115,25 @@ export default class ScorecardPolitical extends React.Component {
 
   processPoliticians = (entries) => {
     var politicians = { good: [], neutral: [], bad: [] };
+    var filtered = { good: [], neutral: [], bad: [] };
 
     for (const entry of entries) {
       var politician = this.processPolitician(entry);
       if (politician.active != 'No' && politician.voting != 'Yes') {
         if (politician.score > 5 ){
           politicians.good.push(politician);
+          if (this.matchPolitician(politician)) filtered.good.push(politician)
         } else if (politician.score >= 0) {
           politicians.neutral.push(politician);
+          if (this.matchPolitician(politician)) filtered.neutral.push(politician)
         } else if (politician.score < 0) {
           politicians.bad.push(politician);
+          if (this.matchPolitician(politician)) filtered.bad.push(politician)
         }
       }
     }
 
-    return politicians;
+    return { politicians: politicians, filtered: filtered };
   }
 
   processPolitician = (entry) => {
@@ -859,7 +861,7 @@ export default class ScorecardPolitical extends React.Component {
   }
 
   filterPoliticians = (value, field) => {
-    const { filtered, name, politicians, affiliation } = this.state;
+    const { politicians } = this.state;
     var goodFiltered, neutralFiltered, badFiltered;
 
     goodFiltered = politicians.good.filter(politician => (
@@ -879,13 +881,13 @@ export default class ScorecardPolitical extends React.Component {
       goodFiltered: goodFiltered,
       neutralFiltered: neutralFiltered,
       badFiltered: badFiltered
-    });
+    }, () => this.updateUrl());
   }
 
   matchPolitician = (politician, value, field) => {
     const { filtered, name, membership, party, candidacy } = this.state;
     var filteredValue = filtered;
-    var nameValue = name;
+    var nameValue = name.toLowerCase();
     var membershipValue = membership;
     var partyValue = party;
     var candidacyValue = candidacy;
@@ -928,9 +930,25 @@ export default class ScorecardPolitical extends React.Component {
     );
   }
 
+  updateUrl = () => {
+    const { filtered, name, membership, party, candidacy } = this.state;
+    var filters = [];
+
+    if(filtered) filters.push("filtered=" + filtered);
+    if(name) filters.push("name=" + name);
+    if(membership) filters.push("membership=" + membership);
+    if(party) filters.push("party=" + party);
+    if(candidacy) filters.push("candidacy=" + candidacy);
+
+    var query = '';
+    if (filters.length > 0) query = '?' + filters.join('&')
+    history.pushState({
+      id: 'home'
+    }, 'Decide The Future', window.location.origin + query);
+  }
+
   render() {
     const {
-      expanded,
       good,
       neutral,
       bad,
@@ -939,6 +957,9 @@ export default class ScorecardPolitical extends React.Component {
       caucuses,
       filtered,
       name,
+      membership,
+      party,
+      candidacy,
       goodFiltered,
       neutralFiltered,
       badFiltered
@@ -957,7 +978,10 @@ export default class ScorecardPolitical extends React.Component {
         <div id="scoreboard_data">
           <div>
             <label>Chamber or State:</label>
-            <select onChange={e => this.filterPoliticians(e.target.value, 'view')}>
+            <select
+              onChange={e => this.filterPoliticians(e.target.value, 'view')}
+              value={filtered}
+            >
               <optgroup label="View by Chamber">
                 <option value="All">All Congress</option>
                 <option value="Senate">Senate</option>
@@ -976,6 +1000,7 @@ export default class ScorecardPolitical extends React.Component {
               className='membership'
               style={{maxWidth: '300px'}}
               onChange={e => this.filterPoliticians(e.target.value, 'membership')}
+              value={membership}
             >
               <option value='All'>All Members</option>
               <optgroup label="View by Committee">
@@ -995,6 +1020,7 @@ export default class ScorecardPolitical extends React.Component {
             <select className='membership'
               style={{maxWidth: '300px'}}
               onChange={e => this.filterPoliticians(e.target.value, 'party')}
+              value={party}
             >
               <option value='All'>All Parties</option>
               <option value='Democrat'>Democratic</option>
@@ -1006,6 +1032,7 @@ export default class ScorecardPolitical extends React.Component {
             <select className='membership'
               style={{maxWidth: '300px'}}
               onChange={e => this.filterPoliticians(e.target.value, 'candidacy')}
+              value={candidacy}
             >
               <option value='All'>All Members</option>
               <option value='Yes'>Running</option>
@@ -1019,6 +1046,7 @@ export default class ScorecardPolitical extends React.Component {
               size='13'
               onChange={e => this.filterPoliticians(e.target.value, 'name')}
               placeholder='First/Last Name'
+              value={name}
             />
           </div>
           <div className='politicians'>

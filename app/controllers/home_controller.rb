@@ -43,5 +43,13 @@ class HomeController < ApplicationController
         { label: 'xerox', name: 'Xerox', scoring: ['bad', 'bad', 'bad'] }
       ]
     }
+
+    @filters = {
+      filtered: params[:filtered],
+      name: params[:name],
+      membership: params[:membership],
+      party: params[:party],
+      candidacy: params[:candidacy]
+    }
   end
 end
