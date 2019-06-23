@@ -222,6 +222,7 @@ export default class ScorecardPolitical extends React.Component {
       coons_cisa_amendment:                                   e('cottoncisaamendment'),
       cisa_final:                                             e('cisafinal'),
       s_139:                                                  e('s139'),
+      h_r_2740:                                               e('hr2740'),
       fbi_search:                                             e('fbisearch'),
       query_warrant:                                          e('querywarrant'),
       fara:                                                   e('fara'),
@@ -779,6 +780,25 @@ export default class ScorecardPolitical extends React.Component {
         score: inc,
         info:   'Voted in Intelligence Committee to not report FARA to floor',
         url: 'https://congress.gov/congressional-report/115th-congress/senate-report/182/1?q=%7B%22search%22%3A%5B%22billOriginalCosponsor%3AW000437%22%2C%22billOriginalCosponsor%3AW000437%22%5D%7D'
+      });
+      score += inc;
+    }
+    if (politician['h_r_2740'] == 'Aye') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted to add prohibitions on NSA reverse targeting to 2018 appropriations',
+        url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
+      });
+      score += inc;
+    }
+    else if (politician['h_r_2740'] == 'No') {
+      var inc = -4;
+
+      score_criteria.push({
+        score: inc,
+        info:   'Voted not to add prohibitions on NSA reverse targeting to 2018 appropriations',
+        url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
       });
       score += inc;
     }
