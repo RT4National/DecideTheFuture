@@ -226,7 +226,9 @@ export default class ScorecardPolitical extends React.Component {
       fbi_search:                                             e('fbisearch'),
       query_warrant:                                          e('querywarrant'),
       fara:                                                   e('fara'),
-      candidacy:                                              e('candidacy')
+      candidacy:                                              e('candidacy'),
+      facial:                                                 e('facial'),
+      biometric:                                              e('biometric')
     };
 
     var scoring = this.doScore(politician);
@@ -798,6 +800,24 @@ export default class ScorecardPolitical extends React.Component {
       score_criteria.push({
         score: inc,
         info:   'Voted not to add prohibitions on NSA reverse targeting to 2018 appropriations',
+        url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
+      });
+      score += inc;
+    }
+    if (politician['facial'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Sponsored bill to prohibit use of facial recognition technology to identify or track an end user without consent',
+        url: 'https://www.govtrack.us/congress/bills/116/s847'
+      });
+      score += inc;
+    }
+    if (politician['biometric'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Sponsored legislation to prohibit biometric recognition in most public and assisted housing',
         url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
       });
       score += inc;
