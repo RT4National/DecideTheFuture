@@ -818,7 +818,7 @@ export default class ScorecardPolitical extends React.Component {
       score_criteria.push({
         score:  inc,
         info:   'Sponsored legislation to prohibit biometric recognition in most public and assisted housing',
-        url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
+        url: 'http://dearcolleague.us/2019/07/cosponsor-the-no-biometric-barriers-to-housing-act-of-2019-2/'
       });
       score += inc;
     }
