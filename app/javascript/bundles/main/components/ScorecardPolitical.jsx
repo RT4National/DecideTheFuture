@@ -1092,7 +1092,7 @@ export default class ScorecardPolitical extends React.Component {
           <div className='politicians'>
             { good > 0 || bad > 0 ? (
               <div className="team internet">
-                <h3>Team Internet</h3>
+                <h3>Team Internet <span>({goodFiltered.length})</span></h3>
                 <em>These politicians are standing up for the free Internet and oppose mass surveillance.</em>
                 <div
                   key={`good-${filtered}${name}`}
@@ -1116,7 +1116,7 @@ export default class ScorecardPolitical extends React.Component {
             ) : '' }
             { good > 0 || bad > 0 ? (
               <div className="team surveillance">
-                <h3>Team Surveillance</h3>
+                <h3>Team Surveillance <span>({badFiltered.length})</span></h3>
                 <em>These politicians are voting to give intelligence agencies a freer hand in spying on Americans.</em>
                 <div
                   key={`bad-${filtered}${name}`}
@@ -1141,7 +1141,7 @@ export default class ScorecardPolitical extends React.Component {
           </div>
           { neutral > 0 ? (
             <div className="team unknown">
-              <h3>Unclear</h3>
+              <h3>Unclear <span>({neutralFiltered.length})</span></h3>
               <div
                 key={`neutral-${filtered}${name}`}
                 className='filtered politicians-scroll'

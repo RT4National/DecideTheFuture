@@ -453,6 +453,9 @@
 
 .internet h3 {
     color: $good;
+    span {
+        font-size: 2rem;
+    }
 }
 
 .internet em {
@@ -461,6 +464,9 @@
 
 .surveillance h3 {
     color: $bad;
+    span {
+        font-size: 2rem;
+    }
 }
 
 .surveillance em {
@@ -477,6 +483,9 @@
     height: 6rem;
     line-height: 6rem;
     margin-bottom: 15px;
+    span {
+        font-size: 2rem;
+    }
 }
 
 .filtered > div {
