@@ -1,6 +1,9 @@
 {
   "name": "decide-the-future",
   "private": true,
+  "engines": {
+    "node": "10.18.0"
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
