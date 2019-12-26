@@ -228,7 +228,8 @@ export default class ScorecardPolitical extends React.Component {
       fara:                                                   e('fara'),
       candidacy:                                              e('candidacy'),
       facial:                                                 e('facial'),
-      biometric:                                              e('biometric')
+      biometric:                                              e('biometric'),
+      s2939:                                                  e('s2939')
     };
 
     var scoring = this.doScore(politician);
@@ -822,7 +823,15 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     }
-
+    if (politician['s2939'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Filed or cosponsored S. 2939, ending NSA call detail records program',
+        url: 'https://www.congress.gov/bill/116th-congress/senate-bill/2939/cosponsors'
+      });
+      score += inc;
+    }
 
     if (score_criteria.length == 0) {
       var grade = '?';
