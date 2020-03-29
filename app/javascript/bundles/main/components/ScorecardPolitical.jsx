@@ -229,7 +229,12 @@ export default class ScorecardPolitical extends React.Component {
       candidacy:                                              e('candidacy'),
       facial:                                                 e('facial'),
       biometric:                                              e('biometric'),
-      s2939:                                                  e('s2939')
+      s2939:                                                  e('s2939'),
+      sapra:                                                  e('sapra'),
+      sapra2:                                                 e('sapra2'),
+      s3420:	                                                  e('s3420'),
+      h_r_6172:	                                              e('hr6172'),
+      earn:                                                   e('earn')
     };
 
     var scoring = this.doScore(politician);
@@ -829,6 +834,59 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Filed or cosponsored S. 2939, ending NSA call detail records program',
         url: 'https://www.congress.gov/bill/116th-congress/senate-bill/2939/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['sapra'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   "Sponsored or cosponsored the Safeguarding Americans' Private Records Act to neuter PATRIOT Act mass surveillance",
+        url: 'https://www.congress.gov/bill/116th-congress/senate-bill/3242/cosponsors?q={%22search%22:[%22safeguarding%22]}&r=15&s=2&searchResultViewType=expanded&KWICView=false'
+      });
+      score += inc;
+    }
+    if (politician['sapra2'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   "Sponsored or cosponsored the Safeguarding Americans' Private Records Act to neuter PATRIOT Act mass surveillance",
+        url: 'https://www.congress.gov/bill/116th-congress/house-bill/5675/cosponsors?q={%22search%22:[%22safeguarding+private%22]}&r=1&s=4&searchResultViewType=expanded&KWICView=false'
+      });
+      score += inc;
+    }
+    if (politician['s3420'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Sponsored or cosponsored improvements to FISC amicus processes',
+        url: 'https://www.congress.gov/bill/116th-congress/senate-bill/3420/cosponsors?q={%22search%22:[%22lee%22]}&r=2&s=7&searchResultViewType=expanded&KWICView=false'
+      });
+      score += inc;
+    }
+    if (politician['h_r_6172'] == 'Yes') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Supported renewal of PATRIOT Act surveillance powers with cosmetic reforms',
+        url: 'http://clerk.house.gov/evs/2020/roll098.xml'
+      });
+      score += inc;
+    } else if (politician['h_r_6172'] == 'No') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Opposed renewal of PATRIOT Act surveillance powers with cosmetic reforms',
+        url: 'http://clerk.house.gov/evs/2020/roll098.xml'
+      });
+      score += inc;
+    }
+    if (politician['earn'] == 'Yes') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Sponsored or cosponsored the EARN IT Act, which would enable the federal government to muscle private firms into not providing end-to-end encryption',
+        url: 'https://www.congress.gov/bill/116th-congress/senate-bill/3398/cosponsors?q={%22search%22:[%22earn+it+act%22]}&r=1&s=9&searchResultViewType=expanded&KWICView=false'
       });
       score += inc;
     }
