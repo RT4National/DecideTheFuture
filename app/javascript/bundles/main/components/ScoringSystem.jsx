@@ -139,6 +139,31 @@ export default class ScoringSystem extends React.Component {
           under Section 702 of the FISA Amendments Act (Yes=+4/No=-4)</span>
           <span>Senate vote for/against cloture on bill extending Section 702 mass
           surveillance powers (Yes=+4/No=-4)</span>
+          <span>Voted in Judiciary Committee for the USA Liberty Act amendment to close
+          the FBI backdoor search loophole (Yes=+2/No=-2)</span>
+          <span>Voted in Intelligence Committee for the FARA amendment to require warrant
+          before querying Section 702 data (Yes=+2/No=-2)</span>
+          <span>Voted in Intelligence Committee to report FARA to floor
+          (Yes=-2/No=+2)</span>
+        </p>
+
+        <h5>116th Congress (2019-20):</h5>
+        <p className='just'>
+          <span>Voted on adding prohibitions on NSA reverse targeting to 2018
+          appropriations (Yes=+4/No=-4)</span>
+          <span>Sponsored bill to prohibit use of facial recognition technology to
+          identify or track an end user without consent (Yes=+3)</span>
+          <span>Sponsored legislation to prohibit biometric recognition in most public
+          and assisted housing (Yes=+4)</span>
+          <span>Filed or cosponsored S. 2939, ending NSA call detail records program
+          (Yes=+3)</span>
+          <span>Sponsored or cosponsored the Safeguarding Americans' Private Records Act
+          to neuter PATRIOT Act mass surveillance (Yes=+4)</span>
+          <span>Sponsored or cosponsored improvements to FISC amicus processes (Yes=+2)</span>
+          <span>Supported/opposed renewal of PATRIOT Act surveillance powers with
+          cosmetic reforms (Yes=-2/No=+3)</span>
+          <span>Sponsored or cosponsored the EARN IT Act, which would enable the federal
+          government to muscle private firms into not providing end-to-end encryption (Yes=-3)</span>
         </p>
 
         <p className='just'>

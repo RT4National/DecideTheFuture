@@ -540,7 +540,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['CISA_cloture_vote'] == 'GOOD') {
         var inc = 4;
-
         score_criteria.push({
             score: inc,
             info:   'Voted against CISA Cloture Vote',
@@ -559,7 +558,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['house_NCPA'] == 'GOOD') {
         var inc = 2;
-
         score_criteria.push({
             score: inc,
             info:   'Voted against National Cybersecurity Protection Advancement Act',
@@ -578,7 +576,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['house_PCNA'] == 'GOOD') {
         var inc = 3;
-
         score_criteria.push({
             score: inc,
             info:   'Voted against The Protecting Cyber Networks Act ',
@@ -597,7 +594,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['franken_cisa_amendment'] == 'GOOD') {
         var inc = 2;
-
         score_criteria.push({
             score: inc,
             info:   'Voted for the Franken CISA amendment ',
@@ -616,7 +612,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['wyden_cisa_amendment'] == 'GOOD') {
         var inc = 2;
-
         score_criteria.push({
             score: inc,
             info:   'Voted for the Wyden CISA amendment ',
@@ -654,7 +649,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['coons_cisa_amendment'] == 'GOOD') {
         var inc = 1;
-
         score_criteria.push({
             score: inc,
             info:   'Voted for the Coons CISA amendment ',
@@ -745,7 +739,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['fbi_search'] == 'No') {
       var inc = -2;
-
       score_criteria.push({
         score: inc,
         info:   'Voted in Judiciary Committee against the USA Liberty Act amendment to close the FBI backdoor search loophole',
@@ -764,7 +757,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['query_warrant'] == 'No') {
       var inc = -2;
-
       score_criteria.push({
         score: inc,
         info:   'Voted in Intelligence Committee against the FARA amendment to require warrant before querying Section 702 data',
@@ -783,7 +775,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['fara'] == 'No') {
       var inc = 2;
-
       score_criteria.push({
         score: inc,
         info:   'Voted in Intelligence Committee to not report FARA to floor',
@@ -802,7 +793,6 @@ export default class ScorecardPolitical extends React.Component {
     }
     else if (politician['h_r_2740'] == 'No') {
       var inc = -4;
-
       score_criteria.push({
         score: inc,
         info:   'Voted not to add prohibitions on NSA reverse targeting to 2018 appropriations',
