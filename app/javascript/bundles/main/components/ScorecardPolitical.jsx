@@ -856,6 +856,7 @@ export default class ScorecardPolitical extends React.Component {
     }
     if (politician['h_r_6172'] == 'Yes') {
       var inc = -2;
+      if (politician['s_139'] == 'Yes') inc = 1;
       score_criteria.push({
         score:  inc,
         info:   'Supported renewal of PATRIOT Act surveillance powers with cosmetic reforms',
@@ -863,7 +864,8 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     } else if (politician['h_r_6172'] == 'No') {
-      var inc = 3;
+      var inc = -1;
+      if (politician['s_139'] == 'Yes') inc = 2;
       score_criteria.push({
         score:  inc,
         info:   'Opposed renewal of PATRIOT Act surveillance powers with cosmetic reforms',

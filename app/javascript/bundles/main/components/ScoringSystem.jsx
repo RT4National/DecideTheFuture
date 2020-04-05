@@ -87,11 +87,11 @@ export default class ScoringSystem extends React.Component {
           <span>Sponsored or cosponsored FISA Transparency & Modernization Act (Yes=-4)</span>
           <span>Sponsored or cosponsored Surveillance State Repeal Act (2014 or 2015) (Yes=+4)</span>
           <span>Sponsored or cosponsored USA FREEDOM 2014 prior to 2014-05-18 (Yes=+2)<br />
-          <em>Before this date, USA FREEDOM was a substantially stronger piece of
+          <em>*Before this date, USA FREEDOM was a substantially stronger piece of
           legislation, meriting +2 rather than +1.</em></span>
           <span>Voted for Conyers/Amash amendment (Yes=+4)</span>
           <span>Voted for House version of USA FREEDOM 2014 (Yes=-2).<br />
-          <em>This gutted version of USA FREEDOM was weaker than what eventually
+          <em>*This gutted version of USA FREEDOM was weaker than what eventually
           passed in the 114th Congress, meriting -2 points.</em></span>
           <span>Voted for Massie-Lofgren amendment 2014 (Yes = +3)</span>
         </p>
@@ -161,7 +161,15 @@ export default class ScoringSystem extends React.Component {
           to neuter PATRIOT Act mass surveillance (Yes=+4)</span>
           <span>Sponsored or cosponsored improvements to FISC amicus processes (Yes=+2)</span>
           <span>Supported/opposed renewal of PATRIOT Act surveillance powers with
-          cosmetic reforms (Yes=-2/No=+3)</span>
+          cosmetic reforms (Yes=-2,+1/No=+2,-1)<br />
+          <em>*Scoring HR 6172 was difficult. HR 6172 was generally opposed by civil liberties
+          organizations, as being far weaker than alternatives like the Safeguarding
+          Americans' Private Records Act. However, it also contained a statutory end to
+          the controversial Call Detail Records program, among other provisions, and for
+          that reason some pro-civil liberties folks voted for it. Therefore, we felt it
+          best to condition our scoring for this bill on the prior and much clearer vote
+          for the USA RIGHTS Act.</em>
+          </span>
           <span>Sponsored or cosponsored the EARN IT Act, which would enable the federal
           government to muscle private firms into not providing end-to-end encryption (Yes=-3)</span>
         </p>
