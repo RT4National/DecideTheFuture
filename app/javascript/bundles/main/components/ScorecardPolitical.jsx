@@ -232,9 +232,10 @@ export default class ScorecardPolitical extends React.Component {
       s2939:                                                  e('s2939'),
       sapra:                                                  e('sapra'),
       sapra2:                                                 e('sapra2'),
-      s3420:	                                                  e('s3420'),
+      s3420:	                                                e('s3420'),
       h_r_6172:	                                              e('hr6172'),
-      earn:                                                   e('earn')
+      earn:                                                   e('earn'),
+      sa1583:                                                 e('sa1583')
     };
 
     var scoring = this.doScore(politician);
@@ -879,6 +880,23 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Sponsored or cosponsored the EARN IT Act, which would enable the federal government to muscle private firms into not providing end-to-end encryption',
         url: 'https://www.congress.gov/bill/116th-congress/senate-bill/3398/cosponsors?q={%22search%22:[%22earn+it+act%22]}&r=1&s=9&searchResultViewType=expanded&KWICView=false'
+      });
+      score += inc;
+    }
+    if (politician['sa1583'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted for amendment to prohibit FBI collection of web browsing history without a warrant',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00089'
+      });
+      score += inc;
+    } else if (politician['sa1583'] == 'No') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted against amendment to prohibit FBI collection of web browsing history without a warrant',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00089'
       });
       score += inc;
     }
