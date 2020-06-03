@@ -235,7 +235,9 @@ export default class ScorecardPolitical extends React.Component {
       s3420:	                                                e('s3420'),
       h_r_6172:	                                              e('hr6172'),
       earn:                                                   e('earn'),
-      sa1583:                                                 e('sa1583')
+      sa1583:                                                 e('sa1583'),
+      sa1584:                                                 e('sa1584'),
+      sa1586:                                                 e('sa1586')
     };
 
     var scoring = this.doScore(politician);
@@ -857,20 +859,26 @@ export default class ScorecardPolitical extends React.Component {
     }
     if (politician['h_r_6172'] == 'Yes') {
       var inc = -2;
-      if (politician['s_139'] == 'Yes') inc = 1;
+      var url = 'http://clerk.house.gov/evs/2020/roll098.xml'
+      if (politician.organization === 'Senate') {
+        url = 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00092'
+      }
       score_criteria.push({
         score:  inc,
         info:   'Supported renewal of PATRIOT Act surveillance powers with cosmetic reforms',
-        url: 'http://clerk.house.gov/evs/2020/roll098.xml'
+        url: url
       });
       score += inc;
     } else if (politician['h_r_6172'] == 'No') {
-      var inc = -1;
-      if (politician['s_139'] == 'Yes') inc = 2;
+      var inc = +2;
+      var url = 'http://clerk.house.gov/evs/2020/roll098.xml'
+      if (politician.organization === 'Senate') {
+        url = 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00092'
+      }
       score_criteria.push({
         score:  inc,
         info:   'Opposed renewal of PATRIOT Act surveillance powers with cosmetic reforms',
-        url: 'http://clerk.house.gov/evs/2020/roll098.xml'
+        url: url
       });
       score += inc;
     }
@@ -897,6 +905,40 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Voted against amendment to prohibit FBI collection of web browsing history without a warrant',
         url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00089'
+      });
+      score += inc;
+    }
+    if (politician['sa1584'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted for improving FISA Court transparency by requiring civil liberties amicus in most situations',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00090'
+      });
+      score += inc;
+    } else if (politician['sa1584'] == 'No') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted against improving FISA Court transparency by requiring civil liberties amicus in most situations',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00090'
+      });
+      score += inc;
+    }
+    if (politician['sa1586'] == 'Yes') {
+      var inc = 5;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted against prohibiting use of Executive Order 12,333-derived information in prosecutions of US persons',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00091'
+      });
+      score += inc;
+    } else if (politician['sa1586'] == 'No') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted against prohibiting use of Executive Order 12,333-derived information in prosecutions of US persons',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00091'
       });
       score += inc;
     }

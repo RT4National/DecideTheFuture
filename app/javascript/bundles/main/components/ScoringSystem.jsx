@@ -161,17 +161,15 @@ export default class ScoringSystem extends React.Component {
           to neuter PATRIOT Act mass surveillance (Yes=+4)</span>
           <span>Sponsored or cosponsored improvements to FISC amicus processes (Yes=+2)</span>
           <span>Supported/opposed renewal of PATRIOT Act surveillance powers with
-          cosmetic reforms (Yes=-2,+1/No=+2,-1)<br />
-          <em>*Scoring HR 6172 was difficult. HR 6172 was generally opposed by civil liberties
-          organizations, as being far weaker than alternatives like the Safeguarding
-          Americans' Private Records Act. However, it also contained a statutory end to
-          the controversial Call Detail Records program, among other provisions, and for
-          that reason some pro-civil liberties folks voted for it. Therefore, we felt it
-          best to condition our scoring for this bill on the prior and much clearer vote
-          for the USA RIGHTS Act.</em>
-          </span>
+          cosmetic reforms (Yes=-2/No=+2)</span>
           <span>Sponsored or cosponsored the EARN IT Act, which would enable the federal
           government to muscle private firms into not providing end-to-end encryption (Yes=-3)</span>
+          <span>Voted for/against amendment to prohibit FBI collection of web browsing history
+          without a warrant (Yes=+3/No=-3)</span>
+          <span>Voted for/against improving FISA Court transparency by requiring civil liberties
+          amicus in most situations (Yes=+2/No=-4)</span>
+          <span>Voted for/against prohibiting use of Executive Order 12,333-derived information
+          in prosecutions of US persons (Yes=+5/No=-2)</span>
         </p>
 
         <p className='just'>
