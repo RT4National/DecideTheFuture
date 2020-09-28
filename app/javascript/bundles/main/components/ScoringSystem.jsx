@@ -170,6 +170,8 @@ export default class ScoringSystem extends React.Component {
           amicus in most situations (Yes=+2/No=-4)</span>
           <span>Voted for/against prohibiting use of Executive Order 12,333-derived information
           in prosecutions of US persons (Yes=+5/No=-2)</span>
+          <span>Supports requiring internal civil liberties review of DHS intelligence products
+          before circulation (Yes=+3)</span>
         </p>
 
         <p className='just'>
