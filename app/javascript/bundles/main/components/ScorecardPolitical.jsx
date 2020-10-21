@@ -1194,6 +1194,7 @@ export default class ScorecardPolitical extends React.Component {
               <option value='All'>All Parties</option>
               <option value='Democrat'>Democratic</option>
               <option value='Republican'>Republican</option>
+              <option value='Independent'>Independent</option>
             </select>
           </div>
           <div style={{marginTop: '15px'}}>
