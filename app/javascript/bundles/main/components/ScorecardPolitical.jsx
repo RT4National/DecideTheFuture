@@ -1068,7 +1068,7 @@ export default class ScorecardPolitical extends React.Component {
       membershipValue = value;
       this.setState({membership: value});
     } else if (field == 'name') {
-      nameValue = value.toLowerCase();
+      nameValue = value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       this.setState({name: value});
     } else if (field == 'party') {
       partyValue = value;
@@ -1084,8 +1084,9 @@ export default class ScorecardPolitical extends React.Component {
         politician.organization == filteredValue ||
         politician.state == filteredValue
       ) && (
-        politician.first_name.toLowerCase().includes(nameValue) ||
-        politician.last_name.toLowerCase().includes(nameValue)
+        (
+          politician.first_name + ' ' + politician.last_name
+        ).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(nameValue)
       ) && (
         membershipValue == 'All' ||
         politician[membershipValue] == 'Yes'
