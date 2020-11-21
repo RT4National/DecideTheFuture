@@ -120,13 +120,13 @@ export default class ScorecardPolitical extends React.Component {
     for (const entry of entries) {
       var politician = this.processPolitician(entry);
       if (politician.active != 'No' && politician.voting != 'Yes') {
-        if (politician.score > 5 ){
+        if (politician.score > 3 ){
           politicians.good.push(politician);
           if (this.matchPolitician(politician)) filtered.good.push(politician)
-        } else if (politician.score >= 0) {
+        } else if (politician.score >= -6) {
           politicians.neutral.push(politician);
           if (this.matchPolitician(politician)) filtered.neutral.push(politician)
-        } else if (politician.score < 0) {
+        } else if (politician.score < -6) {
           politicians.bad.push(politician);
           if (this.matchPolitician(politician)) filtered.bad.push(politician)
         }
@@ -213,7 +213,6 @@ export default class ScorecardPolitical extends React.Component {
       ECPA_reform_cosponsor:                                  e('ecpareformcosponsor'),
       house_PCNA:                                             e('housepcna'),
       house_NCPA:                                             e('housencpaa'),
-      ECPA_reform_cosponsor:                                  e('ecpareformcosponsor'),
       CISA_cloture_vote:                                      e('cisacloture'),
       franken_cisa_amendment:                                 e('frankencisaamendment'),
       wyden_cisa_amendment:                                   e('wydencisaamendment'),
@@ -299,7 +298,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     if (politician['usa_freedom_prior_to_20140518'] == 'X') {
-        var inc = 2;
+        var inc = politician.organization === 'Senate' ? 3 : 1;
         score_criteria.push({
             score:  inc,
             info:   'Supported the original USA Freedom Act (prior to May 18th, 2014)',
@@ -479,15 +478,15 @@ export default class ScorecardPolitical extends React.Component {
         });
         score += inc;
     }
-    if (politician['s_702_reforms'] == 'X') {
-        var inc = 4;
-        score_criteria.push({
-            score:  inc,
-            info:   'Supported bills reforming Section 702 of FISA',
-            url:undefined
-        });
-        score += inc;
-    }
+    // if (politician['s_702_reforms'] == 'X') {
+    //     var inc = 4;
+    //     score_criteria.push({
+    //         score:  inc,
+    //         info:   'Supported bills reforming Section 702 of FISA',
+    //         url:undefined
+    //     });
+    //     score += inc;
+    // }
     if (politician['massie_lofgren_amendment_to_hr2685_defund_702'] == 'GOOD') {
         var inc = 3;
         score_criteria.push({
@@ -525,7 +524,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     if (politician['ECPA_reform_cosponsor'] == 'GOOD') {
-        var inc = 2;
+        var inc = 1;
         score_criteria.push({
             score:  inc,
             info:   'Co-Sponsor of Electronic Communication Privacy Act Reform',
@@ -534,7 +533,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     if (politician['CISA_cloture_vote'] == 'BAD') {
-        var inc = -4;
+        var inc = -2;
         score_criteria.push({
             score:  inc,
             info:   'Voted for CISA Cloture Vote',
@@ -543,7 +542,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     else if (politician['CISA_cloture_vote'] == 'GOOD') {
-        var inc = 4;
+        var inc = 2;
         score_criteria.push({
             score: inc,
             info:   'Voted against CISA Cloture Vote',
@@ -552,7 +551,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     if (politician['house_NCPA'] == 'BAD') {
-        var inc = -2;
+        var inc = -1;
         score_criteria.push({
             score:  inc,
             info:   'Voted for National Cybersecurity Protection Advancement Act',
@@ -561,7 +560,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     else if (politician['house_NCPA'] == 'GOOD') {
-        var inc = 2;
+        var inc = 1;
         score_criteria.push({
             score: inc,
             info:   'Voted against National Cybersecurity Protection Advancement Act',
@@ -570,7 +569,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     if (politician['house_PCNA'] == 'BAD') {
-        var inc = -3;
+        var inc = -2;
         score_criteria.push({
             score:  inc,
             info:   'Voted for The Protecting Cyber Networks Act ',
@@ -579,7 +578,7 @@ export default class ScorecardPolitical extends React.Component {
         score += inc;
     }
     else if (politician['house_PCNA'] == 'GOOD') {
-        var inc = 3;
+        var inc = 2;
         score_criteria.push({
             score: inc,
             info:   'Voted against The Protecting Cyber Networks Act ',
@@ -804,15 +803,15 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     }
-    if (politician['facial'] == 'Yes') {
-      var inc = 3;
-      score_criteria.push({
-        score:  inc,
-        info:   'Sponsored bill to prohibit use of facial recognition technology to identify or track an end user without consent',
-        url: 'https://www.govtrack.us/congress/bills/116/s847'
-      });
-      score += inc;
-    }
+    // if (politician['facial'] == 'Yes') {
+    //   var inc = 3;
+    //   score_criteria.push({
+    //     score:  inc,
+    //     info:   'Sponsored bill to prohibit use of facial recognition technology to identify or track an end user without consent',
+    //     url: 'https://www.govtrack.us/congress/bills/116/s847'
+    //   });
+    //   score += inc;
+    // }
     if (politician['biometric'] == 'Yes') {
       var inc = 4;
       score_criteria.push({
@@ -918,7 +917,7 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     } else if (politician['sa1584'] == 'No') {
-      var inc = -4;
+      var inc = -2;
       score_criteria.push({
         score:  inc,
         info:   'Voted against improving FISA Court transparency by requiring civil liberties amicus in most situations',
@@ -927,7 +926,7 @@ export default class ScorecardPolitical extends React.Component {
       score += inc;
     }
     if (politician['sa1586'] == 'Yes') {
-      var inc = 5;
+      var inc = 4;
       score_criteria.push({
         score:  inc,
         info:   'Voted against prohibiting use of Executive Order 12,333-derived information in prosecutions of US persons',
@@ -955,43 +954,40 @@ export default class ScorecardPolitical extends React.Component {
 
     if (score_criteria.length == 0) {
       var grade = '?';
-    } else if(score >= 15){
+    } else if(score > 30){
       var grade="A+";
     }
-    else if(score >= 12){
+    else if(score > 24){
       var grade="A";
     }
-    else if(score >= 10){
+    else if(score > 17){
       var grade="A-";
     }
-    else if(score >= 9){
+    else if(score > 11){
       var grade="B+";
     }
-    else if(score >= 8){
+    else if(score > 6){
       var grade="B";
     }
-    else if(score >= 7){
+    else if(score > 3){
       var grade="B-";
     }
-    else if(score >= 6){
-      var grade="B-";
-    }
-    else if(score >= 5){
+    else if(score > -2){
       var grade="C+";
     }
-    else if(score >= 3){
+    else if(score > -6){
       var grade="C";
     }
-    else if(score >= 0){
+    else if(score > -7){
       var grade="C-";
     }
-    else if(score >= -2){
+    else if(score > -12){
       var grade="D+";
     }
-    else if(score >= -7){
+    else if(score > -19){
       var grade="D";
     }
-    else if(score >= -9){
+    else if(score > -26){
       var grade="D-";
     }
     else if (politician['last_name'] == 'McConnell') {

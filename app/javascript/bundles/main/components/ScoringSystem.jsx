@@ -86,11 +86,11 @@ export default class ScoringSystem extends React.Component {
           <span>Sponsored or cosponsored FISA Improvements Act (Yes=-4)</span>
           <span>Sponsored or cosponsored FISA Transparency & Modernization Act (Yes=-4)</span>
           <span>Sponsored or cosponsored Surveillance State Repeal Act (2014 or 2015) (Yes=+4)</span>
-          <span>Sponsored or cosponsored USA FREEDOM 2014 prior to 2014-05-18 (Yes=+2)<br />
+          <span>Sponsored or cosponsored USA FREEDOM 2014 prior to 2014-05-18 (Yes=+3)<br />
           <em>*Before this date, USA FREEDOM was a substantially stronger piece of
           legislation, meriting +2 rather than +1.</em></span>
           <span>Voted for Conyers/Amash amendment (Yes=+4)</span>
-          <span>Voted for House version of USA FREEDOM 2014 (Yes=-2).<br />
+          <span>Voted for House version of USA FREEDOM 2014 (Yes=-1).<br />
           <em>*This gutted version of USA FREEDOM was weaker than what eventually
           passed in the 114th Congress, meriting -2 points.</em></span>
           <span>Voted for Massie-Lofgren amendment 2014 (Yes = +3)</span>
@@ -109,11 +109,11 @@ export default class ScoringSystem extends React.Component {
           <span>Amendment 1451 to USA FREEDOM 2015: Gut amicus (No=+1, Yes=-3)</span>
           <span>Final passage USA FREEDOM 2015 (Yes=+1, No=+4 or =-4
           conditional on straight reauth vote)</span>
-          <span>House vote on PCNA (Yes=-3, No=+3)</span>
-          <span>House vote on NCPAA (Yes=-2, No=+2)</span>
+          <span>House vote on PCNA (Yes=-2, No=+2)</span>
+          <span>House vote on NCPAA (Yes=-1, No=+1)</span>
           <span>Massie-Lofgren amendment to HR2685: Defund 702 (Yes=+3/No=-3)</span>
           <span>Massie-Lofgren amendment on HR4870: No Encryption Backdoors (Yes=+3/No=-3)</span>
-          <span>Senate vote for cloture on CISA (Yes=-4, No=+4)</span>
+          <span>Senate vote for cloture on CISA (Yes=-2, No=+2)</span>
           <span>Senate vote on Franken amendment to CISA (narrowing definition of
           cybersecurity threat) (Yes=+2/No=-1)</span>
           <span>Senate vote on Wyden amendment to CISA (companies must scrub personal
@@ -124,9 +124,9 @@ export default class ScoringSystem extends React.Component {
           that necessary to describe or identify a cybersecurity threat) (Yes=+1/No=-1)</span>
           <span>Senate vote on Cotton amendment (removes liability for bypassing DHS
           to share data with FBI and Secret Service) (Yes=-2/No=+1)</span>
-          <span>Cosponsored ECPA reform bill in 114th Congress (Yes=+2)</span>
-          <span>Sponsored or cosponsored bill proposing Section 702 reforms in 114th
-          Congress (Yes=+4)</span>
+          <span>Cosponsored ECPA reform bill in 114th Congress (Yes=+1)</span>
+          {/* <span>Sponsored or cosponsored bill proposing Section 702 reforms in 114th
+          Congress (Yes=+4)</span> */}
         </p>
 
         <h5>115th Congress (2017-18):</h5>
@@ -151,8 +151,8 @@ export default class ScoringSystem extends React.Component {
         <p className='just'>
           <span>Voted on adding prohibitions on NSA reverse targeting to 2018
           appropriations (Yes=+4/No=-4)</span>
-          <span>Sponsored bill to prohibit use of facial recognition technology to
-          identify or track an end user without consent (Yes=+3)</span>
+          {/* <span>Sponsored bill to prohibit use of facial recognition technology to
+          identify or track an end user without consent (Yes=+3)</span> */}
           <span>Sponsored legislation to prohibit biometric recognition in most public
           and assisted housing (Yes=+4)</span>
           <span>Filed or cosponsored S. 2939, ending NSA call detail records program
@@ -167,9 +167,9 @@ export default class ScoringSystem extends React.Component {
           <span>Voted for/against amendment to prohibit FBI collection of web browsing history
           without a warrant (Yes=+3/No=-3)</span>
           <span>Voted for/against improving FISA Court transparency by requiring civil liberties
-          amicus in most situations (Yes=+2/No=-4)</span>
+          amicus in most situations (Yes=+2/No=-2)</span>
           <span>Voted for/against prohibiting use of Executive Order 12,333-derived information
-          in prosecutions of US persons (Yes=+5/No=-2)</span>
+          in prosecutions of US persons (Yes=+4/No=-2)</span>
           <span>Supports requiring internal civil liberties review of DHS intelligence products
           before circulation (Yes=+3)</span>
         </p>
