@@ -120,7 +120,7 @@ export default class ScorecardPolitical extends React.Component {
     for (const entry of entries) {
       var politician = this.processPolitician(entry);
       if (politician.active != 'No' && politician.voting != 'Yes') {
-        if (politician.score > 5 ){
+        if (politician.score > 2 ){
           politicians.good.push(politician);
           if (this.matchPolitician(politician)) filtered.good.push(politician)
         } else if (politician.score >= 0) {
@@ -1219,8 +1219,8 @@ export default class ScorecardPolitical extends React.Component {
           <div className='politicians'>
             { good > 0 || bad > 0 ? (
               <div className="team internet">
-                <h3>Team Internet <span>({goodFiltered.length})</span></h3>
-                <em>These politicians are standing up for the free Internet and oppose mass surveillance.</em>
+                <h3>Team Privacy <span>({goodFiltered.length})</span></h3>
+                <em>These politicians are standing up to oppose mass government surveillance.</em>
                 <div
                   key={`good-${filtered}${name}`}
                   className='filtered politicians-scroll'
