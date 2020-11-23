@@ -120,13 +120,13 @@ export default class ScorecardPolitical extends React.Component {
     for (const entry of entries) {
       var politician = this.processPolitician(entry);
       if (politician.active != 'No' && politician.voting != 'Yes') {
-        if (politician.score > 3 ){
+        if (politician.score > 5 ){
           politicians.good.push(politician);
           if (this.matchPolitician(politician)) filtered.good.push(politician)
-        } else if (politician.score >= -6) {
+        } else if (politician.score >= 0) {
           politicians.neutral.push(politician);
           if (this.matchPolitician(politician)) filtered.neutral.push(politician)
-        } else if (politician.score < -6) {
+        } else if (politician.score < 0) {
           politicians.bad.push(politician);
           if (this.matchPolitician(politician)) filtered.bad.push(politician)
         }
@@ -960,34 +960,34 @@ export default class ScorecardPolitical extends React.Component {
     else if(score > 24){
       var grade="A";
     }
-    else if(score > 17){
+    else if(score > 18){
       var grade="A-";
     }
-    else if(score > 11){
+    else if(score > 13){
       var grade="B+";
     }
-    else if(score > 6){
+    else if(score > 9){
       var grade="B";
     }
-    else if(score > 3){
+    else if(score > 5){
       var grade="B-";
     }
-    else if(score > -2){
+    else if(score > 2){
       var grade="C+";
     }
-    else if(score > -6){
+    else if(score > -1){
       var grade="C";
     }
-    else if(score > -7){
+    else if(score > -3){
       var grade="C-";
     }
-    else if(score > -12){
+    else if(score > -6){
       var grade="D+";
     }
-    else if(score > -19){
+    else if(score > -7){
       var grade="D";
     }
-    else if(score > -26){
+    else if(score > -16){
       var grade="D-";
     }
     else if (politician['last_name'] == 'McConnell') {
