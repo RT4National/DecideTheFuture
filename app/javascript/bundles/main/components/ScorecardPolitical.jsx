@@ -790,7 +790,7 @@ export default class ScorecardPolitical extends React.Component {
       score_criteria.push({
         score:  inc,
         info:   'Voted to add prohibitions on NSA reverse targeting to 2018 appropriations',
-        url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
+        url: 'https://clerk.house.gov/evs/2019/roll345.xml'
       });
       score += inc;
     }
@@ -799,7 +799,7 @@ export default class ScorecardPolitical extends React.Component {
       score_criteria.push({
         score: inc,
         info:   'Voted not to add prohibitions on NSA reverse targeting to 2018 appropriations',
-        url: 'http://legislink.org/us/house-vote-2018-14-2019-345'
+        url: 'https://clerk.house.gov/evs/2019/roll345.xml'
       });
       score += inc;
     }
