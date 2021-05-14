@@ -237,7 +237,8 @@ export default class ScorecardPolitical extends React.Component {
       sa1583:                                                 e('sa1583'),
       sa1584:                                                 e('sa1584'),
       sa1586:                                                 e('sa1586'),
-      h_r_7984:                                               e('hr7984')
+      h_r_7984:                                               e('hr7984'),
+      s1265:                                                  e('s1265')
     };
 
     var scoring = this.doScore(politician);
@@ -948,6 +949,15 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Supports requiring internal civil liberties review of DHS intelligence products before circulation",
         url: 'https://www.congress.gov/bill/116th-congress/house-bill/7984/cosponsors?r=5&s=1&searchResultViewType=expanded'
+      });
+      score += inc;
+    }
+    if (politician['s1265'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   "Original cosponsor of the Wyden-Daines 'Fourth Amendment Is Not For Sale Act'",
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/1265/cosponsors?searchResultViewType=expanded'
       });
       score += inc;
     }
