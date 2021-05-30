@@ -40,7 +40,7 @@ export default class Politician extends React.Component {
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
                 { politician.twitter ? (
-                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter}`}>
+                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} Please cosponsor the 4th Amendment Is Not For Sale Act, to stop the intelligence and law enforcement community buying their way around our rights!`}>
                     <button className='tweet_link'></button>
                   </a>
                 ) : '' }
