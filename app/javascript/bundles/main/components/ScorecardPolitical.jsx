@@ -238,7 +238,8 @@ export default class ScorecardPolitical extends React.Component {
       sa1584:                                                 e('sa1584'),
       sa1586:                                                 e('sa1586'),
       h_r_7984:                                               e('hr7984'),
-      s1265:                                                  e('s1265')
+      s1265:                                                  e('s1265'),
+      uspisspa:                                               e('uspisspa')
     };
 
     var scoring = this.doScore(politician);
@@ -958,6 +959,15 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Original cosponsor of the Wyden-Daines 'Fourth Amendment Is Not For Sale Act'",
         url: 'https://www.congress.gov/bill/117th-congress/senate-bill/1265/cosponsors?searchResultViewType=expanded'
+      });
+      score += inc;
+    }
+    if (politician['uspisspa'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Original cosponsor of bill to end covert internet surveillance by US Postal Intelligence Service",
+        url: 'https://gaetz.house.gov/media/press-releases/congressman-matt-gaetz-leads-9-lawmakers-push-abolish-uspis-s-internet-covert'
       });
       score += inc;
     }

@@ -174,6 +174,14 @@ export default class ScoringSystem extends React.Component {
           before circulation (Yes=+3)</span>
         </p>
 
+        <h5>117th Congress (2021-22):</h5>
+        <p className='just'>
+          <span>Original cosponsor of the Wyden-Daines 'Fourth Amendment Is Not For Sale Act' 
+            (Yes=+4)</span>
+          <span>Original cosponsor of bill to end covert internet surveillance by US Postal 
+            Intelligence Service (Yes=+3)</span>
+        </p>
+
         <p className='just'>
           We set the grade boundaries unevenly, because the legislators are
           themselves distributed unevenly. The buckets are generally narrower in
