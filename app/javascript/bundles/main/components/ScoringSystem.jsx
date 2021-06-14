@@ -180,6 +180,8 @@ export default class ScoringSystem extends React.Component {
             (Yes=+4)</span>
           <span>Original cosponsor of bill to end covert internet surveillance by US Postal 
             Intelligence Service (Yes=+3)</span>
+          <span>Supports requiring tech companies to give children an easy way to erase the data 
+            held on them. (Yes=+3)</span>
         </p>
 
         <p className='just'>

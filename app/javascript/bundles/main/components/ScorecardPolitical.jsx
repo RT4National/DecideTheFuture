@@ -239,7 +239,8 @@ export default class ScorecardPolitical extends React.Component {
       sa1586:                                                 e('sa1586'),
       h_r_7984:                                               e('hr7984'),
       s1265:                                                  e('s1265'),
-      uspisspa:                                               e('uspisspa')
+      uspisspa:                                               e('uspisspa'),
+      s1423:                                                  e('s1423')
     };
 
     var scoring = this.doScore(politician);
@@ -968,6 +969,15 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Original cosponsor of bill to end covert internet surveillance by US Postal Intelligence Service",
         url: 'https://gaetz.house.gov/media/press-releases/congressman-matt-gaetz-leads-9-lawmakers-push-abolish-uspis-s-internet-covert'
+      });
+      score += inc;
+    }
+    if (politician['s1423'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Supports requiring tech companies to give children an easy way to erase the data held on them.",
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/1423/cosponsors?r=73&s=1'
       });
       score += inc;
     }
