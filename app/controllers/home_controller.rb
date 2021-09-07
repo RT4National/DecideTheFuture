@@ -49,7 +49,8 @@ class HomeController < ApplicationController
       name: params[:name],
       membership: params[:membership],
       party: params[:party],
-      candidacy: params[:candidacy]
+      candidacy: params[:candidacy],
+      google_sheets_api_key: ENV['google_sheets_api_key']
     }
   end
 end
