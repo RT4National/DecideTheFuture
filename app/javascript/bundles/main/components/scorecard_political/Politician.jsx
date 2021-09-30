@@ -40,7 +40,7 @@ export default class Politician extends React.Component {
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
                 { politician.twitter ? (
-                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} The FBI is illegally searching NSA foreign intelligence databases MILLIONS of times a year for info on Americans. Vote for the Massie-Lofgren amendment to the Commerce, Justice, and Science Appropriations bill, to %23EndBackdoorSearches.`}>
+                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} HR 3684's §80603 could destroy financial privacy for immigrants, cryptocurrency miners and small-scale traders of cryptocurrency. It's OK for them to not always know the SSNs of the people they trade with. %23DontKillCrypto`}>
                     <button className='tweet_link'></button>
                   </a>
                 ) : '' }
