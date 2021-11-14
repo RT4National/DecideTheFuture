@@ -176,12 +176,17 @@ export default class ScoringSystem extends React.Component {
 
         <h5>117th Congress (2021-22):</h5>
         <p className='just'>
-          <span>Original cosponsor of the Wyden-Daines 'Fourth Amendment Is Not For Sale Act' 
+          <span>Original cosponsor of the Wyden-Daines 'Fourth Amendment Is Not For Sale Act'
             (Yes=+4)</span>
-          <span>Original cosponsor of bill to end covert internet surveillance by US Postal 
+          <span>Original cosponsor of bill to end covert internet surveillance by US Postal
             Intelligence Service (Yes=+3)</span>
-          <span>Supports requiring tech companies to give children an easy way to erase the data 
+          <span>Supports requiring tech companies to give children an easy way to erase the data
             held on them. (Yes=+3)</span>
+          <span>Cosponsored a toothless bill, the "No Trace Act", that exempts intelligence services
+            from any limits on warrantless acquisition of datasets. (Yes=-3)</span>
+          <span>To restrict "1033" military equipment going to police departments (Yes=3/No=+3)</span>
+          <span>Cosponsored bill protecting US persons\' devices from warrantless searches at the
+            "border". (Yes=+2)</span>
         </p>
 
         <p className='just'>

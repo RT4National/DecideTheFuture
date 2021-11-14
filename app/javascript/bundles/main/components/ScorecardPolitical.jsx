@@ -116,7 +116,7 @@ export default class ScorecardPolitical extends React.Component {
   processPoliticians = (entries) => {
     var politicians = { good: [], neutral: [], bad: [] };
     var filtered = { good: [], neutral: [], bad: [] };
-    
+
 
     for (const entry of entries.slice(1)) {
       var politician = this.processPolitician(entry);
@@ -140,7 +140,7 @@ export default class ScorecardPolitical extends React.Component {
   processPolitician = (entry) => {
     const { states } = this.state;
     // var e = (field) => { return entry['gsx$'+field]['$t'].trim(); };
-    
+
     var politician = {
       first_name:               entry[0],
       last_name:                entry[1],
@@ -248,7 +248,12 @@ export default class ScorecardPolitical extends React.Component {
       office7geo:               entry[99],
       office8:                  entry[100],
       office8phone:             entry[101],
-      office8geo:               entry[102]
+      office8geo:               entry[102],
+
+      hr3707:                                                  entry[103],
+      hr4350:                                                  entry[104],
+      hr5524:                                                  entry[105],
+      s2957:                                                   entry[106]
     };
 
     var scoring = this.doScore(politician);
@@ -986,6 +991,50 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Supports requiring tech companies to give children an easy way to erase the data held on them.",
         url: 'https://www.congress.gov/bill/117th-congress/senate-bill/1423/cosponsors?r=73&s=1'
+      });
+      score += inc;
+    }
+    if (politician['hr3707'] == 'Yes') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored a toothless bill, the "No Trace Act", that exempts intelligence services from any limits on warrantless acquisition of datasets.',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/3707/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr4350'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted YES to restrict "1033" military equipment going to police departments.',
+        url: 'https://clerk.house.gov/Votes/2021281'
+      });
+      score += inc;
+    } else if (politician['hr4350'] == 'No') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted NO to restrict "1033" military equipment going to police departments.',
+        url: 'https://clerk.house.gov/Votes/2021281'
+      });
+      score += inc;
+    }
+    if (politician['hr5524'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored bill protecting US persons\' devices from warrantless searches at the "border".',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/5524/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s2957'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored bill protecting US persons\' devices from warrantless searches at the "border".',
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/2957/cosponsors'
       });
       score += inc;
     }
