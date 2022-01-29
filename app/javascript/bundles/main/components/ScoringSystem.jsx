@@ -187,6 +187,9 @@ export default class ScoringSystem extends React.Component {
           <span>To restrict "1033" military equipment going to police departments (Yes=3/No=+3)</span>
           <span>Cosponsored bill protecting US persons\' devices from warrantless searches at the
             "border". (Yes=+2)</span>
+          <span>Opposes intrusive financial surveillance of cryptocurrency users. (Yes=+3)</span>
+          <span>Supports US citizens being allowed to sue federal government agents for deprivation of
+            rights. (Yes=+4)</span>
         </p>
 
         <p className='just'>

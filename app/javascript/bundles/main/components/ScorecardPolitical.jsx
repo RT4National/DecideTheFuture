@@ -253,7 +253,10 @@ export default class ScorecardPolitical extends React.Component {
       hr3707:                                                  entry[103],
       hr4350:                                                  entry[104],
       hr5524:                                                  entry[105],
-      s2957:                                                   entry[106]
+      s2957:                                                   entry[106],
+      hr6006:                                                  entry[107],
+      s3343:                                                   entry[108],
+      hr6185:                                                  entry[109]
     };
 
     var scoring = this.doScore(politician);
@@ -1035,6 +1038,33 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Cosponsored bill protecting US persons\' devices from warrantless searches at the "border".',
         url: 'https://www.congress.gov/bill/117th-congress/senate-bill/2957/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr6006'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Opposes intrusive financial surveillance of cryptocurrency users.',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/6006/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s3343'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Supports US citizens being allowed to sue federal government agents for deprivation of rights.',
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/3343/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr6185'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Supports US citizens being allowed to sue federal government agents for deprivation of rights.',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/6185/cosponsors'
       });
       score += inc;
     }

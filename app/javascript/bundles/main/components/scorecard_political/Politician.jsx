@@ -40,7 +40,7 @@ export default class Politician extends React.Component {
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
                 { politician.twitter ? (
-                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} HR 3684's §80603 could destroy financial privacy for immigrants, cryptocurrency miners and small-scale traders of cryptocurrency. It's OK for them to not always know the SSNs of the people they trade with. %23DontKillCrypto`}>
+                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} Why don't people trust the govt? Because if they violate your rights, you can't get redress. Citizens SHOULD be able to sue federal agents, like they can agents of the state govt, who violate their rights. Please cosponsor the Bivens Act [S3343/HR6185] today!`}>
                     <button className='tweet_link'></button>
                   </a>
                 ) : '' }
