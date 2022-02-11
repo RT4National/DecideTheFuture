@@ -948,7 +948,7 @@ export default class ScorecardPolitical extends React.Component {
       var inc = 4;
       score_criteria.push({
         score:  inc,
-        info:   'Voted against prohibiting use of Executive Order 12,333-derived information in prosecutions of US persons',
+        info:   'Voted for prohibiting use of Executive Order 12,333-derived information in prosecutions of US persons',
         url: 'https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=116&session=2&vote=00091'
       });
       score += inc;
