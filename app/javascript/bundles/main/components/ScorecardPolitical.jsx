@@ -256,7 +256,11 @@ export default class ScorecardPolitical extends React.Component {
       s2957:                                                   entry[106],
       hr6006:                                                  entry[107],
       s3343:                                                   entry[108],
-      hr6185:                                                  entry[109]
+      hr6185:                                                  entry[109],
+      hr8454:                                                  entry[110],
+      s3398:                                                   entry[111],
+      hr6544:                                                  entry[112],
+      s3538:                                                   entry[113]
     };
 
     var scoring = this.doScore(politician);
@@ -1065,6 +1069,42 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Supports US citizens being allowed to sue federal government agents for deprivation of rights.',
         url: 'https://www.congress.gov/bill/117th-congress/house-bill/6185/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr8454'] == 'Yes') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the EARN-IT Act of 2020, which would force internet services to give police access to decrypted user data.',
+        url: 'https://www.congress.gov/bill/116th-congress/house-bill/8454/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s3398'] == 'Yes') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the EARN-IT Act of 2020, which would force internet services to give police access to decrypted user data.',
+        url: 'https://www.congress.gov/bill/116th-congress/senate-bill/3398/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr6544'] == 'Yes') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the EARN-IT Act of 2022, which would force internet services to give police access to decrypted user data.',
+        url: 'https://www.govtrack.us/congress/bills/117/hr6544/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s3538'] == 'Yes') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the EARN-IT Act of 2022, which would force internet services to give police access to decrypted user data.',
+        url: 'https://www.govtrack.us/congress/bills/117/s3538/cosponsors'
       });
       score += inc;
     }
