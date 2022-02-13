@@ -1076,8 +1076,16 @@ export default class ScorecardPolitical extends React.Component {
       var inc = -4;
       score_criteria.push({
         score:  inc,
-        info:   'Cosponsored the EARN-IT Act of 2020, which would force internet services to give police access to decrypted user data.',
+        info:   'Cosponsored the EARN-IT Act, which would force internet services to give police access to decrypted user data.',
         url: 'https://www.congress.gov/bill/116th-congress/house-bill/8454/cosponsors'
+      });
+      score += inc;
+    } else if (politician['hr6544'] == 'Yes') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the EARN-IT Act, which would force internet services to give police access to decrypted user data.',
+        url: 'https://www.govtrack.us/congress/bills/117/hr6544/cosponsors'
       });
       score += inc;
     }
@@ -1085,25 +1093,15 @@ export default class ScorecardPolitical extends React.Component {
       var inc = -4;
       score_criteria.push({
         score:  inc,
-        info:   'Cosponsored the EARN-IT Act of 2020, which would force internet services to give police access to decrypted user data.',
+        info:   'Cosponsored the EARN-IT Act, which would force internet services to give police access to decrypted user data.',
         url: 'https://www.congress.gov/bill/116th-congress/senate-bill/3398/cosponsors'
       });
       score += inc;
-    }
-    if (politician['hr6544'] == 'Yes') {
+    } else if (politician['s3538'] == 'Yes') {
       var inc = -4;
       score_criteria.push({
         score:  inc,
-        info:   'Cosponsored the EARN-IT Act of 2022, which would force internet services to give police access to decrypted user data.',
-        url: 'https://www.govtrack.us/congress/bills/117/hr6544/cosponsors'
-      });
-      score += inc;
-    }
-    if (politician['s3538'] == 'Yes') {
-      var inc = -4;
-      score_criteria.push({
-        score:  inc,
-        info:   'Cosponsored the EARN-IT Act of 2022, which would force internet services to give police access to decrypted user data.',
+        info:   'Cosponsored the EARN-IT Act, which would force internet services to give police access to decrypted user data.',
         url: 'https://www.govtrack.us/congress/bills/117/s3538/cosponsors'
       });
       score += inc;
