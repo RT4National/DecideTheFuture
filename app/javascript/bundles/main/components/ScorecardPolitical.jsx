@@ -260,7 +260,9 @@ export default class ScorecardPolitical extends React.Component {
       hr8454:                                                  entry[110],
       s3398:                                                   entry[111],
       hr6544:                                                  entry[112],
-      s3538:                                                   entry[113]
+      s3538:                                                   entry[113],
+      hr6877:                                                  entry[114],
+      s3668:                                                   entry[115]
     };
 
     var scoring = this.doScore(politician);
@@ -1103,6 +1105,24 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Cosponsored the EARN-IT Act, which would force internet services to give police access to decrypted user data.',
         url: 'https://www.govtrack.us/congress/bills/117/s3538/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr6877'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Original cosponsor of legislation to restrict no-knock and night-time police raids',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/6877/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s3668'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Original cosponsor of legislation to ban IRS use of facial recognition',
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/3668/cosponsors'
       });
       score += inc;
     }

@@ -194,6 +194,9 @@ export default class ScoringSystem extends React.Component {
             rights. (Yes=+4)</span>
           <span>Cosponsored the EARN-IT Act of 2022, which would force internet services to give police
             access to decrypted user data. (Yes=-4)</span>
+          <span>Original cosponsor of legislation to restrict no-knock and night-time police raids.
+            (Yes=+3)</span>
+          <span>Original cosponsor of legislation to ban IRS use of facial recognition. (Yes=+2)</span>
         </p>
 
         <p className='just'>
