@@ -197,6 +197,16 @@ export default class ScoringSystem extends React.Component {
           <span>Original cosponsor of legislation to restrict no-knock and night-time police raids.
             (Yes=+3)</span>
           <span>Original cosponsor of legislation to ban IRS use of facial recognition. (Yes=+2)</span>
+          <span>Voted for bill expanding domestic surveillance capabilities of DHS and FBI."
+            (Yes=-3)</span>
+          <span>Cosponsored the NDO Fairness Act, a bill to improve government surveillance order
+            transparency (Yes=+1)</span>
+          <span>Cosponsored the Government Surveillance Transparency Act, a bill to significantly
+            improve government surveillance order transparency (Yes=+3)</span>
+          <span>Supported bill to protect drivers against technology mandate that would unconstitutionally
+            impose breath searches as a condition of driving (Yes=+2)</span>
+          <span>Supported 'Fourth Amendment Restoration Act', requiring warrants for surveillance
+            of US citizens and prohibiting parallel construction (Yes=+5)</span>
         </p>
 
         <p className='just'>

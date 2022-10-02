@@ -262,7 +262,12 @@ export default class ScorecardPolitical extends React.Component {
       hr6544:                                                  entry[112],
       s3538:                                                   entry[113],
       hr6877:                                                  entry[114],
-      s3668:                                                   entry[115]
+      s3668:                                                   entry[115],
+      hr350:                                                   entry[116],
+      hr7072:                                                  entry[117],
+      hr7214:                                                  entry[118],
+      s4647:                                                   entry[119],
+      hr8173:                                                  entry[120]
     };
 
     var scoring = this.doScore(politician);
@@ -1123,6 +1128,51 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   'Original cosponsor of legislation to ban IRS use of facial recognition',
         url: 'https://www.congress.gov/bill/117th-congress/senate-bill/3668/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr350'] == 'Yes') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted for bill expanding domestic surveillance capabilities of DHS and FBI',
+        url: 'https://clerk.house.gov/Votes/2022221'
+      });
+      score += inc;
+    }
+    if (politician['hr7072'] == 'Yes') {
+      var inc = 1;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the NDO Fairness Act, a bill to improve government surveillance order transparency',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/7072/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr7214'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   'Cosponsored the Government Surveillance Transparency Act, a bill to significantly improve government surveillance order transparency',
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/7214/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s4647'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Supported bill to protect drivers against technology mandate that would unconstitutionally impose breath searches as a condition of driving',
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/4647/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr8173'] == 'Yes') {
+      var inc = 5;
+      score_criteria.push({
+        score:  inc,
+        info:   "Supported 'Fourth Amendment Restoration Act', requiring warrants for surveillance of US citizens and prohibiting parallel construction",
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/8173/cosponsors'
       });
       score += inc;
     }
