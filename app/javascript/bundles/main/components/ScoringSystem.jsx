@@ -207,6 +207,7 @@ export default class ScoringSystem extends React.Component {
             impose breath searches as a condition of driving (Yes=+2)</span>
           <span>Supported 'Fourth Amendment Restoration Act', requiring warrants for surveillance
             of US citizens and prohibiting parallel construction (Yes=+5)</span>
+          <span>Cosponsored warrants for law enforcement use of facial recognition (Yes=+3)</span>
         </p>
 
         <p className='just'>

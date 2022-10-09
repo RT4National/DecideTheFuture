@@ -267,7 +267,8 @@ export default class ScorecardPolitical extends React.Component {
       hr7072:                                                  entry[117],
       hr7214:                                                  entry[118],
       s4647:                                                   entry[119],
-      hr8173:                                                  entry[120]
+      hr8173:                                                  entry[120],
+      hr9061:                                                  entry[121]
     };
 
     var scoring = this.doScore(politician);
@@ -1176,6 +1177,17 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     }
+    if (politician['hr9061'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored warrants for law enforcement use of facial recognition",
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/9061/cosponsors'
+      });
+      score += inc;
+    }
+
+
 
     if (score_criteria.length == 0) {
       var grade = '?';
