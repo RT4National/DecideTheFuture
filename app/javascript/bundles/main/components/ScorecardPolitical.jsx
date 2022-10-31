@@ -1141,6 +1141,15 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     }
+    if (politician['hr350'] == 'No') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   'Voted against bill expanding domestic surveillance capabilities of DHS and FBI',
+        url: 'https://clerk.house.gov/Votes/2022221'
+      });
+      score += inc;
+    }
     if (politician['hr7072'] == 'Yes') {
       var inc = 1;
       score_criteria.push({

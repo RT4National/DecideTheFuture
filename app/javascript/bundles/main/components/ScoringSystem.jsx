@@ -186,7 +186,7 @@ export default class ScoringSystem extends React.Component {
             held on them. (Yes=+3)</span>
           <span>Cosponsored a toothless bill, the "No Trace Act", that exempts intelligence services
             from any limits on warrantless acquisition of datasets. (Yes=-3)</span>
-          <span>To restrict "1033" military equipment going to police departments (Yes=3/No=+3)</span>
+          <span>To restrict "1033" military equipment going to police departments (Yes=+3/No=-3)</span>
           <span>Cosponsored bill protecting US persons\' devices from warrantless searches at the
             "border". (Yes=+2)</span>
           <span>Opposes intrusive financial surveillance of cryptocurrency users. (Yes=+3)</span>
@@ -197,8 +197,8 @@ export default class ScoringSystem extends React.Component {
           <span>Original cosponsor of legislation to restrict no-knock and night-time police raids.
             (Yes=+3)</span>
           <span>Original cosponsor of legislation to ban IRS use of facial recognition. (Yes=+2)</span>
-          <span>Voted for bill expanding domestic surveillance capabilities of DHS and FBI."
-            (Yes=-3)</span>
+          <span>Voted for/against bill expanding domestic surveillance capabilities of DHS and FBI."
+            (Yes=-3/No=+2)</span>
           <span>Cosponsored the NDO Fairness Act, a bill to improve government surveillance order
             transparency (Yes=+1)</span>
           <span>Cosponsored the Government Surveillance Transparency Act, a bill to significantly
