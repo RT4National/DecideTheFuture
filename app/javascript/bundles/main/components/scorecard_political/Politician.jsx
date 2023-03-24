@@ -40,7 +40,7 @@ export default class Politician extends React.Component {
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
                 { politician.twitter ? (
-                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} Why don't people trust the govt? Because if they violate your rights, you can't get redress. Citizens SHOULD be able to sue federal agents, like they can agents of the state govt, who violate their rights. Please cosponsor the Bivens Act [S3343/HR6185] today!`}>
+                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} Congress is considering this year whether to renew the government's mass surveillance powers, including Section 702 of FISA. This power has been abused for years to violate our privacy rights [link to: https://restorethe4th.com/wp-content/uploads/2023/03/Sec.-702-Violations-Handout.pdf]. Please vote for bills to rein in government surveillance in 2023!`}>
                     <button className='tweet_link'></button>
                   </a>
                 ) : '' }
