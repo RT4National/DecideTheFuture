@@ -270,7 +270,9 @@ export default class ScorecardPolitical extends React.Component {
       hr7214:                                                  entry[119],
       s4647:                                                   entry[120],
       hr8173:                                                  entry[121],
-      hr9061:                                                  entry[122]
+      hr9061:                                                  entry[122],
+      hr3907:                                                  entry[123],
+      s2052:                                                   entry[124]
     };
 
     var scoring = this.doScore(politician);
@@ -1197,6 +1199,25 @@ export default class ScorecardPolitical extends React.Component {
       });
       score += inc;
     }
+    if (politician['hr3907'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored a bill that would impose a moratorium on law enforcement use of facial recognition technology",
+        url: 'https://www.congress.gov/bill/117th-congress/house-bill/3907/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s2052'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored a bill that would impose a moratorium on law enforcement use of facial recognition technology",
+        url: 'https://www.congress.gov/bill/117th-congress/senate-bill/2052/cosponsors'
+      });
+      score += inc;
+    }
+
 
 
 
