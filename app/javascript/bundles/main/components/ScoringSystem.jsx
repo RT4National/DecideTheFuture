@@ -208,6 +208,15 @@ export default class ScoringSystem extends React.Component {
           <span>Supported 'Fourth Amendment Restoration Act', requiring warrants for surveillance
             of US citizens and prohibiting parallel construction (Yes=+5)</span>
           <span>Cosponsored warrants for law enforcement use of facial recognition (Yes=+3)</span>
+          <span>Cosponsored a bill that would impose a moratorium on law enforcement use of facial
+            recognition technology (Yes=+4)</span>
+        </p>
+
+        <h5>117th Congress (2021-22):</h5>
+        <p className='just'>
+          <span>Cosponsored or voted for the RESTRICT Act, which would give expansive authority to
+            the US government to ban apps on national security grounds, seize phones used to access
+            them, and impose criminal penalties for using VPNs to access them. (Yes=-4)</span>
         </p>
 
         <p className='just'>
