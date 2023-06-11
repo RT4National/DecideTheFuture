@@ -273,7 +273,10 @@ export default class ScorecardPolitical extends React.Component {
       hr9061:                                                  entry[122],
       hr3907:                                                  entry[123],
       s2052:                                                   entry[124],
-      s686:                                                    entry[125]
+      s686:                                                    entry[125],
+      s1199:                                                   entry[126],
+      s1409:                                                   entry[127],
+      s1080:                                                   entry[128]
     };
 
     var scoring = this.doScore(politician);
@@ -1219,11 +1222,38 @@ export default class ScorecardPolitical extends React.Component {
       score += inc;
     }
     if (politician['s686'] == 'Yes') {
-      var inc = -4;
+      var inc = -2;
       score_criteria.push({
         score:  inc,
         info:   "Cosponsored or voted for the RESTRICT Act, which would give expansive authority to the US government to ban apps on national security grounds, seize phones used to access them, and impose criminal penalties for using VPNs to access them.",
         url: 'https://www.congress.gov/bill/118th-congress/senate-bill/686/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s1199'] == 'Yes') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored bill that would pressure tech companies to scan for CSAM, even by breaking user encryption, and by doing so, would trigger 4A warrant requirement for currently voluntary searches.",
+        url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1199/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s1409'] == 'Yes') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored bill that would remove liability shield for tech companies that host content any state attorney-general disapproves of.",
+        url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1409/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s1080'] == 'Yes') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored bill that would pressure tech companies to censor drug-related content online.",
+        url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1080/cosponsors'
       });
       score += inc;
     }

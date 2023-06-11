@@ -216,7 +216,14 @@ export default class ScoringSystem extends React.Component {
         <p className='just'>
           <span>Cosponsored or voted for the RESTRICT Act, which would give expansive authority to
             the US government to ban apps on national security grounds, seize phones used to access
-            them, and impose criminal penalties for using VPNs to access them. (Yes=-4)</span>
+            them, and impose criminal penalties for using VPNs to access them. (Yes=-2)</span>
+          <span>Cosponsored bill that would pressure tech companies to scan for CSAM, even by breaking
+            user encryption, and by doing so, would trigger 4A warrant requirement for currently
+            voluntary searches. (Yes=-2)</span>
+          <span>Cosponsored bill that would remove liability shield for tech companies that host
+            content any state attorney-general disapproves of. (Yes=-2)</span>
+          <span>Cosponsored bill that would pressure tech companies to censor drug-related content
+            online. (Yes=-2)</span>
         </p>
 
         <p className='just'>
