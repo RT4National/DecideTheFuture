@@ -226,6 +226,22 @@ export default class ScoringSystem extends React.Component {
             online. (Yes=-2)</span>
         </p>
 
+        <h5>118th Congress (2023-24):</h5>
+        <p className='just'>
+          <span>Cosponsored a bill that would limit government's access to electronic communications,
+            including those over 180 days old. (Yes=1)</span>
+          <span>Cosponsored a bill that would protect sale and use of encryption products and bar states
+            from requiring reconfiguration of encrypted services to enable law enforcement access. (Yes=2)
+            </span>
+          <span>Cosponsored a bill that would require disclosure of surveillance to individuals surveilled.
+            (Yes=1)</span>
+          <span>Consolidates within DOD the operation of armed government drones. (Yes=2)</span>
+          <span>Cosponsored bill creating DHS office to counter shoplifting and expanding forfeitures.
+            (Yes=-2)</span>
+        </p>
+
+
+
         <p className='just'>
           We set the grade boundaries unevenly, because the legislators are
           themselves distributed unevenly. The buckets are generally narrower in

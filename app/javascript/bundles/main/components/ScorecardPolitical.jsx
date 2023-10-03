@@ -276,7 +276,12 @@ export default class ScorecardPolitical extends React.Component {
       s686:                                                    entry[125],
       s1199:                                                   entry[126],
       s1409:                                                   entry[127],
-      s1080:                                                   entry[128]
+      s1080:                                                   entry[128],
+      hr5309:                                                  entry[129],
+      hr5311:                                                  entry[130],
+      hr5331:                                                  entry[131],
+      hr5442:                                                  entry[132],
+      hr895:                                                   entry[134]
     };
 
     var scoring = this.doScore(politician);
@@ -1254,6 +1259,51 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Cosponsored bill that would pressure tech companies to censor drug-related content online.",
         url: 'https://www.congress.gov/bill/118th-congress/senate-bill/1080/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr5309'] == 'Yes') {
+      var inc = 1;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored a bill that would limit government's access to electronic communications, including those over 180 days old.",
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/5309/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr5311'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored a bill that would protect sale and use of encryption products and bar states from requiring reconfiguration of encrypted services to enable law enforcement access.",
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/5311/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr5331'] == 'Yes') {
+      var inc = 1;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored a bill that would require disclosure of surveillance to individuals surveilled.",
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/5331/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr5442'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info:   "Consolidates within DOD the operation of armed government drones.",
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/5442/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr895'] == 'Yes') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored bill creating DHS office to counter shoplifting and expanding forfeitures.",
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/895/cosponsors'
       });
       score += inc;
     }
