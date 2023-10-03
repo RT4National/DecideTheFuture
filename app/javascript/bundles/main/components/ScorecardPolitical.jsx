@@ -281,7 +281,7 @@ export default class ScorecardPolitical extends React.Component {
       hr5311:                                                  entry[130],
       hr5331:                                                  entry[131],
       hr5442:                                                  entry[132],
-      hr895:                                                   entry[134]
+      hr895:                                                   entry[133]
     };
 
     var scoring = this.doScore(politician);
