@@ -238,6 +238,11 @@ export default class ScoringSystem extends React.Component {
           <span>Consolidates within DOD the operation of armed government drones. (Yes=2)</span>
           <span>Cosponsored bill creating DHS office to counter shoplifting and expanding forfeitures.
             (Yes=-2)</span>
+          <span>Cosponsored the Government Surveillance Reform Act, which would prohibit warrantless queries
+            of U. S. persons, and incorporate every major surveillance reform proposed from 2013-2023
+            (Yes=10)</span>
+          <span>Voted for amendment to remove requirement for all new cars to have remote killswitches by
+            2025 (Yes=3/No=-3)</span>
         </p>
 
 

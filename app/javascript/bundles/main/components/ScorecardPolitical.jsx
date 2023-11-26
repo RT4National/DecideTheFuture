@@ -281,7 +281,10 @@ export default class ScorecardPolitical extends React.Component {
       hr5311:                                                  entry[130],
       hr5331:                                                  entry[131],
       hr5442:                                                  entry[132],
-      hr895:                                                   entry[133]
+      hr895:                                                   entry[133],
+      hr6262:                                                  entry[134],
+      s3234:                                                   entry[135],
+      hr4820:                                                  entry[136]
     };
 
     var scoring = this.doScore(politician);
@@ -1304,6 +1307,41 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Cosponsored bill creating DHS office to counter shoplifting and expanding forfeitures.",
         url: 'https://www.congress.gov/bill/118th-congress/house-bill/895/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr6262'] == 'Yes') {
+      var inc = 10;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored the Government Surveillance Reform Act, which would prohibit warrantless queries of U. S. persons, and incorporate every major surveillance reform proposed from 2013-2023",
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/6262/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['s3234'] == 'Yes') {
+      var inc = 10;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored the Government Surveillance Reform Act, which would prohibit warrantless queries of U. S. persons, and incorporate every major surveillance reform proposed from 2013-2023",
+        url: 'https://www.congress.gov/bill/118th-congress/senate-bill/3234/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr4820'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Voted for amendment to remove requirement for all new cars to have remote killswitches by 2025",
+        url: 'https://clerk.house.gov/evs/2023/roll616.xml'
+      });
+      score += inc;
+    } else if (politician['hr4820'] == 'No') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Voted against amendment to remove requirement for all new cars to have remote killswitches by 2025",
+        url: 'https://clerk.house.gov/evs/2023/roll616.xml'
       });
       score += inc;
     }

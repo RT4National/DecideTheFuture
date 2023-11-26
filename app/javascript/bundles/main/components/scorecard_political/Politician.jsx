@@ -40,7 +40,7 @@ export default class Politician extends React.Component {
               <h3 className='grade'>{politician.grade}</h3>
               <div className='rollover'>
                 { politician.twitter ? (
-                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} Congress is considering this year whether to renew the government's mass surveillance powers, including Section 702 of FISA. This power has been abused for years to violate our privacy rights [link to: https://restorethe4th.com/wp-content/uploads/2023/03/Sec.-702-Violations-Handout.pdf]. Please vote for bills to rein in government surveillance in 2023!`}>
+                  <a href={`https://twitter.com/intent/tweet?text=%40${politician.twitter} Congress is considering this year whether to renew the government's mass surveillance powers, including Section 702 of FISA. This power has been abused for years to violate our privacy rights [link to: https://restorethe4th.com/wp-content/uploads/2023/03/Sec.-702-Violations-Handout.pdf]. Please vote for bills to rein in government surveillance in 2023!" It should read, "@[Member's-account] @Restore_The4th Congress is considering this year whether to reauthorize Section 702 of #FISA. Please cosponsor the Government Surveillance Reform Act, S. 3234​ / H. R. 6262​​, to restore our privacy rights #FISAReformNow`}>
                     <button className='tweet_link'></button>
                   </a>
                 ) : '' }
