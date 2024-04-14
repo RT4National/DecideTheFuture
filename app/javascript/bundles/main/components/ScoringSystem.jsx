@@ -243,6 +243,18 @@ export default class ScoringSystem extends React.Component {
             (Yes=10)</span>
           <span>Voted for amendment to remove requirement for all new cars to have remote killswitches by
             2025 (Yes=3/No=-3)</span>
+          <span>Voted to prevent straight reauthorization of FISA Section 702 to the 2023 NDAA (Yes=3)</span>
+          <span>Cosponsored the Security and Freedom Enhancement Act of 2024 (Yes=3)</span>
+          <span>Voted for/against the Protect Liberty and End Warrantless Surveillance Act in the Judiciary
+            Committee (+7/-7)</span>
+          <span>Voted for/against a warrant by default for FISA Section 702 queries for US persons (+7/-10)</span>
+          <span>Voted for/against permitting FISA Section 702 queries for international conversations involving
+            "precursors" of illegal drugs that lead to overdoses, including Sudafed and Adderall (-3/+3)</span>
+          <span>Voted for/against permitting FISA Section 702 queries of visitors and immigrants (-4/+4)</span>
+          <span>Voted for/against expanding secret surveillance of data centers and commercial tenants
+            ("PATRIOT Act 2.0") (-5/+5)</span>
+          <span>Voted for/against final passage of the Reforming Intelligence and Securing America Act
+            (-5/+5)</span>
         </p>
 
 

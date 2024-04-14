@@ -284,7 +284,15 @@ export default class ScorecardPolitical extends React.Component {
       hr895:                                                   entry[133],
       hr6262:                                                  entry[134],
       s3234:                                                   entry[135],
-      hr4820:                                                  entry[136]
+      hr4820:                                                  entry[136],
+      hr2670:                                                  entry[137],
+      s3961:                                                   entry[138],
+      hr6570:                                                  entry[139],
+      hr7888_114:                                              entry[140],
+      hr7888_116:                                              entry[141],
+      hr7888_117:                                              entry[142],
+      hr7888_118:                                              entry[143],
+      hr7888_119:                                              entry[144]
     };
 
     var scoring = this.doScore(politician);
@@ -1342,6 +1350,126 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info:   "Voted against amendment to remove requirement for all new cars to have remote killswitches by 2025",
         url: 'https://clerk.house.gov/evs/2023/roll616.xml'
+      });
+      score += inc;
+    }
+    if (politician['hr2670'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Voted to prevent straight reauthorization of FISA Section 702 to the 2023 NDAA",
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00342.htm'
+      });
+      score += inc;
+    }
+    if (politician['s3961'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info:   "Cosponsored the Security and Freedom Enhancement Act of 2024",
+        url: 'https://www.congress.gov/bill/118th-congress/senate-bill/3961/cosponsors'
+      });
+      score += inc;
+    }
+    if (politician['hr6570'] == 'Yes') {
+      var inc = 7;
+      score_criteria.push({
+        score:  inc,
+        info:   "Voted for the Protect Liberty and End Warrantless Surveillance Act in the Judiciary Committee",
+        url: 'https://www.congress.gov/congressional-report/118th-congress/house-report/307'
+      });
+      score += inc;
+    } else if (politician['hr6570'] == 'No') {
+      var inc = -7;
+      score_criteria.push({
+        score:  inc,
+        info:   "Voted against the Protect Liberty and End Warrantless Surveillance Act in the Judiciary Committee",
+        url: 'https://www.congress.gov/congressional-report/118th-congress/house-report/307'
+      });
+      score += inc;
+    }
+    if (politician['hr7888_114'] == 'Yes') {
+      var inc = 7;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for a warrant by default for FISA Section 702 queries for US persons',
+        url: 'https://clerk.house.gov/Votes/2024114'
+      });
+      score += inc;
+    } else if (politician['hr7888_114'] == 'No') {
+      var inc = -10;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against p a warrant by default for FISA Section 702 queries for US persons',
+        url: 'https://clerk.house.gov/Votes/2024114'
+      });
+      score += inc;
+    }
+    if (politician['hr7888_116'] == 'Yes') {
+      var inc = -3;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for permitting FISA Section 702 queries for international conversations involving "precursors" of illegal drugs that lead to overdoses, including Sudafed and Adderall',
+        url: 'https://clerk.house.gov/Votes/2024116'
+      });
+      score += inc;
+    } else if (politician['hr7888_116'] == 'No') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against permitting FISA Section 702 queries for international conversations involving "precursors" of illegal drugs that lead to overdoses, including Sudafed and Adderall',
+        url: 'https://clerk.house.gov/Votes/2024116'
+      });
+      score += inc;
+    }
+    if (politician['hr7888_117'] == 'Yes') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for permitting FISA Section 702 queries of visitors and immigrants',
+        url: 'https://clerk.house.gov/Votes/2024117'
+      });
+      score += inc;
+    } else if (politician['hr7888_117'] == 'No') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against permitting FISA Section 702 queries of visitors and immigrants',
+        url: 'https://clerk.house.gov/Votes/2024117'
+      });
+      score += inc;
+    }
+    if (politician['hr7888_118'] == 'Yes') {
+      var inc = -5;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for expanding secret surveillance of data centers and commercial tenants ("PATRIOT Act 2.0")',
+        url: 'https://clerk.house.gov/Votes/2024118'
+      });
+      score += inc;
+    } else if (politician['hr7888_118'] == 'No') {
+      var inc = 5;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against expanding secret surveillance of data centers and commercial tenants ("PATRIOT Act 2.0")',
+        url: 'https://clerk.house.gov/Votes/2024118'
+      });
+      score += inc;
+    }
+    if (politician['hr7888_119'] == 'Yes') {
+      var inc = -5;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for final passage of the Reforming Intelligence and Securing America Act',
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/7888'
+      });
+      score += inc;
+    } else if (politician['hr7888_119'] == 'No') {
+      var inc = 5;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against final passage of the Reforming Intelligence and Securing America Act',
+        url: 'https://www.congress.gov/bill/118th-congress/house-bill/7888'
       });
       score += inc;
     }
