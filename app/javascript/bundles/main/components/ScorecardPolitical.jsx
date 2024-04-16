@@ -1400,7 +1400,7 @@ export default class ScorecardPolitical extends React.Component {
       var inc = -10;
       score_criteria.push({
         score:  inc,
-        info: 'Voted against p a warrant by default for FISA Section 702 queries for US persons',
+        info: 'Voted against a warrant by default for FISA Section 702 queries for US persons',
         url: 'https://clerk.house.gov/Votes/2024114'
       });
       score += inc;
@@ -1461,7 +1461,7 @@ export default class ScorecardPolitical extends React.Component {
       score_criteria.push({
         score:  inc,
         info: 'Voted for final passage of the Reforming Intelligence and Securing America Act',
-        url: 'https://www.congress.gov/bill/118th-congress/house-bill/7888'
+        url: 'https://clerk.house.gov/Votes/2024119'
       });
       score += inc;
     } else if (politician['hr7888_119'] == 'No') {
@@ -1469,7 +1469,7 @@ export default class ScorecardPolitical extends React.Component {
       score_criteria.push({
         score:  inc,
         info: 'Voted against final passage of the Reforming Intelligence and Securing America Act',
-        url: 'https://www.congress.gov/bill/118th-congress/house-bill/7888'
+        url: 'https://clerk.house.gov/Votes/2024119'
       });
       score += inc;
     }
