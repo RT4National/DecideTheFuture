@@ -292,7 +292,13 @@ export default class ScorecardPolitical extends React.Component {
       hr7888_116:                                              entry[141],
       hr7888_117:                                              entry[142],
       hr7888_118:                                              entry[143],
-      hr7888_119:                                              entry[144]
+      hr7888_119:                                              entry[144],
+      sa1829:                                                  entry[145],
+      sa1820:                                                  entry[146],
+      sa1841:                                                  entry[147],
+      sa1840:                                                  entry[148],
+      hr7888_s:                                                entry[149],
+      hr4639:                                                  entry[150]
     };
 
     var scoring = this.doScore(politician);
@@ -1470,6 +1476,108 @@ export default class ScorecardPolitical extends React.Component {
         score:  inc,
         info: 'Voted against final passage of the Reforming Intelligence and Securing America Act',
         url: 'https://clerk.house.gov/Votes/2024119'
+      });
+      score += inc;
+    }
+    if (politician['sa1829'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for the Fourth Amendment Is Not For Sale Act, which would bar US agencies from warrantlessly purchasing from private data brokers, data that would require a warrant to obtain directly',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00144.htm'
+      });
+      score += inc;
+    } else if (politician['sa1829'] == 'No') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against the Fourth Amendment Is Not For Sale Act, which would bar US agencies from warrantlessly purchasing from private data brokers, data that would require a warrant to obtain directly',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00144.htm'
+      });
+      score += inc;
+    }
+    if (politician['sa1820'] == 'Yes') {
+      var inc = 3;
+      score_criteria.push({
+        score:  inc,
+        info: "Voted for the ECSP \"Make Everyone A Spy\" amendment, which substantially expands the NSA's power to secretly compel private companies to produce information on US persons using their networks",
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00146.htm'
+      });
+      score += inc;
+    } else if (politician['sa1820'] == 'No') {
+      var inc = -10;
+      score_criteria.push({
+        score:  inc,
+        info: "Voted against the ECSP \"Make Everyone A Spy\" amendment, which substantially expands the NSA's power to secretly compel private companies to produce information on US persons using their networks",
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00146.htm'
+      });
+      score += inc;
+    }
+    if (politician['sa1841'] == 'Yes') {
+      var inc = 7;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for final requiring a warrant in order for the FBI to access the full contents of a communication resulting from a FISA Section 702 query involving a US person',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00148.htm'
+      });
+      score += inc;
+    } else if (politician['sa1841'] == 'No') {
+      var inc = -10;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against final requiring a warrant in order for the FBI to access the full contents of a communication resulting from a FISA Section 702 query involving a US person',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00148.htm'
+      });
+      score += inc;
+    }
+    if (politician['sa1840'] == 'Yes') {
+      var inc = 2;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for improvements to FISC amicus processes',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00149.htm'
+      });
+      score += inc;
+    } else if (politician['sa1840'] == 'No') {
+      var inc = -2;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against improvements to FISC amicus processes',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00149.htm'
+      });
+      score += inc;
+    }
+    if (politician['hr7888_s'] == 'Yes') {
+      var inc = -13;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for final passage of RISAA, a bill reauthorizing and expanding government surveillance under FISA till 2026',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00150.htm'
+      });
+      score += inc;
+    } else if (politician['hr7888_s'] == 'No') {
+      var inc = 10;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against final passage of RISAA, a bill reauthorizing and expanding government surveillance under FISA till 2026',
+        url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00150.htm'
+      });
+      score += inc;
+    }
+    if (politician['hr4639'] == 'Yes') {
+      var inc = 4;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted for the Fourth Amendment Is Not For Sale Act, which would bar US agencies from warrantlessly purchasing from private data brokers, data that would require a warrant to obtain directly',
+        url: 'https://clerk.house.gov/Votes/2024136'
+      });
+      score += inc;
+    } else if (politician['hr4639'] == 'No') {
+      var inc = -4;
+      score_criteria.push({
+        score:  inc,
+        info: 'Voted against the Fourth Amendment Is Not For Sale Act, which would bar US agencies from warrantlessly purchasing from private data brokers, data that would require a warrant to obtain directly',
+        url: 'https://clerk.house.gov/Votes/2024136'
       });
       score += inc;
     }
