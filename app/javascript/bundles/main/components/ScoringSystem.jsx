@@ -258,8 +258,8 @@ export default class ScoringSystem extends React.Component {
           <span>Voted for/against the Fourth Amendment Is Not For Sale Act, which would bar US agencies
             from warrantlessly purchasing from private data brokers, data that would require a warrant
             to obtain directly (+4/-4)</span>
-          <span>Voted for/against the ECSP "Make Everyone A Spy" amendment, which substantially expands
-            the NSA's power to secretly compel private companies to produce information on US persons
+          <span>Voted for/against the removal of the ECSP "Make Everyone A Spy" amendment, which substantially
+            expands the NSA's power to secretly compel private companies to produce information on US persons
             using their networks (+3/-10)</span>
           <span>Voted for/against requiring a warrant in order for the FBI to access the full contents
             of a communication resulting from a FISA Section 702 query involving a US person (+7/-10)</span>

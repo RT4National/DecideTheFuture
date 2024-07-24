@@ -1500,7 +1500,7 @@ export default class ScorecardPolitical extends React.Component {
       var inc = 3;
       score_criteria.push({
         score:  inc,
-        info: "Voted for the ECSP \"Make Everyone A Spy\" amendment, which substantially expands the NSA's power to secretly compel private companies to produce information on US persons using their networks",
+        info: "Voted for the removal of the ECSP \"Make Everyone A Spy\" amendment, which substantially expands the NSA's power to secretly compel private companies to produce information on US persons using their networks",
         url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00146.htm'
       });
       score += inc;
@@ -1508,7 +1508,7 @@ export default class ScorecardPolitical extends React.Component {
       var inc = -10;
       score_criteria.push({
         score:  inc,
-        info: "Voted against the ECSP \"Make Everyone A Spy\" amendment, which substantially expands the NSA's power to secretly compel private companies to produce information on US persons using their networks",
+        info: "Voted against the removal of the ECSP \"Make Everyone A Spy\" amendment, which substantially expands the NSA's power to secretly compel private companies to produce information on US persons using their networks",
         url: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00146.htm'
       });
       score += inc;
